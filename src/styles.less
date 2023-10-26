@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+/* 
+ * Este arquivo contem as configurações globais de estilos
+ * Os estilos aplicados aqui alteram todos os modulos  
+ */
+
+/* 
+ * Declaração das variavéis
+ */
+// Tamanho da tela para responsividade
+@screen-width-phone: 767px;
+@screen-width-tablet: 1023px;
+
+// Cores
+@cor-primaria: #309F41;
+@cor-secundaria: #a1c702;
+@cor-links: #105F1C;
+@cor-sobre: #22aa86;
+@cor-aceitar: #1dc095;
+@cor-cancelar: #de2245;
+
+// Fontes 
+
+
+/* 
+ * Estilos dos Elementos
+ */
+// Todos os elementos da página
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* 
+ * Configuração de layout responsivo para phones
+ */
+@media (max-width: @screen-width-phone) {
+    
+}
+
+/* 
+ * Configuração de layout responsivo para tables
+ */
+ @media (max-width: @screen-width-tablet) {
+    
+ }
+
+
+/*  
+ * Elemento de carregamento de página
+ */
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    font-size: large;
+    color: white;
+    background-color: @cor-primaria;
+    text-align: center;
+    animation: loader ease 2.0s infinite;
+}
+
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
