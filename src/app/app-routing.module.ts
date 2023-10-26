@@ -6,7 +6,7 @@ import { SobreComponent } from './pages/sobre/sobre.component';
 import { EntrarComponent } from './forms/entrar/entrar.component';
 
 const routes: Routes = [
-  { path: '', title: 'Inicio',   redirectTo: '/inicio', pathMatch: 'full' },
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
   { path: 'inicio', title: 'Inicio', component: InicioComponent },
   { path: 'sobre', title: 'Sobre', component: SobreComponent },
   { path: 'entrar', title: 'Entrar', component: EntrarComponent },
