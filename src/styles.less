@@ -38,6 +38,31 @@ html {
 body {
     min-height: 100vh;
     min-width: 100vw;
+    background-image: linear-gradient(to bottom, @cor-aceitar, @cor-primaria);
+    z-index: -1;
+    color: white;
+    font-size: 1.20rem;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 40px 20px;
+    width: 80vw;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: @cor-links;
+    text-decoration: none;
+}
+
+a:hover {
+    color: @cor-sobre;
+    text-decoration: underline;
+    transition: 0.4s;
 }
 
 /* 
