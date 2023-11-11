@@ -11,101 +11,97 @@
 @screen-width-tablet: 1023px;
 
 // Cores
-@cor-primaria: #309F41;
-@cor-secundaria: #a1c702;
-@cor-links: #105F1C;
+@cor-aceitar: #3ab28f;
+@cor-editar: #a1c518;
+@cor-cancelar: #de2247;
+
+@cor-links: #105f1c;
 @cor-sobre: #22aa86;
-@cor-aceitar: #1dc095;
-@cor-cancelar: #de2245;
 
-@cor-fundo1: #2e8b57;
-@cor-fundo2: #226840;
+@cor-fundo1: #41ac6f;
+@cor-fundo2: #153623;
 
-// Fontes 
-
+// Fontes
 
 /* 
  * Estilos dos Elementos
  */
 // Todos os elementos da página
 * {
-    position: relative;
-    margin: 0;
-    padding: 0;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    min-height: 100vh;
-    min-width: 100vw;
-    background-image: linear-gradient(to bottom, @cor-fundo1, @cor-fundo2);
-    z-index: -1;
-    color: white;
-    font-size: 1.20rem;
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: linear-gradient(to bottom, @cor-fundo1, @cor-fundo2);
+  z-index: -1;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .container {
-    margin: 0 auto;
-    padding: 40px 20px;
-    width: 80vw;
+  margin: 0 auto;
+  padding: 40px 20px;
+  width: 60vw;
 }
 
 li {
-    list-style: none;
+  list-style: none;
 }
 
 a {
-    color: @cor-links;
-    text-decoration: none;
+  color: @cor-links;
+  text-decoration: none;
 }
 
 a:hover {
-    color: @cor-sobre;
-    text-decoration: underline;
-    transition: 0.4s;
+  color: @cor-sobre;
+  text-decoration: underline;
+  transition: 0.4s;
 }
 
 /* 
  * Configuração de layout responsivo para phones
  */
 @media (max-width: @screen-width-phone) {
-    
 }
 
 /* 
  * Configuração de layout responsivo para tables
  */
- @media (max-width: @screen-width-tablet) {
-    
- }
-
+@media (max-width: @screen-width-tablet) {
+}
 
 /*  
  * Elemento de carregamento de página
  */
 #loader {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 128px;
-    height: 128px;
-    border-radius: 50%;
-    font-size: large;
-    color: white;
-    background-color: @cor-primaria;
-    text-align: center;
-    animation: loader ease 2.0s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  font-size: large;
+  color: white;
+  background-color: @cor-aceitar;
+  text-align: center;
+  animation: loader ease 2s infinite;
 }
 
 @keyframes loader {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
