@@ -4,23 +4,19 @@ header {
     background-color: white;
     padding: 5px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     box-shadow: 0px 15px 30px 0px black;
-    h1 {
-        color: black;
-    }
     div {
-        .center();
+        #center.row();
         img {
             min-height: 5vh;
-            max-height: 100%;
+            vertical-align: middle;
+            margin-left: 20px;
         }
     }
     ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        #center();
         li {
             margin: 0px 20px;
         }
