@@ -83,25 +83,19 @@ a:hover {
  * Elemento de carregamento de página
  */
 #loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  margin: 100px auto;
   width: 128px;
   height: 128px;
   border-radius: 50%;
-  font-size: large;
-  color: white;
-  background-color: @cor-aceitar;
-  text-align: center;
-  animation: loader ease 2s infinite;
+  border: white 5px inset;
+  animation: loader 1s infinite;
 }
 
 @keyframes loader {
-  from {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
