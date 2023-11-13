@@ -8,6 +8,8 @@ import { FooterComponent } from './partials/footer/footer.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { EntrarComponent } from './forms/entrar/entrar.component';
+import { MensagensComponent } from './componentes/mensagens/mensagens.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { EntrarComponent } from './forms/entrar/entrar.component';
     FooterComponent,
     PageNotFoundComponent,
     InicioComponent,
-    EntrarComponent
+    EntrarComponent,
+    MensagensComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
