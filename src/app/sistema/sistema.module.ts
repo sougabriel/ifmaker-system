@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { SistemaRoutingModule } from './sistema-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 
@@ -11,7 +12,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   ],
   imports: [
     CommonModule,
-    SistemaRoutingModule
+    SistemaRoutingModule,
+    HttpClientModule
   ]
 })
 export class SistemaModule { }
