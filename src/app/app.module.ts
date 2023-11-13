@@ -10,6 +10,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { EntrarComponent } from './forms/entrar/entrar.component';
 import { MensagensComponent } from './componentes/mensagens/mensagens.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SistemaModule } from './sistema/sistema.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule, 
+    SistemaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
