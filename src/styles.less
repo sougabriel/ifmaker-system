@@ -44,6 +44,7 @@ body {
   z-index: -1;
   color: white;
   font-size: 1.2rem;
+  overflow-x: hidden;
 }
 
 .container {
@@ -52,31 +53,22 @@ body {
   width: 60vw;
 }
 
-li {
-  list-style: none;
-}
-
-a {
-  color: @cor-links;
-  text-decoration: none;
-}
-
-a:hover {
-  color: @cor-sobre;
-  text-decoration: underline;
-  transition: 0.4s;
-}
-
 /* 
  * Configuração de layout responsivo para phones
  */
 @media (max-width: @screen-width-phone) {
+  .container {
+    width: 95vw;
+  }
 }
 
 /* 
  * Configuração de layout responsivo para tables
  */
 @media (max-width: @screen-width-tablet) {
+  .container {
+    width: 80vw;
+  }
 }
 
 /*  
@@ -98,4 +90,8 @@ a:hover {
   100% {
     transform: rotate(360deg);
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
