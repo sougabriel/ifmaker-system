@@ -25,7 +25,7 @@ html {
 body {
   min-height: 100vh;
   min-width: 100vw;
-  color: white;
+  color: @branca;
   background-image: linear-gradient(to bottom, @fundo1, @fundo2);
   z-index: -1;
   font-size: 1.2rem;
@@ -37,10 +37,6 @@ body {
   padding: 40px 20px;
   width: 60vw;
 }
-
-@miniphone: 486px;
-@phone: 767px;
-@tablet: 1023px;
 
 /* 
  * Configuração de layout responsivo para tables
@@ -76,9 +72,9 @@ body {
   margin: 100px auto;
   width: 128px;
   height: 128px;
-  color: white;
+  color: @branca;
   border-radius: 50%;
-  border: white 5px inset;
+  border: @branca 5px inset;
   animation: loader 1s infinite;
 }
 
