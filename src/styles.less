@@ -1,27 +1,12 @@
 /* 
  * Este arquivo contem as configurações globais de estilos
- * Os estilos aplicados aqui alteram todos os modulos  
+ * Os estilos aplicados aqui alteram todos os modulos e 
+ * componentes. Algumas variaveis 
  */
 
-/* 
- * Declaração das variavéis
- */
-// Tamanho da tela para responsividade
-@screen-width-phone: 767px;
-@screen-width-tablet: 1023px;
-
-// Cores
-@cor-aceitar: #3ab28f;
-@cor-editar: #a1c518;
-@cor-cancelar: #de2247;
-
-@cor-links: #105f1c;
-@cor-sobre: #22aa86;
-
-@cor-fundo1: #41ac6f;
-@cor-fundo2: #153623;
-
-// Fontes
+// Importação das variaveis de estilo
+@import "/src/styles/mixins.less";
+@import "/src/styles/variables.less";
 
 /* 
  * Estilos dos Elementos
@@ -40,9 +25,9 @@ html {
 body {
   min-height: 100vh;
   min-width: 100vw;
-  background-image: linear-gradient(to bottom, @cor-fundo1, @cor-fundo2);
+  color: #cores[branca];
+  background-image: linear-gradient(to bottom, @fundo1, @fundo2);
   z-index: -1;
-  color: white;
   font-size: 1.2rem;
   overflow-x: hidden;
 }
@@ -54,20 +39,29 @@ body {
 }
 
 /* 
+ * Configuração de layout responsivo para tables
+ */
+@media (max-width: @tablet) {
+  .container {
+    width: 80vw;
+  }
+}
+
+/* 
  * Configuração de layout responsivo para phones
  */
-@media (max-width: @screen-width-phone) {
+@media (max-width: @phone) {
   .container {
     width: 95vw;
   }
 }
 
 /* 
- * Configuração de layout responsivo para tables
+ * Configuração de layout responsivo para phones
  */
-@media (max-width: @screen-width-tablet) {
+@media (max-width: @miniphone) {
   .container {
-    width: 80vw;
+    width: 100vw;
   }
 }
 
@@ -78,6 +72,7 @@ body {
   margin: 100px auto;
   width: 128px;
   height: 128px;
+  color: #cores[@branca];
   border-radius: 50%;
   border: white 5px inset;
   animation: loader 1s infinite;

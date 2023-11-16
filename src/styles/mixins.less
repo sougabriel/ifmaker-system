@@ -1,4 +1,4 @@
-@import "/src/styles.less";
+@import "/src/styles/variables.less";
 
 #center() {
   display: flex;
@@ -13,10 +13,7 @@
 }
 
 #artigo() {
-  display: flex;
-  justify-content: stretch;
-  align-items: center;
-  flex-direction: column;
+  #center.column();
   flex-wrap: nowrap;
   h1 {
     margin-top: 10px;
@@ -52,8 +49,9 @@
   display: grid;
   grid-template-columns: 38px auto 20vw;
   grid-template-rows: 5vh 95vh;
-  grid-template-areas: "logo"     "header" "sair"
-                       "sidemenu" "tabela" "local";
+  grid-template-areas:
+    "logo" "header" "sair"
+    "sidemenu" "tabela" "local";
   header {
     grid-area: "logo" "header" "sair";
   }
