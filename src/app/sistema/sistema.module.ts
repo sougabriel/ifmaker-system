@@ -4,7 +4,6 @@ import { SistemaRoutingModule } from './sistema-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { UsuariosService } from './services/routes/usuarios.service';
 
 
 @NgModule({
@@ -20,7 +19,7 @@ import { UsuariosService } from './services/routes/usuarios.service';
     DashboardComponent
   ],
   providers: [
-    UsuariosService
+    
   ]
 })
 export class SistemaModule { }
