@@ -1,0 +1,56 @@
+@import "/src/styles/variables.less";
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 0 auto;
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    box-shadow: 0px 15px 30px 0px @preta;
+}
+
+input[type=text],
+input[type=password] {
+    border: none;
+    border-bottom: 1px solid @preta;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+#sub {
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+input[type=submit] {
+    border: 1px solid @preta;
+    background-color: @aceitar;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    width: 30%;
+    font-size: large;
+}
+
+a {
+    color: @preta;
+    text-decoration: none;
+    border: 1px solid @preta;
+    background-color: @cancelar;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    width: 30%;
+    font-size: large;
+}
+
+p {
+    color: @cancelar;
+    font-size: 0.5rem;
+}
