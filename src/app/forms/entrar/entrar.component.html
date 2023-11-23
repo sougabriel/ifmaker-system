@@ -1,1 +1,24 @@
-<p>entrar works!</p>
+<form (submit)="submit()" [formGroup]="entrarForm" #formDir="ngForm">
+    <div class="form-group">
+        <label for="nomeUsuario">usuário</label> <br>
+        <input id="nomeUsuario" formControlName="nomeUsuario" type="text" autocomplete="name" placeholder="Digite seu nome de usuário" required/>
+        <div *ngIf="nomeUsuario.invalid && formDir.submitted" class="valid-error">
+            <p *ngIf="nomeUsuario.errors?.['required']">
+                Nome de usuário é obrigatório! 
+            </p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="senha">senha</label> <br>
+        <input formControlName="senha" type="password" name="senha" id="senha" autocomplete="current-password" required/>
+        <div *ngIf="senha.invalid && formDir.submitted" class="valid-error">
+            <p *ngIf="senha.errors?.['required']">
+                Campo senha é obrigatório! 
+            </p>
+        </div>
+    </div>
+    <div id="sub">
+        <input type="submit" value="Entrar"> 
+        <a routerLink="/">Voltar</a>
+    </div>
+</form>

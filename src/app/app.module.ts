@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { EntrarComponent } from './forms/entrar/entrar.component';
 import { MensagensComponent } from './componentes/mensagens/mensagens.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SistemaModule } from './sistema/sistema.module';
+import { LogarComponent } from './forms/logar/logar.component';
 
 @NgModule({
   declarations: [
@@ -20,10 +22,13 @@ import { SistemaModule } from './sistema/sistema.module';
     PageNotFoundComponent,
     InicioComponent,
     EntrarComponent,
-    MensagensComponent
+    MensagensComponent,
+    LogarComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FontAwesomeModule, 
     SistemaModule
