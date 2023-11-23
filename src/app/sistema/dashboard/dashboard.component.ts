@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
-  constructor() {
+  list: ["material", "usuario"]= ["material", "usuario"];
 
+  constructor() {
+    
   }
 
 
