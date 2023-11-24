@@ -5,11 +5,11 @@
 
     <div id="conteudo">
         <section>
-            tabelas
+            <router-outlet></router-outlet>
         </section>
 
         <nav>
-            <a *ngFor="let item of list" routerLink="">{{item}}</a>
+            <a *ngFor="let item of list" routerLink="{{item}}">{{item}}</a>
         </nav>
 
     </div>
