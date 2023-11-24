@@ -1,1 +1,36 @@
-<p>usuario works!</p>
+<main>
+    
+    <section id="insert">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Adicionar">
+        </form>
+    </section>
+    
+    <section id="select">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Buscar">
+        </form>
+    </section>
+
+    <section>
+        <table>
+            <tr>
+                <th>Nome Usuário</th>
+                <th>Nível</th>
+                <th>ID da Pessoa</th>
+            </tr>
+            <tbody *ngFor="let usuario of usuarios">
+                <td>{{ usuario.nomeUsuario }}</td>
+                <td>{{ usuario.nivel }}</td>
+                <td>{{ usuario.idPessoa }}</td>
+                <div>
+                    <button>Editar</button>
+                    <button (click)="removeUsuario(usuario.id!)">Excluir</button>
+                </div>
+            </tbody>
+        </table>
+    </section>
+
+</main>

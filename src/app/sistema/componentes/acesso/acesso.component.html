@@ -1,1 +1,41 @@
-<p>acesso works!</p>
+<main id="model">
+    
+    <section id="insert">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Adicionar">
+        </form>
+    </section>
+    
+    <section id="select">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Buscar">
+        </form>
+    </section>
+
+    <section>
+        <table>
+            <h2>
+                Tabela de Acessos
+            </h2>
+            <tr>
+                <th>Dia</th>
+                <th>Hora de Entrada</th>
+                <th>Finalidade</th>
+                <th>ID da Pessoa</th>
+            </tr>
+            <tbody *ngFor="let acesso of acessos">
+                <td>{{ acesso.dia }}</td>
+                <td>{{ acesso.horaEntrada }}</td>
+                <td>{{ acesso.finalidade }}</td>
+                <td>{{ acesso.idPessoa }}</td>
+                <div>
+                    <button>Editar</button>
+                    <button (click)="removeAcesso(acesso.id!)">Excluir</button>
+                </div>
+            </tbody>
+        </table>
+    </section>
+
+</main>

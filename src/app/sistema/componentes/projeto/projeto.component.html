@@ -1,1 +1,37 @@
-<p>projeto works!</p>
+<main id="model">
+    
+    <section id="insert">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Adicionar">
+        </form>
+    </section>
+    
+    <section id="select">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Buscar">
+        </form>
+    </section>
+
+    <section>
+        <table>
+            <h2>
+                Tabela de Projetos
+            </h2>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+            </tr>
+            <tbody *ngFor="let projeto of projetos">
+                <td>{{ projeto.nome }}</td>
+                <td>{{ projeto.descricao }}</td>
+                <div>
+                    <button>Editar</button>
+                    <button (click)="removeProjeto(projeto.id!)">Excluir</button>
+                </div>
+            </tbody>
+        </table>
+    </section>
+
+</main>

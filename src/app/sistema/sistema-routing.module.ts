@@ -9,6 +9,7 @@ import { ProjetoComponent } from './componentes/projeto/projeto.component';
 import { PessoaProjetoComponent } from './componentes/pessoa-projeto/pessoa-projeto.component';
 import { AcessoComponent } from './componentes/acesso/acesso.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
+import { EmprestimoComponent } from './componentes/emprestimo/emprestimo.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/sistema/pessoa', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'usuario', title: 'Usuário', component: UsuarioComponent },
     { path: 'pessoa', title: 'Pessoa', component: PessoaComponent },
     { path: 'material', title: 'Material', component: MaterialComponent },
+    { path: 'emprestimo', title: 'Emprestimos', component: EmprestimoComponent },
     { path: 'projeto', title: 'Projeto', component: ProjetoComponent },
     { path: 'pessoa-projeto', title: 'Pessoas em Projetos', component: PessoaProjetoComponent },
     { path: 'acesso', title: 'Acessos', component: AcessoComponent },

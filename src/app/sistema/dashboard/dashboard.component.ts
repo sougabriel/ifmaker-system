@@ -13,7 +13,7 @@ export class DashboardComponent {
   list: string[];
 
   constructor(private router: Router, private localStorage: LocalStorageService, private mensagem: MensagensService) {
-    this.list = ["material", "pessoa", "projeto", "pessoa-projeto", "acesso", "usuario", "registro"];
+    this.list = ["acesso", "emprestimo", "material", "pessoa", "pessoa-projeto", "projeto", "registro", "usuario"];
   }
 
   ngOnInit() {

@@ -1,1 +1,41 @@
-<p>material works!</p>
+<main id="model">
+    
+    <section id="insert">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Adicionar">
+        </form>
+    </section>
+    
+    <section id="select">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Buscar">
+        </form>
+    </section>
+
+    <section>
+        <table>
+            <h2>
+                Tabela de Materiais
+            </h2>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Tipo</th>
+                <th>Quantidade</th>
+            </tr>
+            <tbody *ngFor="let material of materiais">
+                <td>{{ material.nome }}</td>
+                <td>{{ material.descricao }}</td>
+                <td>{{ material.tipo }}</td>
+                <td>{{ material.quantidade }}</td>
+                <div>
+                    <button>Editar</button>
+                    <button (click)="removeMaterial(material.id!)">Excluir</button>
+                </div>
+            </tbody>
+        </table>
+    </section>
+
+</main>

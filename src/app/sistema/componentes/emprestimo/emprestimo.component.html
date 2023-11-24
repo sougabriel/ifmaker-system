@@ -1,1 +1,43 @@
-<p>emprestimo works!</p>
+<main id="model">
+    
+    <section id="insert">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Adicionar">
+        </form>
+    </section>
+    
+    <section id="select">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Buscar">
+        </form>
+    </section>
+
+    <section>
+        <table>
+            <h2>
+                Tabela de Emprestimos
+            </h2>
+            <tr>
+                <th>Data Inicial</th>
+                <th>Data Final</th>
+                <th>Finalidade</th>
+                <th>ID do Material</th>
+                <th>ID da Pessoa</th>
+            </tr>
+            <tbody *ngFor="let emprestimo of emprestimos">
+                <td>{{ emprestimo.dataInicial }}</td>
+                <td>{{ emprestimo.dataFinal }}</td>
+                <td>{{ emprestimo.finalidade }}</td>
+                <td>{{ emprestimo.idMaterial }}</td>
+                <td>{{ emprestimo.idPessoa }}</td>
+                <div>
+                    <button>Editar</button>
+                    <button (click)="removeEmprestimo(emprestimo.id!)">Excluir</button>
+                </div>
+            </tbody>
+        </table>
+    </section>
+
+</main>

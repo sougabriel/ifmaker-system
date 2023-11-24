@@ -1,1 +1,37 @@
-<p>pessoa-projeto works!</p>
+<main id="model">
+    
+    <section id="insert">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Adicionar">
+        </form>
+    </section>
+    
+    <section id="select">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Buscar">
+        </form>
+    </section>
+
+    <section>
+        <table>
+            <h2>
+                Tabela de Pessoas em Projetos
+            </h2>
+            <tr>
+                <th>ID Pessoa</th>
+                <th>ID Projeto</th>
+            </tr>
+            <tbody *ngFor="let pessoaProjeto of pessoasProjetos">
+                <td>{{ pessoaProjeto.idPessoa }}</td>
+                <td>{{ pessoaProjeto.idProjeto }}</td>
+                <div>
+                    <button>Editar</button>
+                    <button (click)="removePessoaProjeto(pessoaProjeto.idPessoa!, pessoaProjeto.idProjeto!)">Excluir</button>
+                </div>
+            </tbody>
+        </table>
+    </section>
+
+</main>

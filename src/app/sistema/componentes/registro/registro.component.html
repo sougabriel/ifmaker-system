@@ -1,1 +1,39 @@
-<p>registro works!</p>
+<main id="model">
+    
+    <section id="insert">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Adicionar">
+        </form>
+    </section>
+    
+    <section id="select">
+        <form action="">
+            <input type="text">
+            <input type="submit" value="Buscar">
+        </form>
+    </section>
+
+    <section>
+        <table>
+            <h2>
+                Tabela de Registros
+            </h2>
+            <tr>
+                <th>ID do Usuário</th>
+                <th>Atividade</th>
+                <th>Descrição</th>
+            </tr>
+            <tbody *ngFor="let registro of registros">
+                <td>{{ registro.idusuario }}</td>
+                <td>{{ registro.atividade }}</td>
+                <td>{{ registro.descricao }}</td>
+                <div>
+                    <button>Editar</button>
+                    <button (click)="removeRegistro(registro.id!)">Excluir</button>
+                </div>
+             </tbody>
+        </table>
+    </section>
+
+</main>

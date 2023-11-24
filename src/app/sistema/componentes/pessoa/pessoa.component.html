@@ -1,4 +1,4 @@
-<main>
+<main id="model">
     
     <section id="insert">
         <form action="">
@@ -15,7 +15,27 @@
     </section>
 
     <section>
-        tabela com update e delete
+        <table>
+            <h2>
+                Tabela de Pessoas 
+            </h2>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Público</th>
+            </tr>
+            <tbody *ngFor="let pessoa of pessoas">
+                <td>{{ pessoa.nome }}</td>
+                <td>{{ pessoa.email }}</td>
+                <td>{{ pessoa.telefone }}</td>
+                <td>{{ pessoa.publico }}</td>   
+                <div>
+                    <button>Editar</button>
+                    <button (click)="removePessoa(pessoa.id!)">Excluir</button>
+                </div>
+            </tbody>
+        </table>
     </section>
 
 </main>
