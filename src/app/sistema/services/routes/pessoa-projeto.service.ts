@@ -9,7 +9,7 @@ import { PessoaProjeto } from '../../interfaces/pessoa-projeto';
 })
 export class PessoaProjetoService {
   private baseApiUrl = environment.baseApiUrl
-  private apiUrl = `${this.baseApiUrl}/pessoaprojeto`
+  private apiUrl = `${this.baseApiUrl}/pessoa-projeto`
 
   constructor(private http: HttpClient) {}
 
