@@ -8,8 +8,12 @@ import { LocalStorageService } from './services/local-storage.service';
 })
 export class AppComponent {
 
+  logado: boolean = false;
+
   constructor (private localStorage: LocalStorageService) {}
   
-  
+  logar() {
+    this.logado = true;
+  }
 
 }

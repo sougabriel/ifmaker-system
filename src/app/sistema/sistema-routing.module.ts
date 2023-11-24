@@ -11,7 +11,7 @@ import { AcessoComponent } from './componentes/acesso/acesso.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/sistema', pathMatch: 'full' },
+  { path: '', redirectTo: '/sistema/pessoa', pathMatch: 'full' },
   { path: 'sistema', title: 'Sistema', component: DashboardComponent, children: [
     { path: 'usuario', title: 'Usuário', component: UsuarioComponent },
     { path: 'pessoa', title: '', component: PessoaComponent },

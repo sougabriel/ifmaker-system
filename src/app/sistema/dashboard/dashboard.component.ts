@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,10 +10,9 @@ export class DashboardComponent {
 
   list: string[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.list = ["material", "pessoa", "projeto", "pessoa-projeto", "acesso", "usuario", "registro"];
   }
-
 
 
 }
