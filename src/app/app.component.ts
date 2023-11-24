@@ -12,8 +12,14 @@ export class AppComponent {
 
   constructor (private localStorage: LocalStorageService) {}
   
-  logar() {
-    this.logado = true;
+  logar(): boolean {
+    if (this.localStorage.get('usuario') == null) {
+      this.logado = false;
+      return false;
+    } else {
+      this.logado = true;
+      return true;
+    }
   }
 
 }

@@ -14,12 +14,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/sistema/pessoa', pathMatch: 'full' },
   { path: 'sistema', title: 'Sistema', component: DashboardComponent, children: [
     { path: 'usuario', title: 'Usuário', component: UsuarioComponent },
-    { path: 'pessoa', title: '', component: PessoaComponent },
-    { path: 'material', title: '', component: MaterialComponent },
-    { path: 'projeto', title: '', component: ProjetoComponent },
-    { path: 'pessoa-projeto', title: '', component: PessoaProjetoComponent },
-    { path: 'acesso', title: '', component: AcessoComponent },
-    { path: 'registro', title: '', component: RegistroComponent },
+    { path: 'pessoa', title: 'Pessoa', component: PessoaComponent },
+    { path: 'material', title: 'Material', component: MaterialComponent },
+    { path: 'projeto', title: 'Projeto', component: ProjetoComponent },
+    { path: 'pessoa-projeto', title: 'Pessoas em Projetos', component: PessoaProjetoComponent },
+    { path: 'acesso', title: 'Acessos', component: AcessoComponent },
+    { path: 'registro', title: 'Registros', component: RegistroComponent },
   ] },
   { path: '**', title: 'Página Não Encontrada', component: PageNotFoundComponent },
 ];
