@@ -7,11 +7,26 @@ div {
     header {
         min-height: 5vh;
         max-height: 5vh;
+        color: black;
+        padding: 5px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: @branca;
         border-bottom: solid 1px grey;
+        div {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 10px;
+            img {
+                width: 42px;
+            }
+            h3 {
+                margin-left: 10px;
+            }
+        }
     }
 
     #conteudo {
