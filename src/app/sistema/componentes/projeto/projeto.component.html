@@ -27,8 +27,8 @@
                 <td>{{ projeto.nome }}</td>
                 <td>{{ projeto.descricao }}</td>
                 <div>
-                    <button>Editar</button>
-                    <button (click)="removeProjeto(projeto.id!)">Excluir</button>
+                    <button id="bt-editar">Editar</button>
+                    <button id="bt-excluir" (click)="removeProjeto(projeto.id!)">Excluir</button>
                 </div>
             </tbody>
         </table>

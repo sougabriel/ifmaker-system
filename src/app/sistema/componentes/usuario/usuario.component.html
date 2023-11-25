@@ -27,8 +27,8 @@
                 <td>{{ usuario.nivel }}</td>
                 <td>{{ usuario.idPessoa }}</td>
                 <div>
-                    <button>Editar</button>
-                    <button (click)="removeUsuario(usuario.id!)">Excluir</button>
+                    <button id="bt-editar">Editar</button>
+                    <button id="bt-excluir" (click)="removeUsuario(usuario.id!)">Excluir</button>
                 </div>
             </tbody>
         </table>

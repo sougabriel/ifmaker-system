@@ -27,8 +27,8 @@
                 <td>{{ pessoaProjeto.idPessoa }}</td>
                 <td>{{ pessoaProjeto.idProjeto }}</td>
                 <div>
-                    <button>Editar</button>
-                    <button (click)="removePessoaProjeto(pessoaProjeto.idPessoa!, pessoaProjeto.idProjeto!)">Excluir</button>
+                    <button id="bt-editar">Editar</button>
+                    <button id="bt-excluir" (click)="removePessoaProjeto(pessoaProjeto.idPessoa!, pessoaProjeto.idProjeto!)">Excluir</button>
                 </div>
             </tbody>
         </table>

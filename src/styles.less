@@ -76,8 +76,10 @@ table {
   }
   th {
     color: @preta;
-    background-color: rgb(250, 250, 250);
+    background-color: rgb(240, 240, 240);
     border: solid 1px @preta;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
   td {
     color: @preta;
@@ -101,6 +103,19 @@ table {
       align-items: center;
       flex-direction: row;
       flex-wrap: nowrap;
+  }
+  button {
+    width: 100%;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+  }
+  #bt-editar {
+    background-color: @editar;
+  }
+  #bt-excluir {
+    background-color: @remover;
   }
 }
 

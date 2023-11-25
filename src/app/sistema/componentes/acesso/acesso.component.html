@@ -31,8 +31,8 @@
                 <td>{{ acesso.finalidade }}</td>
                 <td>{{ acesso.idPessoa }}</td>
                 <div>
-                    <button>Editar</button>
-                    <button (click)="removeAcesso(acesso.id!)">Excluir</button>
+                    <button id="bt-editar">Editar</button>
+                    <button id="bt-excluir" (click)="removeAcesso(acesso.id!)">Excluir</button>
                 </div>
             </tbody>
         </table>

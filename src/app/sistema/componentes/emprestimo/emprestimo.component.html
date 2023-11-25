@@ -33,8 +33,8 @@
                 <td>{{ emprestimo.idMaterial }}</td>
                 <td>{{ emprestimo.idPessoa }}</td>
                 <div>
-                    <button>Editar</button>
-                    <button (click)="removeEmprestimo(emprestimo.id!)">Excluir</button>
+                    <button id="bt-editar">Editar</button>
+                    <button id="bt-excluir" (click)="removeEmprestimo(emprestimo.id!)">Excluir</button>
                 </div>
             </tbody>
         </table>
