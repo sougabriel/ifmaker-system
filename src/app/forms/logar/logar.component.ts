@@ -9,13 +9,16 @@ import { UsuarioService } from 'src/app/sistema/services/routes/usuario.service'
 @Component({
   selector: 'app-logar',
   templateUrl: './logar.component.html',
-  styleUrls: ['./logar.component.less']
+  styleUrls: ['./logar.component.less'],
 })
 export class LogarComponent {
-
-  constructor (private usuarioService: UsuarioService, private mensagem: MensagensService, private localStorage: LocalStorageService, private router: Router, private app: AppComponent) {
-
-  }
+  constructor(
+    private usuarioService: UsuarioService,
+    private mensagem: MensagensService,
+    private localStorage: LocalStorageService,
+    private router: Router,
+    private app: AppComponent
+  ) {}
 
   async createHandler(usuario: Usuario) {
     const formData = new FormData();
@@ -25,8 +28,10 @@ export class LogarComponent {
 
     await this.usuarioService.entrar(formData).subscribe();
 
-    this.localStorage.set("usuario", usuario.nomeUsuario);
-    this.mensagem.adicionar(this.localStorage.get('usuario') + " Logado com sucesso! ");
+    this.localStorage.set('usuario', usuario.nomeUsuario);
+    this.mensagem.adicionar(
+      this.localStorage.get('usuario') + ' Logado com sucesso! '
+    );
     this.app.logar();
     this.router.navigate(['sistema']);
   }
