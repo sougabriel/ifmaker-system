@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Usuario } from '../../interfaces/usuario';
 import { UsuarioService } from '../../services/routes/usuario.service';
+import { AtualizarService } from '../../services/atualizar.service';
 
 @Component({
   selector: 'app-usuario',
@@ -11,12 +12,16 @@ export class UsuarioComponent {
 
   usuarios: Usuario[] = [];
 
-  constructor(private usuarioService: UsuarioService) {
+  constructor(private usuarioService: UsuarioService, private atualizar: AtualizarService) {
     this.getUsuarios();
   }
 
   getUsuarios(): void {
     this.usuarioService.consultarTodos().subscribe((usuarios) => (this.usuarios = usuarios));
+  }
+
+  editarUsuario(usuario: Usuario) {
+    this.atualizar.alterarUsuario(usuario);
   }
 
   removeUsuario(id: number) {

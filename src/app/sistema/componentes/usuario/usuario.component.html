@@ -27,9 +27,10 @@
                 <td>{{ usuario.nivel }}</td>
                 <td>{{ usuario.idPessoa }}</td>
                 <div>
-                    <button id="bt-editar">Editar</button>
+                    <button id="bt-editar" (click)="editarUsuario(usuario)">Editar</button>
                     <button id="bt-excluir" (click)="removeUsuario(usuario.id!)">Excluir</button>
                 </div>
+                <app-atualizar-usuario></app-atualizar-usuario>
             </tbody>
         </table>
     </section>

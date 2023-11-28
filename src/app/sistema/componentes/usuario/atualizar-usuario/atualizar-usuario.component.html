@@ -1,0 +1,14 @@
+<section id="atualizar" *ngIf="atualizar.usuario">
+    <div id="background"></div>
+    <form (submit)="submit()" [formGroup]="usuarioForm" #formDir="ngForm">
+        <input formControlName="id" type="hidden" value="{{ atualizar.usuario.id }}">
+        <input formControlName="nomeUsuario" type="text" value="" placeholder="{{ atualizar.usuario.nomeUsuario }}">
+        <input formControlName="senha" type="text" value="" placeholder="{{ atualizar.usuario.senha }}">
+        <input formControlName="nivel" type="number" value="" placeholder="{{ atualizar.usuario.nivel }}" [disabled]="true">
+        <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.usuario.idPessoa }}">
+        <div id="sub">
+            <input type="submit" value="Salvar">
+            <button (click)="atualizar.limpar()">Cancelar</button>
+        </div>
+    </form>
+</section>
