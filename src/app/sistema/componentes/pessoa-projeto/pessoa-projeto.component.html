@@ -27,9 +27,10 @@
                 <td>{{ pessoaProjeto.idPessoa }}</td>
                 <td>{{ pessoaProjeto.idProjeto }}</td>
                 <div>
-                    <button id="bt-editar">Editar</button>
+                    <button id="bt-editar" (click)="editarPessoaProjeto(pessoaProjeto)">Editar</button>
                     <button id="bt-excluir" (click)="removePessoaProjeto(pessoaProjeto.idPessoa!, pessoaProjeto.idProjeto!)">Excluir</button>
                 </div>
+                <app-atualizar-pessoa-projeto></app-atualizar-pessoa-projeto>
             </tbody>
         </table>
     </section>
