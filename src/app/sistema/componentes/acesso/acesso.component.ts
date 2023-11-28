@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Acesso } from '../../interfaces/acesso';
 import { AcessoService } from '../../services/routes/acesso.service';
+import { AtualizarService } from '../../services/atualizar.service';
 
 @Component({
   selector: 'app-acesso',
@@ -11,8 +12,12 @@ export class AcessoComponent {
 
   acessos: Acesso[] = [];
 
-  constructor (private acessoService: AcessoService) {
+  constructor (private acessoService: AcessoService, private atualizar: AtualizarService) {
     this.getAcessos();
+  }
+
+  editarAcesso(acesso: Acesso) {
+    this.atualizar.alterarAcesso(acesso);
   }
 
   removeAcesso(id: number) {

@@ -31,9 +31,10 @@
                 <td>{{ acesso.finalidade }}</td>
                 <td>{{ acesso.idPessoa }}</td>
                 <div>
-                    <button id="bt-editar">Editar</button>
+                    <button id="bt-editar" (click)="editarAcesso(acesso)">Editar</button>
                     <button id="bt-excluir" (click)="removeAcesso(acesso.id!)">Excluir</button>
                 </div>
+                <app-atualizar-acesso></app-atualizar-acesso>
             </tbody>
         </table>
     </section>

@@ -1,4 +1,4 @@
-<section *ngIf="atualizar.pessoa"> 
+<section id="atualizar" *ngIf="atualizar.pessoa"> 
     <div id="background"></div>
     <form (submit)="submit()" [formGroup]="pessoaForm" #formDir="ngForm">
         <input formControlName="id" type="hidden" value="{{ atualizar.pessoa.id }}">

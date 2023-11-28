@@ -1,0 +1,14 @@
+<section id="atualizar" *ngIf="atualizar.acesso"> 
+    <div id="background"></div>
+    <form (submit)="submit()" [formGroup]="acessoForm" #formDir="ngForm">
+        <input formControlName="id" type="hidden" value="{{ atualizar.acesso.id }}">
+        <input formControlName="dia" type="date" value="" placeholder="{{ atualizar.acesso.dia }}">
+        <input formControlName="horaEntrada" type="time" value="" placeholder="{{ atualizar.acesso.horaEntrada }}">
+        <input formControlName="finalidade" type="text" value="" placeholder="{{ atualizar.acesso.finalidade }}">
+        <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.acesso.idPessoa }}">
+        <div id="sub">
+            <input type="submit" value="Salvar">
+            <button (click)="atualizar.limpar()">Cancelar</button>
+        </div>
+    </form>
+</section>
