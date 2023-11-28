@@ -25,8 +25,8 @@ export class RegistroService {
     return this.http.get<Registro[]>(this.apiUrl + "/" + id);
   }
 
-  atualizar() {
-       
+  atualizar(id: number, formData: FormData): Observable<FormData> {
+    return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
   }
 
   removerPorId(id: number) {

@@ -19,6 +19,7 @@ import { AtualizarEmprestimoComponent } from './componentes/emprestimo/atualizar
 import { AtualizarMaterialComponent } from './componentes/material/atualizar-material/atualizar-material.component';
 import { AtualizarPessoaProjetoProjetoComponent } from './componentes/pessoa-projeto/atualizar-pessoa-projeto/atualizar-pessoa-projeto.component';
 import { AtualizarProjetoComponent } from './componentes/projeto/atualizar-projeto/atualizar-projeto.component';
+import { AtualizarRegistroComponent } from './componentes/registro/atualizar-registro/atualizar-registro.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { AtualizarProjetoComponent } from './componentes/projeto/atualizar-proje
     AtualizarEmprestimoComponent,
     AtualizarMaterialComponent,
     AtualizarPessoaProjetoProjetoComponent,
-    AtualizarProjetoComponent
+    AtualizarProjetoComponent,
+    AtualizarRegistroComponent
   ],
   imports: [
     CommonModule,

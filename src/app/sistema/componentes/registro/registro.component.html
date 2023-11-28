@@ -29,9 +29,10 @@
                 <td>{{ registro.atividade }}</td>
                 <td>{{ registro.descricao }}</td>
                 <div>
-                    <button id="bt-editar">Editar</button>
+                    <button id="bt-editar" (click)="editarRegistro(registro)">Editar</button>
                     <button id="bt-excluir" (click)="removeRegistro(registro.id!)">Excluir</button>
                 </div>
+                <app-atualizar-registro></app-atualizar-registro>
              </tbody>
         </table>
     </section>
