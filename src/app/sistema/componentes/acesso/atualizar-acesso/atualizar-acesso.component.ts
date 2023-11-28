@@ -7,13 +7,15 @@ import { AcessoService } from 'src/app/sistema/services/routes/acesso.service';
 @Component({
   selector: 'app-atualizar-acesso',
   templateUrl: './atualizar-acesso.component.html',
-  styleUrls: ['./atualizar-acesso.component.less']
+  styleUrls: ['./atualizar-acesso.component.less'],
 })
 export class AtualizarAcessoComponent {
-
   acessoForm!: FormGroup;
 
-  constructor(public atualizar: AtualizarService, private acessoService: AcessoService) { }
+  constructor(
+    public atualizar: AtualizarService,
+    private acessoService: AcessoService
+  ) {}
 
   ngOnInit(): void {
     this.acessoForm = new FormGroup({
@@ -22,7 +24,7 @@ export class AtualizarAcessoComponent {
       horaEntrada: new FormControl(''),
       finalidade: new FormControl(),
       idPessoa: new FormControl(''),
-    })
+    });
   }
 
   get id() {
@@ -49,12 +51,12 @@ export class AtualizarAcessoComponent {
     if (this.acessoForm.invalid) {
       return;
     }
-    this.atualizarAcesso(this.acessoForm.value)
+    this.atualizarAcesso(this.acessoForm.value);
   }
 
   async atualizarAcesso(acesso: Acesso) {
-    const formData = new FormData;
-    
+    const formData = new FormData();
+
     formData.append('dia', acesso.dia as any);
     formData.append('horaEntrada', acesso.horaEntrada as any);
     formData.append('idPessoa', acesso.idPessoa as any);
@@ -65,8 +67,8 @@ export class AtualizarAcessoComponent {
       formData.append('finalidade', acesso.finalidade!);
     }
 
-    await this.acessoService.atualizar(this.atualizar.acesso.id!, formData).subscribe();
-
+    await this.acessoService
+      .atualizar(this.atualizar.acesso.id!, formData)
+      .subscribe();
   }
-
 }

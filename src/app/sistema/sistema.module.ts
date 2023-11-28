@@ -15,6 +15,7 @@ import { PessoaProjetoComponent } from './componentes/pessoa-projeto/pessoa-proj
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AtualizarPessoaComponent } from './componentes/pessoa/atualizar-pessoa/atualizar-pessoa.component';
 import { AtualizarAcessoComponent } from './componentes/acesso/atualizar-acesso/atualizar-acesso.component';
+import { AtualizarEmprestimoComponent } from './componentes/emprestimo/atualizar-emprestimo/atualizar-emprestimo.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { AtualizarAcessoComponent } from './componentes/acesso/atualizar-acesso/
     ProjetoComponent,
     PessoaProjetoComponent,
     AtualizarPessoaComponent,
-    AtualizarAcessoComponent
+    AtualizarAcessoComponent,
+    AtualizarEmprestimoComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,15 @@
+<section id="atualizar" *ngIf="atualizar.emprestimo"> 
+    <div id="background"></div>
+    <form (submit)="submit()" [formGroup]="emprestimoForm" #formDir="ngForm">
+        <input formControlName="id" type="hidden" value="{{ atualizar.emprestimo.id }}">
+        <input formControlName="dataInicial" type="date" value="" placeholder="{{ atualizar.emprestimo.dataInicial }}">
+        <input formControlName="dataFinal" type="date" value="" placeholder="{{ atualizar.emprestimo.dataFinal }}">
+        <input formControlName="finalidade" type="text" value="" placeholder="{{ atualizar.emprestimo.finalidade }}">
+        <input formControlName="idMaterial" type="number" value="" placeholder="{{ atualizar.emprestimo.idMaterial }}">
+        <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.emprestimo.idPessoa }}">
+        <div id="sub">
+            <input type="submit" value="Salvar">
+            <button (click)="atualizar.limpar()">Cancelar</button>
+        </div>
+    </form>
+</section>

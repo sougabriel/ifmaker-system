@@ -33,9 +33,10 @@
                 <td>{{ emprestimo.idMaterial }}</td>
                 <td>{{ emprestimo.idPessoa }}</td>
                 <div>
-                    <button id="bt-editar">Editar</button>
+                    <button id="bt-editar" (click)="editarEmprestimo(emprestimo)">Editar</button>
                     <button id="bt-excluir" (click)="removeEmprestimo(emprestimo.id!)">Excluir</button>
                 </div>
+                <app-atualizar-emprestimo></app-atualizar-emprestimo>
             </tbody>
         </table>
     </section>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Emprestimo } from '../../interfaces/emprestimo';
 import { EmprestimoService } from '../../services/routes/emprestimo.service';
+import { AtualizarService } from '../../services/atualizar.service';
 
 @Component({
   selector: 'app-emprestimo',
@@ -11,7 +12,7 @@ export class EmprestimoComponent {
 
   emprestimos: Emprestimo[] = [];
 
-  constructor(private emprestimoService: EmprestimoService) {
+  constructor(private emprestimoService: EmprestimoService, private atualizar: AtualizarService) {
     this.getEmprestimos();
   }
 
@@ -19,6 +20,9 @@ export class EmprestimoComponent {
     this.emprestimoService.consultarTodos().subscribe((emprestimos) => (this.emprestimos = emprestimos));
   }
 
+  editarEmprestimo(emprestimo: Emprestimo) {
+    this.atualizar.alterarEmprestimo(emprestimo);
+  }
 
   removeEmprestimo(id: number) {
     this.emprestimos = this.emprestimos.filter((a) => id !== a.id);
