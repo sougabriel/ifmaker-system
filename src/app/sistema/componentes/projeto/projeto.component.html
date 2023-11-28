@@ -27,10 +27,11 @@
                 <td>{{ projeto.nome }}</td>
                 <td>{{ projeto.descricao }}</td>
                 <div>
-                    <button id="bt-editar">Editar</button>
+                    <button id="bt-editar" (click)="editarProjeto(projeto)">Editar</button>
                     <button id="bt-excluir" (click)="removeProjeto(projeto.id!)">Excluir</button>
                 </div>
             </tbody>
+            <app-atualizar-projeto></app-atualizar-projeto>
         </table>
     </section>
 

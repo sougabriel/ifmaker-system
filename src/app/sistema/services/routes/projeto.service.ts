@@ -25,8 +25,8 @@ export class ProjetoService {
     return this.http.get<Projeto[]>(this.apiUrl + "/" + id);
   }
 
-  atualizar() {
-       
+  atualizar(id: number, formData: FormData): Observable<FormData> {
+    return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
   }
 
   removerPorId(id: number) {
