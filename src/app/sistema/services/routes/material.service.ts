@@ -33,6 +33,10 @@ export class MaterialService {
     return this.http.get<Material[]>(this.apiUrl + "/" + tipo);
   }
 
+  atualizar(id: number, formData: FormData): Observable<FormData> {
+    return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
+  }
+
   removerPorId(id: number) {
     return this.http.delete<Material>(this.apiUrl + '/' + id);
   }

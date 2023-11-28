@@ -31,9 +31,10 @@
                 <td>{{ material.tipo }}</td>
                 <td>{{ material.quantidade }}</td>
                 <div>
-                    <button id="bt-editar">Editar</button>
+                    <button id="bt-editar" (click)="editarMaterial(material)">Editar</button>
                     <button id="bt-excluir" (click)="removeMaterial(material.id!)">Excluir</button>
                 </div>
+                <app-atualizar-material></app-atualizar-material>
             </tbody>
         </table>
     </section>

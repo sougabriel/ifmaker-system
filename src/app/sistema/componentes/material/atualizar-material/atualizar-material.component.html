@@ -1,0 +1,14 @@
+<section id="atualizar" *ngIf="atualizar.material"> 
+    <div id="background"></div>
+    <form (submit)="submit()" [formGroup]="materialForm" #formDir="ngForm">
+        <input formControlName="id" type="hidden" value="{{ atualizar.material.id }}">
+        <input formControlName="dataInicial" type="text" value="" placeholder="{{ atualizar.material.nome }}">
+        <input formControlName="dataFinal" type="text" value="" placeholder="{{ atualizar.material.tipo }}">
+        <input formControlName="finalidade" type="number" value="" placeholder="{{ atualizar.material.quantidade }}">
+        <input formControlName="idMaterial" type="text" value="" placeholder="{{ atualizar.material.descricao }}">
+        <div id="sub">
+            <input type="submit" value="Salvar">
+            <button (click)="atualizar.limpar()">Cancelar</button>
+        </div>
+    </form>
+</section>

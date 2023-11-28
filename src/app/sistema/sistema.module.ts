@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AtualizarPessoaComponent } from './componentes/pessoa/atualizar-pessoa/atualizar-pessoa.component';
 import { AtualizarAcessoComponent } from './componentes/acesso/atualizar-acesso/atualizar-acesso.component';
 import { AtualizarEmprestimoComponent } from './componentes/emprestimo/atualizar-emprestimo/atualizar-emprestimo.component';
+import { AtualizarMaterialComponent } from './componentes/material/atualizar-material/atualizar-material.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AtualizarEmprestimoComponent } from './componentes/emprestimo/atualizar
     PessoaProjetoComponent,
     AtualizarPessoaComponent,
     AtualizarAcessoComponent,
-    AtualizarEmprestimoComponent
+    AtualizarEmprestimoComponent,
+    AtualizarMaterialComponent
   ],
   imports: [
     CommonModule,

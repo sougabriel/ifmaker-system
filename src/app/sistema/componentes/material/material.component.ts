@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Material } from '../../interfaces/material';
 import { MaterialService } from '../../services/routes/material.service';
+import { AtualizarService } from '../../services/atualizar.service';
 
 @Component({
   selector: 'app-material',
@@ -11,7 +12,7 @@ export class MaterialComponent {
 
   materiais: Material[] = [];
 
-  constructor (private materialService: MaterialService) {
+  constructor (private materialService: MaterialService, private atualizar: AtualizarService) {
     this.getMateriais();    
   }
 
@@ -19,6 +20,9 @@ export class MaterialComponent {
     this.materialService.consultarTodos().subscribe((materiais) => (this.materiais = materiais));
   }
 
+  editarMaterial(material: Material) {
+    this.atualizar.alterarMaterial(material);
+  }
 
   removeMaterial(id: number) {
     this.materiais = this.materiais.filter((a) => id !== a.id);
