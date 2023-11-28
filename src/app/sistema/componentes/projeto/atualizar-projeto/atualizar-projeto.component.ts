@@ -17,9 +17,9 @@ export class AtualizarProjetoComponent {
 
   ngOnInit(): void {
     this.projetoForm = new FormGroup({
-      id: new FormControl(''),
-      nome: new FormControl(''),
-      descricao: new FormControl(''),
+      id: new FormControl(),
+      nome: new FormControl(),
+      descricao: new FormControl(),
     })
   }
 
@@ -45,11 +45,19 @@ export class AtualizarProjetoComponent {
   async atualizarProjeto(projeto: Projeto) {
     const formData = new FormData;
     
-    formData.append('idPessoa', projeto.nome);
-    formData.append('idProjeto', projeto.descricao!); 
+    if (projeto.nome == null) {
+      formData.append('nome', this.atualizar.projeto.nome);
+    } else {
+      formData.append('nome', projeto.nome);
+    }
+    if (projeto.descricao == null) {
+      formData.append('descricao', projeto.descricao!); 
+    } else {
+      formData.append('descricao', projeto.descricao!); 
+    }
 
     await this.projetoService.atualizar(this.atualizar.projeto.id!, formData).subscribe();
-
+    this.atualizar.limpar();
   }
 
 }

@@ -31,7 +31,7 @@ export class UsuarioService {
   }
 
   atualizar(id: number, formData: FormData): Observable<FormData> {
-    return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
+    return this.http.put<FormData>(`${this.apiUrl}/${id}`, formData);
   }
 
   removerPorId(id: number) {

@@ -17,11 +17,11 @@ export class AtualizarPessoaComponent {
 
   ngOnInit(): void {
     this.pessoaForm = new FormGroup({
-      id: new FormControl(''),
-      nome: new FormControl(''),
-      email: new FormControl(''),
+      id: new FormControl(),
+      nome: new FormControl(),
+      email: new FormControl(),
       telefone: new FormControl(),
-      publico: new FormControl(''),
+      publico: new FormControl(),
     })
   }
 
@@ -55,18 +55,30 @@ export class AtualizarPessoaComponent {
   async atualizarPessoa(pessoa: Pessoa) {
     const formData = new FormData;
     
-    formData.append('nome', pessoa.nome);
-    formData.append('email', pessoa.email);
-    
+    if (pessoa.nome == null) {
+      formData.append('nome', this.atualizar.pessoa.nome);
+    } else {
+      formData.append('nome', pessoa.nome);
+    }
+    if (pessoa.email == null) {
+      formData.append('email', this.atualizar.pessoa.email);
+    } else {
+      formData.append('email', pessoa.email);
+    }
     if (pessoa.telefone == null) {
       formData.append('telefone', this.atualizar.pessoa.telefone as any);
     } else {
       formData.append('telefone', pessoa.telefone as any);
     }
-
-    formData.append('publico', pessoa.publico);
+    if (pessoa.publico == null) {
+      formData.append('publico', this.atualizar.pessoa.publico);
+    } else {
+      formData.append('publico', pessoa.publico);
+    }
 
     await this.pessoaService.atualizar(this.atualizar.pessoa.id!, formData).subscribe();
+
+    this.atualizar.limpar();
 
   }
 }

@@ -20,11 +20,11 @@ export class AtualizarMaterialComponent {
 
   ngOnInit(): void {
     this.materialForm = new FormGroup({
-      id: new FormControl(''),
-      nome: new FormControl(''),
-      tipo: new FormControl(''),
+      id: new FormControl(),
+      nome: new FormControl(),
+      tipo: new FormControl(),
       quantidade: new FormControl(),
-      descricao: new FormControl(''),
+      descricao: new FormControl(),
     });
   }
 
@@ -58,10 +58,22 @@ export class AtualizarMaterialComponent {
   async atualizarMaterial(material: Material) {
     const formData = new FormData();
 
-    formData.append('nome', material.nome);
-    formData.append('tipo', material.tipo);
-    formData.append('quantidade', material.quantidade as any);
-
+    
+    if (material.nome == '') {
+      formData.append('nome', this.atualizar.material.nome);
+    } else {
+      formData.append('nome', material.nome);
+    }
+    if (material.tipo == '') {
+      formData.append('tipo', this.atualizar.material.tipo);
+    } else {
+      formData.append('tipo', material.tipo);
+    }
+    if (material.quantidade == null) {
+      formData.append('quantidade', this.atualizar.material.quantidade as any);
+    } else {
+      formData.append('quantidade', material.quantidade as any);
+    }
     if (material.descricao == null) {
       formData.append('finalidade', this.atualizar.material.descricao!);
     } else {
@@ -69,6 +81,7 @@ export class AtualizarMaterialComponent {
     }
 
     await this.materialService.atualizar(this.atualizar.material.id!, formData).subscribe();
+    this.atualizar.limpar();
   }
 
 }

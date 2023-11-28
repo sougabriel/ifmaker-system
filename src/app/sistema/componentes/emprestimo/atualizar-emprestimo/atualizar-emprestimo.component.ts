@@ -19,12 +19,12 @@ export class AtualizarEmprestimoComponent {
 
   ngOnInit(): void {
     this.emprestimoForm = new FormGroup({
-      id: new FormControl(''),
-      dataInicial: new FormControl(''),
-      dataFinal: new FormControl(''),
+      id: new FormControl(),
+      dataInicial: new FormControl(),
+      dataFinal: new FormControl(),
       finalidade: new FormControl(),
-      idMaterial: new FormControl(''),
-      idPessoa: new FormControl(''),
+      idMaterial: new FormControl(),
+      idPessoa: new FormControl(),
     });
   }
 
@@ -62,20 +62,39 @@ export class AtualizarEmprestimoComponent {
   async atualizarEmprestimo(emprestimo: Emprestimo) {
     const formData = new FormData();
 
-    formData.append('dataInicial', emprestimo.dataInicial as any);
-    formData.append('dataFinal', emprestimo.dataFinal as any);
+    
+    
 
+    if (emprestimo.dataInicial == null) {
+      formData.append('dataInicial', this.atualizar.emprestimo.dataInicial as any);
+    } else {
+      formData.append('dataInicial', emprestimo.dataInicial as any);
+    }
+    if (emprestimo.dataFinal == null) {
+      formData.append('dataFinal', this.atualizar.emprestimo.dataFinal as any);
+    } else {
+      formData.append('dataFinal', emprestimo.dataFinal as any);
+    }
     if (emprestimo.finalidade == null) {
       formData.append('finalidade', this.atualizar.emprestimo.finalidade!);
     } else {
       formData.append('finalidade', emprestimo.finalidade!);
     }
-
-    formData.append('idMaterial', emprestimo.idMaterial as any);
-    formData.append('idPessoa', emprestimo.idPessoa as any);
+    if (emprestimo.idMaterial == null) {
+      formData.append('idMaterial', this.atualizar.emprestimo.idMaterial as any);
+    } else {
+      formData.append('idMaterial', emprestimo.idMaterial as any);
+    }
+    if (emprestimo.idPessoa == null) {
+      formData.append('idPessoa', this.atualizar.emprestimo.idPessoa as any);
+    } else {
+      formData.append('idPessoa', emprestimo.idPessoa as any);
+    }
 
     await this.emprestimoService
       .atualizar(this.atualizar.emprestimo.id!, formData)
       .subscribe();
+    this.atualizar.limpar();
   }
+
 }

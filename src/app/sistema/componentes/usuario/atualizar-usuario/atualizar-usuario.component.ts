@@ -17,11 +17,11 @@ export class AtualizarUsuarioComponent {
 
   ngOnInit(): void {
     this.usuarioForm = new FormGroup({
-      id: new FormControl(''),
-      nomeUsuario: new FormControl(''),
-      senha: new FormControl(''),
-      nivel: new FormControl(''),
-      idPessoa: new FormControl(''),
+      id: new FormControl(),
+      nomeUsuario: new FormControl(),
+      senha: new FormControl(),
+      nivel: new FormControl({value: null, disabled: true}),
+      idPessoa: new FormControl({value: null, disabled: true}),
     })
   }
 
@@ -55,13 +55,40 @@ export class AtualizarUsuarioComponent {
   async atualizarUsuario(usuario: Usuario) {
     const formData = new FormData;
     
-    formData.append('nomeUsuario', usuario.nomeUsuario);
-    formData.append('senha', usuario.senha!);
-    formData.append('nivel', usuario.nivel as any); 
-    formData.append('idPessoa', usuario.idPessoa as any);
+    if (usuario.nomeUsuario == null) {
+      formData.append('nomeUsuario', this.atualizar.usuario.nomeUsuario);
+    } else {
+      formData.append('nomeUsuario', usuario.nomeUsuario);
+    }
+    if (usuario.senha == null) {
+      formData.append('senha', this.atualizar.usuario.senha!);
+    } else {
+      formData.append('senha', usuario.senha!);
+    }
+    if (usuario.nivel == null) {
+      formData.append('nivel', this.atualizar.usuario.nivel as any);
+    } else {
+      formData.append('nivel', usuario.nivel as any);
+    }
+    if (usuario.idPessoa == null) {
+      formData.append('idPessoa', this.atualizar.usuario.idPessoa as any);
+    } else {
+      formData.append('idPessoa', usuario.idPessoa as any);
+    }
+
 
     await this.usuarioService.atualizar(this.atualizar.usuario.id!, formData).subscribe();
 
+    this.atualizar.limpar();
+    
+  }
+
+  transform(value: string): string {
+    let transformedValue = '';
+    if (value && typeof value === 'string') {
+      transformedValue = '*'.repeat(value.length);
+    }
+    return transformedValue;
   }
 
 }

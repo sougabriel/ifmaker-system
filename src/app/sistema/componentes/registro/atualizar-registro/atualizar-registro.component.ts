@@ -17,10 +17,10 @@ export class AtualizarRegistroComponent {
 
   ngOnInit(): void {
     this.registroForm = new FormGroup({
-      id: new FormControl(''),
-      atividade: new FormControl(''),
-      descricao: new FormControl(''),
-      idUsuario: new FormControl(''),
+      id: new FormControl(),
+      atividade: new FormControl(),
+      descricao: new FormControl(),
+      idUsuario: new FormControl(),
     })
   }
 
@@ -49,13 +49,25 @@ export class AtualizarRegistroComponent {
 
   async atualizarRegistro(registro: Registro) {
     const formData = new FormData;
-    
-    formData.append('idPessoa', registro.atividade);
-    formData.append('idRegistro', registro.descricao!);
-    formData.append('idRegistro', registro.idusuario as any); 
+
+    if (registro.atividade == null) {
+      formData.append('atividade', this.atualizar.registro.atividade);
+    } else {
+      formData.append('atividade', registro.atividade);
+    }
+    if (registro.descricao == null) {
+      formData.append('descricao', this.atualizar.registro.descricao!);
+    } else {
+      formData.append('descricao', registro.descricao!);
+    }
+    if (registro.idusuario == null) {
+      formData.append('idUsuario', registro.idusuario as any); 
+    } else {
+      formData.append('idUsuario', registro.idusuario as any); 
+    }
 
     await this.registroService.atualizar(this.atualizar.registro.id!, formData).subscribe();
-
+    this.atualizar.limpar();
   }
 
 }

@@ -2,9 +2,9 @@
     <div id="background"></div>
     <form (submit)="submit()" [formGroup]="usuarioForm" #formDir="ngForm">
         <input formControlName="id" type="hidden" value="{{ atualizar.usuario.id }}">
-        <input formControlName="nomeUsuario" type="text" value="" placeholder="{{ atualizar.usuario.nomeUsuario }}">
-        <input formControlName="senha" type="text" value="" placeholder="{{ atualizar.usuario.senha }}">
-        <input formControlName="nivel" type="number" value="" placeholder="{{ atualizar.usuario.nivel }}" [disabled]="true">
+        <input formControlName="nomeUsuario" type="text" value="" placeholder="{{ atualizar.usuario.nomeUsuario }}" autocomplete="username">
+        <input formControlName="senha" type="password" value="" placeholder="{{  transform(atualizar.usuario.senha!) }}" autocomplete="current-password">
+        <input formControlName="nivel" type="number" value="" placeholder="{{ atualizar.usuario.nivel }}">
         <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.usuario.idPessoa }}">
         <div id="sub">
             <input type="submit" value="Salvar">
