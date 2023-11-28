@@ -25,8 +25,8 @@ export class PessoaService {
     return this.http.get<Pessoa[]>(this.apiUrl + "/" + id);
   }
 
-  atualizar() {
-       
+  atualizar(id: number, formData: FormData): Observable<FormData> {
+       return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
   }
 
   removerPorId(id: number) {

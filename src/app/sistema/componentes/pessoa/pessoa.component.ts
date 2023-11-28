@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { Pessoa } from '../../interfaces/pessoa';
 import { PessoaService } from '../../services/routes/pessoa.service';
+import { AtualizarService } from '../../services/atualizar.service';
 
 @Component({
   selector: 'app-pessoa',
@@ -11,8 +12,12 @@ export class PessoaComponent {
 
   pessoas: Pessoa[] = [];
 
-  constructor (private pessoaService: PessoaService) {
+  constructor (private pessoaService: PessoaService, private atualizar: AtualizarService) {
     this.getPessoas();
+  }
+
+  editarPessoa(pessoa: Pessoa) {
+    this.atualizar.alterarPessoa(pessoa);
   }
 
   async removePessoa(id: number) {

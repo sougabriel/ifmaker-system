@@ -12,6 +12,8 @@ import { AcessoComponent } from './componentes/acesso/acesso.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ProjetoComponent } from './componentes/projeto/projeto.component';
 import { PessoaProjetoComponent } from './componentes/pessoa-projeto/pessoa-projeto.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AtualizarPessoaComponent } from './componentes/pessoa/atualizar-pessoa/atualizar-pessoa.component';
 
 
 @NgModule({
@@ -24,12 +26,15 @@ import { PessoaProjetoComponent } from './componentes/pessoa-projeto/pessoa-proj
     AcessoComponent,
     RegistroComponent,
     ProjetoComponent,
-    PessoaProjetoComponent
+    PessoaProjetoComponent,
+    AtualizarPessoaComponent
   ],
   imports: [
     CommonModule,
     SistemaRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ], 
   exports: [
     DashboardComponent,

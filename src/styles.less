@@ -145,6 +145,14 @@ table {
       min-height: 70vh;
     }
   }
+  input {
+    border: none;
+    border-bottom: solid 1px black;
+    width: 90%;
+    height: 100%;
+    font-size: large;
+    outline: none;
+  }
 }
 
 /*  
@@ -171,4 +179,32 @@ table {
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+#sub {
+  display: flex; 
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  input, button {
+    width: 30%;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 1s;
+    font-size: large;
+    margin: 0px 0px;
+  }
+  input {
+    background-color: @editar;
+    &:hover {
+      background-color: darkgreen;
+    }
+  }
+  button {
+    background-color: @remover;
+    &:hover {
+      background-color: rgb(97, 0, 0);
+    }
+  }
 }

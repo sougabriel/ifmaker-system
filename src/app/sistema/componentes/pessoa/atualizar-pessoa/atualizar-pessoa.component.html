@@ -1,0 +1,14 @@
+<section *ngIf="atualizar.pessoa"> 
+    <div id="background"></div>
+    <form (submit)="submit()" [formGroup]="pessoaForm" #formDir="ngForm">
+        <input formControlName="id" type="hidden" value="{{ atualizar.pessoa.id }}">
+        <input formControlName="nome" type="text" value="" placeholder="{{ atualizar.pessoa.nome }}">
+        <input formControlName="email" type="email" value="" placeholder="{{ atualizar.pessoa.email }}">
+        <input formControlName="telefone" type="tel" value="" placeholder="{{ atualizar.pessoa.telefone }}">
+        <input formControlName="publico" type="text" value="" placeholder="{{ atualizar.pessoa.publico }}">
+        <div id="sub">
+            <input type="submit" value="Salvar">
+            <button (click)="atualizar.limpar()">Cancelar</button>
+        </div>
+    </form>
+</section>

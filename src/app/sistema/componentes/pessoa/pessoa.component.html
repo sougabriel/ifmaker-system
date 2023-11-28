@@ -1,12 +1,12 @@
 <main id="model">
-    
+
     <section id="insert">
         <form action="">
             <input type="text">
             <input type="submit" value="Adicionar">
         </form>
     </section>
-    
+
     <section id="select">
         <form action="">
             <input type="text">
@@ -17,7 +17,7 @@
     <section>
         <table>
             <h2>
-                Tabela de Pessoas 
+                Tabela de Pessoas
             </h2>
             <tr>
                 <th>Nome</th>
@@ -29,13 +29,14 @@
                 <td>{{ pessoa.nome }}</td>
                 <td>{{ pessoa.email }}</td>
                 <td>{{ pessoa.telefone }}</td>
-                <td>{{ pessoa.publico }}</td>   
+                <td>{{ pessoa.publico }}</td>
                 <div>
-                    <button id="bt-editar">Editar</button>
+                    <button id="bt-editar" (click)="editarPessoa(pessoa)">Editar</button>
                     <button id="bt-excluir" (click)="removePessoa(pessoa.id!)">Excluir</button>
                 </div>
+                <app-atualizar-pessoa></app-atualizar-pessoa>
             </tbody>
         </table>
     </section>
-
+    
 </main>
