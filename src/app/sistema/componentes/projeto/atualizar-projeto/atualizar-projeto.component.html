@@ -1,12 +1,16 @@
 <section id="atualizar" *ngIf="atualizar.projeto">
     <div id="background"></div>
     <form (submit)="submit()" [formGroup]="projetoForm" #formDir="ngForm">
+        <div id="head">
+            <h4>Alterar Projeto</h4>
+            <button id="sair" (click)="atualizar.limpar()">X</button>
+        </div>
         <input formControlName="id" type="hidden" value="{{ atualizar.projeto.id }}">
         <input formControlName="nome" type="text" value="" placeholder="{{ atualizar.projeto.nome }}">
         <input formControlName="descricao" type="text" value="" placeholder="{{ atualizar.projeto.descricao }}">
         <div id="sub">
             <input type="submit" value="Salvar">
-            <button (click)="atualizar.limpar()">Cancelar</button>
+            <button id="bt-excluir" (click)="removeProjeto(atualizar.projeto.id!)">Excluir</button>
         </div>
     </form>
 </section>

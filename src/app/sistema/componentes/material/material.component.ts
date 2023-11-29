@@ -20,13 +20,12 @@ export class MaterialComponent {
     this.materialService.consultarTodos().subscribe((materiais) => (this.materiais = materiais));
   }
 
-  editarMaterial(material: Material) {
-    this.atualizar.alterarMaterial(material);
+  recaregarTabela(): void {
+    this.getMateriais();
   }
 
-  removeMaterial(id: number) {
-    this.materiais = this.materiais.filter((a) => id !== a.id);
-    this.materialService.removerPorId(id).subscribe();
+  editarMaterial(material: Material) {
+    this.atualizar.alterarMaterial(material);
   }
 
 }

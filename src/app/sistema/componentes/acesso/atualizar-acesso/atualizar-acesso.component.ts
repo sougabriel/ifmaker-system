@@ -84,4 +84,9 @@ export class AtualizarAcessoComponent {
       .subscribe();
     this.atualizar.limpar();
   }
+
+  removeAcesso(id: number) {
+    this.acessoService.removerPorId(id).subscribe();
+  }
+
 }

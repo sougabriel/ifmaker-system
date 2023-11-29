@@ -84,4 +84,8 @@ export class AtualizarMaterialComponent {
     this.atualizar.limpar();
   }
 
+  async removeMaterial(id: number) {
+    await this.materialService.removerPorId(id).subscribe();
+  }
+
 }

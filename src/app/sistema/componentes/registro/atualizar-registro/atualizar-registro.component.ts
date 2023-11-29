@@ -70,4 +70,9 @@ export class AtualizarRegistroComponent {
     this.atualizar.limpar();
   }
 
+  async removeRegistro(id: number) {
+    await this.registroService.removerPorId(id).subscribe();
+  }
+
+
 }

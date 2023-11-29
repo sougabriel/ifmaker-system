@@ -16,9 +16,10 @@
 
     <section>
         <table>
-            <h2>
-                Tabela de Emprestimos
-            </h2>
+            <div id="head">
+                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+                <h2>Tabela de Emprestimos</h2>
+            </div>
             <tr>
                 <th>Data Inicial</th>
                 <th>Data Final</th>
@@ -34,7 +35,6 @@
                 <td>{{ emprestimo.idPessoa }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarEmprestimo(emprestimo)">Editar</button>
-                    <button id="bt-excluir" (click)="removeEmprestimo(emprestimo.id!)">Excluir</button>
                 </div>
                 <app-atualizar-emprestimo></app-atualizar-emprestimo>
             </tbody>

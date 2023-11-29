@@ -16,17 +16,16 @@ export class ProjetoComponent {
     this.getProjetos();
   }
 
+  recaregarTabela(): void {
+    this.getProjetos();
+  }
+
   getProjetos(): void {
     this.projetoService.consultarTodos().subscribe((projetos) => (this.projetos = projetos));
   }
 
   editarProjeto(projeto: Projeto) {
     this.atualizar.alterarProjeto(projeto);
-  }
-
-  removeProjeto(id: number) {
-    this.projetos = this.projetos.filter((a) => id !== a.id);
-    this.projetoService.removerPorId(id).subscribe();
   }
 
 }

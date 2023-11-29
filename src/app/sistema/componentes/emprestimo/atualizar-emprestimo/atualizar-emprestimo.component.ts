@@ -97,4 +97,9 @@ export class AtualizarEmprestimoComponent {
     this.atualizar.limpar();
   }
 
+  async removeEmprestimo(id: number) {
+    await this.emprestimoService.removerPorId(id).subscribe();
+  }
+
+
 }

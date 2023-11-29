@@ -16,7 +16,10 @@
 
     <section>
         <table>
-            <h2>Tabela de Usuários</h2>
+            <div id="head">
+                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+                <h2>Tabela de Usuários</h2>
+            </div>
             <tr>
                 <th>Nome Usuário</th>
                 <th>Nível</th>
@@ -28,7 +31,6 @@
                 <td>{{ usuario.idPessoa }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarUsuario(usuario)">Editar</button>
-                    <button id="bt-excluir" (click)="removeUsuario(usuario.id!)">Excluir</button>
                 </div>
                 <app-atualizar-usuario></app-atualizar-usuario>
             </tbody>

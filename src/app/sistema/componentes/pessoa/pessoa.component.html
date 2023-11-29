@@ -16,9 +16,10 @@
 
     <section>
         <table>
-            <h2>
-                Tabela de Pessoas
-            </h2>
+            <div id="head">
+                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+                <h2>Tabela de Pessoas</h2>
+            </div>
             <tr>
                 <th>Nome</th>
                 <th>Email</th>
@@ -32,7 +33,6 @@
                 <td>{{ pessoa.publico }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarPessoa(pessoa)">Editar</button>
-                    <button id="bt-excluir" (click)="removePessoa(pessoa.id!)">Excluir</button>
                 </div>
                 <app-atualizar-pessoa></app-atualizar-pessoa>
             </tbody>

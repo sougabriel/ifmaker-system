@@ -20,13 +20,12 @@ export class UsuarioComponent {
     this.usuarioService.consultarTodos().subscribe((usuarios) => (this.usuarios = usuarios));
   }
 
-  editarUsuario(usuario: Usuario) {
-    this.atualizar.alterarUsuario(usuario);
+  recaregarTabela(): void {
+    this.getUsuarios();
   }
 
-  removeUsuario(id: number) {
-    this.usuarios = this.usuarios.filter((a) => id !== a.id);
-    this.usuarioService.removerPorId(id).subscribe();
+  editarUsuario(usuario: Usuario) {
+    this.atualizar.alterarUsuario(usuario);
   }
 
 }

@@ -16,9 +16,10 @@
 
     <section>
         <table>
-            <h2>
-                Tabela de Registros
-            </h2>
+            <div id="head">
+                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+                <h2>Tabela de Registros</h2>
+            </div>
             <tr>
                 <th>ID do Usuário</th>
                 <th>Atividade</th>
@@ -30,7 +31,6 @@
                 <td>{{ registro.descricao }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarRegistro(registro)">Editar</button>
-                    <button id="bt-excluir" (click)="removeRegistro(registro.id!)">Excluir</button>
                 </div>
                 <app-atualizar-registro></app-atualizar-registro>
              </tbody>

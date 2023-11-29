@@ -91,4 +91,8 @@ export class AtualizarUsuarioComponent {
     return transformedValue;
   }
 
+  async removeUsuario(id: number) {
+    await this.usuarioService.removerPorId(id).subscribe();
+  }
+
 }

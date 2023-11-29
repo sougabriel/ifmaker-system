@@ -1,6 +1,10 @@
 <section id="atualizar" *ngIf="atualizar.acesso"> 
     <div id="background"></div>
     <form (submit)="submit()" [formGroup]="acessoForm" #formDir="ngForm">
+        <div id="head">
+            <h4>Alterar Acesso</h4>
+            <button id="sair" (click)="atualizar.limpar()">X</button>
+        </div>
         <input formControlName="id" type="hidden" value="{{ atualizar.acesso.id }}">
         <input formControlName="dia" type="date" value="" placeholder="{{ atualizar.acesso.dia }}">
         <input formControlName="horaEntrada" type="time" value="" placeholder="{{ atualizar.acesso.horaEntrada }}">
@@ -8,7 +12,7 @@
         <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.acesso.idPessoa }}">
         <div id="sub">
             <input type="submit" value="Salvar">
-            <button (click)="atualizar.limpar()">Cancelar</button>
+            <button (click)="removeAcesso(atualizar.acesso.id!)">Excluir</button>
         </div>
     </form>
 </section>

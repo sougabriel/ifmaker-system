@@ -16,14 +16,12 @@ export class PessoaComponent {
     this.getPessoas();
   }
 
-  editarPessoa(pessoa: Pessoa) {
-    this.atualizar.alterarPessoa(pessoa);
+  recaregarTabela(): void {
+    this.getPessoas();
   }
 
-  async removePessoa(id: number) {
-    await this.pessoaService.removerPorId(id).subscribe();
-
-    this.pessoas = this.pessoas.filter((a) => id !== a.id);
+  editarPessoa(pessoa: Pessoa) {
+    this.atualizar.alterarPessoa(pessoa);
   }
 
   getPessoas(): void {

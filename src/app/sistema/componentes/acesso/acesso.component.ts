@@ -20,9 +20,8 @@ export class AcessoComponent {
     this.atualizar.alterarAcesso(acesso);
   }
 
-  removeAcesso(id: number) {
-    this.acessos = this.acessos.filter((a) => id !== a.id);
-    this.acessoService.removerPorId(id).subscribe();
+  recaregarTabela(): void {
+    this.getAcessos();
   }
 
   getAcessos(): void {

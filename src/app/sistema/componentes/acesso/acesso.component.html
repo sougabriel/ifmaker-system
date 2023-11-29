@@ -16,9 +16,10 @@
 
     <section>
         <table>
-            <h2>
-                Tabela de Acessos
-            </h2>
+            <div id="head">
+                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+                <h2>Tabela de Acessos</h2>
+            </div>
             <tr>
                 <th>Dia</th>
                 <th>Hora de Entrada</th>
@@ -32,7 +33,6 @@
                 <td>{{ acesso.idPessoa }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarAcesso(acesso)">Editar</button>
-                    <button id="bt-excluir" (click)="removeAcesso(acesso.id!)">Excluir</button>
                 </div>
                 <app-atualizar-acesso></app-atualizar-acesso>
             </tbody>

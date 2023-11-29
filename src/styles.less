@@ -153,6 +153,28 @@ table {
     font-size: large;
     outline: none;
   }
+  #head {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    #reload {
+      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+      border: solid black 1px;
+      border-radius: 50%;
+      img {
+        width: 100%;
+      }
+      &:hover {
+        background-color: @editar;
+        transform: rotate(-360deg);
+      }
+    }
+  }
 }
 
 /*  
@@ -233,7 +255,7 @@ table {
       border: none;
       border-radius: 10px;
       transition: 1s;
-      opacity: 50%;
+      opacity: 20%;
   }
   form {
       padding: 10px;
@@ -242,6 +264,9 @@ table {
       background-color: white;
       width: 40%;
       box-shadow: 0px 15px 30px 0px black;
+      h4 {
+        color: black;
+      }
   }
   input, #sub {
       margin-top: 10px;
@@ -252,5 +277,20 @@ table {
       border: none;
       border-radius: 10px;
       transition: 1s;
+  }
+  #head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    #sair {
+      border: black solid 1px;
+      border-radius: 50%; 
+      width: 40px;
+      height: 40px;
+      color: black;
+      background-color: @cancelar;
+    }
   }
 }

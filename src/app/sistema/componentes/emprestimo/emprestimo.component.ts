@@ -20,13 +20,12 @@ export class EmprestimoComponent {
     this.emprestimoService.consultarTodos().subscribe((emprestimos) => (this.emprestimos = emprestimos));
   }
 
+  recaregarTabela(): void {
+    this.getEmprestimos();
+  }
+
   editarEmprestimo(emprestimo: Emprestimo) {
     this.atualizar.alterarEmprestimo(emprestimo);
   }
-
-  removeEmprestimo(id: number) {
-    this.emprestimos = this.emprestimos.filter((a) => id !== a.id);
-    this.emprestimoService.removerPorId(id).subscribe();
-  }
-
+  
 }

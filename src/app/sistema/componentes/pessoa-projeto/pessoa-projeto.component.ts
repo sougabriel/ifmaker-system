@@ -20,13 +20,12 @@ export class PessoaProjetoComponent {
     this.atualizar.alterarPessoaProjeto(pessoaProjeto);
   }
 
-  getPessoasProjetos(): void { 
-    this.pessoaProjetosService.consultarTodos().subscribe((pessoasProjetos) => (this.pessoasProjetos = pessoasProjetos));
+  recaregarTabela(): void {
+    this.getPessoasProjetos();
   }
 
-  removePessoaProjeto(idPessoa: number, idProjeto: number) {
-    this.pessoasProjetos = this.pessoasProjetos.filter((a) => idPessoa !== a.idPessoa || idProjeto !== a.idProjeto);
-    this.pessoaProjetosService.removerPorId(idPessoa).subscribe();
+  getPessoasProjetos(): void { 
+    this.pessoaProjetosService.consultarTodos().subscribe((pessoasProjetos) => (this.pessoasProjetos = pessoasProjetos));
   }
 
 }

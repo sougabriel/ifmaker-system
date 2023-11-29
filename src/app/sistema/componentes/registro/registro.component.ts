@@ -20,13 +20,12 @@ export class RegistroComponent {
     this.registroService.consultarTodos().subscribe((registros) => (this.registros = registros));
   }
 
-  editarRegistro(registro: Registro) {
-    this.atualizar.alterarRegistro(registro);
+  recaregarTabela(): void {
+    this.getRegistros();
   }
 
-  removeRegistro(id: number) {
-    this.registros = this.registros.filter((a) => id !== a.id);
-    this.registroService.removerPorId(id).subscribe();
+  editarRegistro(registro: Registro) {
+    this.atualizar.alterarRegistro(registro);
   }
 
 }

@@ -60,4 +60,8 @@ export class AtualizarProjetoComponent {
     this.atualizar.limpar();
   }
 
+  async removeProjeto(id: number) {
+    await this.projetoService.removerPorId(id).subscribe();
+  }
+
 }

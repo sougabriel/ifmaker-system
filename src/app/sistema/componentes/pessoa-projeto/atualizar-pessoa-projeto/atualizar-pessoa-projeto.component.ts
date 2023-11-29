@@ -55,4 +55,8 @@ export class AtualizarPessoaProjetoProjetoComponent {
     this.atualizar.limpar();
   }
 
+  async removePessoaProjeto(idPessoa: number) {
+    await this.pessoaprojetoService.removerPorId(idPessoa).subscribe();
+  }
+
 }
