@@ -15,22 +15,27 @@
     </section>
 
     <section>
+        <div id="head">
+            <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+            <h2>Tabela de Acessos</h2>
+            <button (click)="colunasE = !colunasE">Exibir Colunas Ocultas</button>
+        </div>
         <table>
-            <div id="head">
-                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
-                <h2>Tabela de Acessos</h2>
-            </div>
             <tr>
                 <th>Dia</th>
                 <th>Hora de Entrada</th>
                 <th>Finalidade</th>
                 <th>ID da Pessoa</th>
+                <th *ngIf="colunasE">Data de Criação</th>
+                <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
             <tbody *ngFor="let acesso of acessos">
                 <td>{{ acesso.dia }}</td>
                 <td>{{ acesso.horaEntrada }}</td>
                 <td>{{ acesso.finalidade }}</td>
                 <td>{{ acesso.idPessoa }}</td>
+                <td *ngIf="colunasE">{{ acesso.createdAt }}</td>
+                <td *ngIf="colunasE">{{ acesso.updatedAt }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarAcesso(acesso)">Editar</button>
                 </div>

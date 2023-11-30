@@ -11,6 +11,7 @@ import { AtualizarService } from '../../services/atualizar.service';
 export class ProjetoComponent {
 
   projetos: Projeto[] = [];
+  colunasE: boolean = false;
 
   constructor(private projetoService: ProjetoService, private atualizar: AtualizarService) {
     this.getProjetos();

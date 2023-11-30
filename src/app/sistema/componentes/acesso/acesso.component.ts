@@ -11,6 +11,7 @@ import { AtualizarService } from '../../services/atualizar.service';
 export class AcessoComponent {
 
   acessos: Acesso[] = [];
+  colunasE: boolean = false;
 
   constructor (private acessoService: AcessoService, private atualizar: AtualizarService) {
     this.getAcessos();

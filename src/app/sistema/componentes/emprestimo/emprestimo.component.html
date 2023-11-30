@@ -15,17 +15,20 @@
     </section>
 
     <section>
+        <div id="head">
+            <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+            <h2>Tabela de Emprestimos</h2>
+            <button (click)="colunasE = !colunasE">Exibir Colunas Ocultas</button>
+        </div>
         <table>
-            <div id="head">
-                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
-                <h2>Tabela de Emprestimos</h2>
-            </div>
             <tr>
                 <th>Data Inicial</th>
                 <th>Data Final</th>
                 <th>Finalidade</th>
                 <th>ID do Material</th>
                 <th>ID da Pessoa</th>
+                <th *ngIf="colunasE">Data de Criação</th>
+                <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
             <tbody *ngFor="let emprestimo of emprestimos">
                 <td>{{ emprestimo.dataInicial }}</td>
@@ -33,6 +36,8 @@
                 <td>{{ emprestimo.finalidade }}</td>
                 <td>{{ emprestimo.idMaterial }}</td>
                 <td>{{ emprestimo.idPessoa }}</td>
+                <td *ngIf="colunasE">{{ emprestimo.createdAt }}</td>
+                <td *ngIf="colunasE">{{ emprestimo.updatedAt }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarEmprestimo(emprestimo)">Editar</button>
                 </div>

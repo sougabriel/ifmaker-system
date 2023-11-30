@@ -11,6 +11,7 @@ import { AtualizarService } from '../../services/atualizar.service';
 export class UsuarioComponent {
 
   usuarios: Usuario[] = [];
+  colunasE: boolean = false;
 
   constructor(private usuarioService: UsuarioService, private atualizar: AtualizarService) {
     this.getUsuarios();

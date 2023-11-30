@@ -15,18 +15,23 @@
     </section>
 
     <section>
+        <div id="head">
+            <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+            <h2>Tabela de Projetos</h2>
+            <button (click)="colunasE = !colunasE">Exibir Colunas Ocultas</button>
+        </div>
         <table>
-            <div id="head">
-                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
-                <h2>Tabela de Projetos</h2>
-            </div>
             <tr>
                 <th>Nome</th>
                 <th>Descrição</th>
+                <th *ngIf="colunasE">Data de Criação</th>
+                <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
             <tbody *ngFor="let projeto of projetos">
                 <td>{{ projeto.nome }}</td>
                 <td>{{ projeto.descricao }}</td>
+                <td *ngIf="colunasE">{{ projeto.createdAt }}</td>
+                <td *ngIf="colunasE">{{ projeto.updatedAt }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarProjeto(projeto)">Editar</button>
                 </div>

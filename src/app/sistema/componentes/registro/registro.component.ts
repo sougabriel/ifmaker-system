@@ -11,6 +11,7 @@ import { AtualizarService } from '../../services/atualizar.service';
 export class RegistroComponent {
 
   registros: Registro[] = [];
+  colunasE: boolean = false;
 
   constructor(private registroService: RegistroService, private atualizar: AtualizarService) {
     this.getRegistros();

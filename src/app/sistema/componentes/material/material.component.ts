@@ -11,6 +11,7 @@ import { AtualizarService } from '../../services/atualizar.service';
 export class MaterialComponent {
 
   materiais: Material[] = [];
+  colunasE: boolean = false;
 
   constructor (private materialService: MaterialService, private atualizar: AtualizarService) {
     this.getMateriais();    

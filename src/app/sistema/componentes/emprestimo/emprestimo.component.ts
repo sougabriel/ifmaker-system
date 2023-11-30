@@ -11,6 +11,7 @@ import { AtualizarService } from '../../services/atualizar.service';
 export class EmprestimoComponent {
 
   emprestimos: Emprestimo[] = [];
+  colunasE: boolean = false;
 
   constructor(private emprestimoService: EmprestimoService, private atualizar: AtualizarService) {
     this.getEmprestimos();

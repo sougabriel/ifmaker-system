@@ -15,20 +15,25 @@
     </section>
 
     <section>
+        <div id="head">
+            <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
+            <h2>Tabela de Registros</h2>
+            <button (click)="colunasE = !colunasE">Exibir Colunas Ocultas</button>
+        </div>
         <table>
-            <div id="head">
-                <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
-                <h2>Tabela de Registros</h2>
-            </div>
             <tr>
                 <th>ID do Usuário</th>
                 <th>Atividade</th>
                 <th>Descrição</th>
+                <th *ngIf="colunasE">Data de Criação</th>
+                <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
             <tbody *ngFor="let registro of registros">
                 <td>{{ registro.idusuario }}</td>
                 <td>{{ registro.atividade }}</td>
                 <td>{{ registro.descricao }}</td>
+                <td *ngIf="colunasE">{{ registro.createdAt }}</td>
+                <td *ngIf="colunasE">{{ registro.updatedAt }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarRegistro(registro)">Editar</button>
                 </div>
