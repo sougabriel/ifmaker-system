@@ -71,6 +71,7 @@ table {
   background-color: @fundo1;
   border-radius: 20px;
   padding: 10px;
+  overflow-x: auto;
   h2 {
     text-align: center;
   }
@@ -180,6 +181,17 @@ table {
       &:hover {
         background-color: #e0e0e0;
       }
+    }
+  }
+  @media (max-width: 1480px) {
+    * {
+        font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    * {
+        font-size: 0.8rem;
     }
   }
 }

@@ -11,6 +11,7 @@ import { MensagensService } from 'src/app/services/mensagens.service';
 export class DashboardComponent {
 
   list: string[];
+  menu: boolean = true;
 
   constructor(private router: Router, private localStorage: LocalStorageService, private mensagem: MensagensService) {
     this.list = ["acesso", "emprestimo", "material", "pessoa", "pessoa-projeto", "projeto", "registro", "usuario"];
@@ -22,6 +23,5 @@ export class DashboardComponent {
       this.router.navigate(['/entrar']);
     }
   }
-
 
 }
