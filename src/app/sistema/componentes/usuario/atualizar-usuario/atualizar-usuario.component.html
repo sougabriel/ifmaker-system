@@ -5,11 +5,13 @@
             <h4>Alterar Usuário</h4>
             <button id="sair" (click)="atualizar.limpar()">X</button>
         </div>
-        <input formControlName="id" type="hidden" value="{{ atualizar.usuario.id }}">
-        <input formControlName="nomeUsuario" type="text" value="" placeholder="{{ atualizar.usuario.nomeUsuario }}" autocomplete="username">
-        <input formControlName="senha" type="password" value="" placeholder="{{  transform(atualizar.usuario.senha!) }}" autocomplete="current-password">
-        <input formControlName="nivel" type="number" value="" placeholder="{{ atualizar.usuario.nivel }}">
-        <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.usuario.idPessoa }}">
+        <div id="campos">
+            <input formControlName="id" type="hidden" value="{{ atualizar.usuario.id }}">
+            <input formControlName="nomeUsuario" type="text" value="" placeholder="{{ atualizar.usuario.nomeUsuario }}" autocomplete="username">
+            <input formControlName="senha" type="password" value="" placeholder="{{  transform(atualizar.usuario.senha!) }}" autocomplete="current-password">
+            <input formControlName="nivel" type="number" value="" placeholder="{{ atualizar.usuario.nivel }}">
+            <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.usuario.idPessoa }}">    
+        </div>
         <div id="sub">
             <input type="submit" value="Salvar">
             <button id="bt-excluir" (click)="removeUsuario(atualizar.usuario.id!)">Excluir</button>

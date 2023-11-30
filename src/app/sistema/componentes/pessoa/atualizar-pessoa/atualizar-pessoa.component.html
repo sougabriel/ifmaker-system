@@ -1,15 +1,19 @@
-<section id="atualizar" *ngIf="atualizar.pessoa"> 
+<section id="atualizar" *ngIf="atualizar.pessoa">
     <div id="background"></div>
     <form (submit)="submit()" [formGroup]="pessoaForm" #formDir="ngForm">
         <div id="head">
             <h4>Alterar Pessoa</h4>
             <button id="sair" (click)="atualizar.limpar()">X</button>
         </div>
-        <input formControlName="id" type="hidden" value="{{ atualizar.pessoa.id }}">
-        <input formControlName="nome" type="text" value="" placeholder="{{ atualizar.pessoa.nome }}">
-        <input formControlName="email" type="email" value="" placeholder="{{ atualizar.pessoa.email }}" autocomplete="email">
-        <input formControlName="telefone" type="tel" value="" placeholder="{{ atualizar.pessoa.telefone }}" autocomplete="tel">
-        <input formControlName="publico" type="text" value="" placeholder="{{ atualizar.pessoa.publico }}">
+        <div id="campos">
+            <input formControlName="id" type="hidden" value="{{ atualizar.pessoa.id }}">
+            <input formControlName="nome" type="text" value="" placeholder="{{ atualizar.pessoa.nome }}">
+            <input formControlName="email" type="email" value="" placeholder="{{ atualizar.pessoa.email }}"
+                autocomplete="email">
+            <input formControlName="telefone" type="tel" value="" placeholder="{{ atualizar.pessoa.telefone }}"
+                autocomplete="tel">
+            <input formControlName="publico" type="text" value="" placeholder="{{ atualizar.pessoa.publico }}">
+        </div>
         <div id="sub">
             <input type="submit" value="Salvar">
             <button (click)="removePessoa(atualizar.pessoa.id!)">Excluir</button>

@@ -5,9 +5,11 @@
             <h4>Alterar Projeto</h4>
             <button id="sair" (click)="atualizar.limpar()">X</button>
         </div>
-        <input formControlName="id" type="hidden" value="{{ atualizar.projeto.id }}">
-        <input formControlName="nome" type="text" value="" placeholder="{{ atualizar.projeto.nome }}">
-        <input formControlName="descricao" type="text" value="" placeholder="{{ atualizar.projeto.descricao }}">
+        <div id="campos">
+            <input formControlName="id" type="hidden" value="{{ atualizar.projeto.id }}">
+            <input formControlName="nome" type="text" value="" placeholder="{{ atualizar.projeto.nome }}">
+            <input formControlName="descricao" type="text" value="" placeholder="{{ atualizar.projeto.descricao }}">
+        </div>
         <div id="sub">
             <input type="submit" value="Salvar">
             <button id="bt-excluir" (click)="removeProjeto(atualizar.projeto.id!)">Excluir</button>

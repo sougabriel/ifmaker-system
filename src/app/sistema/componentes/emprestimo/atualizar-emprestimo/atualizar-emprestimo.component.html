@@ -1,16 +1,21 @@
-<section id="atualizar" *ngIf="atualizar.emprestimo"> 
+<section id="atualizar" *ngIf="atualizar.emprestimo">
     <div id="background"></div>
     <form (submit)="submit()" [formGroup]="emprestimoForm" #formDir="ngForm">
         <div id="head">
             <h4>Alterar Emprestimo</h4>
             <button id="sair" (click)="atualizar.limpar()">X</button>
         </div>
-        <input formControlName="id" type="hidden" value="{{ atualizar.emprestimo.id }}">
-        <input formControlName="dataInicial" type="date" value="" placeholder="{{ atualizar.emprestimo.dataInicial }}">
-        <input formControlName="dataFinal" type="date" value="" placeholder="{{ atualizar.emprestimo.dataFinal }}">
-        <input formControlName="finalidade" type="text" value="" placeholder="{{ atualizar.emprestimo.finalidade }}">
-        <input formControlName="idMaterial" type="number" value="" placeholder="{{ atualizar.emprestimo.idMaterial }}">
-        <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.emprestimo.idPessoa }}">
+        <div id="campos">
+            <input formControlName="id" type="hidden" value="{{ atualizar.emprestimo.id }}">
+            <input formControlName="dataInicial" type="date" value=""
+                placeholder="{{ atualizar.emprestimo.dataInicial }}">
+            <input formControlName="dataFinal" type="date" value="" placeholder="{{ atualizar.emprestimo.dataFinal }}">
+            <input formControlName="finalidade" type="text" value=""
+                placeholder="{{ atualizar.emprestimo.finalidade }}">
+            <input formControlName="idMaterial" type="number" value=""
+                placeholder="{{ atualizar.emprestimo.idMaterial }}">
+            <input formControlName="idPessoa" type="number" value="" placeholder="{{ atualizar.emprestimo.idPessoa }}">
+        </div>
         <div id="sub">
             <input type="submit" value="Salvar">
             <button id="bt-excluir" (click)="removeEmprestimo(atualizar.emprestimo.id!)">Excluir</button>
