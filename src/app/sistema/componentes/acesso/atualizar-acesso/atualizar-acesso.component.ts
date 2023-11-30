@@ -11,7 +11,7 @@ import { AcessoService } from 'src/app/sistema/services/routes/acesso.service';
 })
 export class AtualizarAcessoComponent {
   acessoForm!: FormGroup;
-
+  
   constructor(
     public atualizar: AtualizarService,
     private acessoService: AcessoService

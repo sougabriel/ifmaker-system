@@ -25,12 +25,14 @@
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Público</th>
+                <th>ID</th>
             </tr>
             <tbody *ngFor="let pessoa of pessoas">
                 <td>{{ pessoa.nome }}</td>
                 <td>{{ pessoa.email }}</td>
                 <td>{{ pessoa.telefone }}</td>
                 <td>{{ pessoa.publico }}</td>
+                <td>{{ pessoa.id }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarPessoa(pessoa)">Editar</button>
                 </div>
