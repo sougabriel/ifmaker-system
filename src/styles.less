@@ -87,7 +87,7 @@ table {
     background-color: white;
     transition: 0.4s;
     &:hover {
-      background-color: rgb(224, 224, 224);
+      background-color: #e0e0e0
     }
   }
 
@@ -155,11 +155,10 @@ table {
   }
   #head {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 100%;
     #reload {
       margin-right: 20px;
       width: 40px;
@@ -170,8 +169,16 @@ table {
         width: 100%;
       }
       &:hover {
-        background-color: @editar;
-        transform: rotate(-360deg);
+        background-color: #e0e0e0;
+      }
+    }
+    button {
+      width: 200px;
+      color: black;
+      border: 1px solid black;
+      background-color: white;
+      &:hover {
+        background-color: #e0e0e0;
       }
     }
   }

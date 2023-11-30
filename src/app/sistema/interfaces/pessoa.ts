@@ -5,5 +5,7 @@ export interface Pessoa {
     email: string;
     telefone?: number;
     publico: string;
+    createdAt: Date;
+    updatedAt: Date;
     
 }

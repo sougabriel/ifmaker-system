@@ -5,5 +5,7 @@ export interface Usuario {
     senha?: string;
     nivel: number;
     idPessoa?: number;
-
+    createdAt: Date;
+    updatedAt: Date;
+    
 }

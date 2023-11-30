@@ -5,5 +5,7 @@ export interface Acesso {
     horaEntrada: number;
     finalidade?: string;
     idPessoa?: number;
+    createdAt: Date;
+    updatedAt: Date;
 
 }

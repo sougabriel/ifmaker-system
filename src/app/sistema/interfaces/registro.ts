@@ -4,5 +4,7 @@ export interface Registro {
     atividade: string;
     descricao: string;
     idusuario?: number;
-
+    createdAt: Date;
+    updatedAt: Date;
+    
 }

@@ -12,6 +12,8 @@ export class PessoaComponent {
 
   pessoas: Pessoa[] = [];
 
+  colunasE: boolean = false;
+
   constructor (private pessoaService: PessoaService, private atualizar: AtualizarService) {
     this.getPessoas();
   }

@@ -5,5 +5,7 @@ export interface Material {
     tipo: string;
     quantidade: number;
     descricao?: string;
-
+    createdAt: Date;
+    updatedAt: Date;
+    
 }

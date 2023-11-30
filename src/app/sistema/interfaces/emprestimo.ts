@@ -6,5 +6,6 @@ export interface Emprestimo {
     finalidade?: string;
     idPessoa?: number;
     idMaterial?: number;
-
+    createdAt: Date;
+    updatedAt: Date;
 }
