@@ -1,9 +1,26 @@
 <main id="model">
     
     <section id="insert">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Adicionar">
+        <form (submit)="submit()" [formGroup]="acessoInForm" #formDir="ngForm">
+            <div class="inp">
+                <label for="dia">Dia</label>
+                <input formControlName="dia" type="date">
+            </div>
+            <div class="inp">
+                <label for="horaEntrada">Hora de Entrada</label>
+                <input formControlName="horaEntrada" type="time">
+            </div>
+            <div class="inp">
+                <label for="finalidade">Finalidade</label>
+                <input formControlName="finalidade" type="text">
+            </div>
+            <div class="inp">
+                <label for="idPessoa">ID Pessoa</label>
+                <input formControlName="idPessoa" type="number">
+            </div>
+            <div class="inp">
+                <input type="submit">
+            </div>
         </form>
     </section>
     
@@ -27,7 +44,7 @@
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
             <tbody *ngFor="let acesso of acessos">
-                <td>{{ acesso.dia }}</td>
+                <td>{{ acesso.dia | date:'mediumDate' }}</td>
                 <td>{{ acesso.horaEntrada }}</td>
                 <td>{{ acesso.finalidade }}</td>
                 <td>{{ acesso.idPessoa }}</td>
