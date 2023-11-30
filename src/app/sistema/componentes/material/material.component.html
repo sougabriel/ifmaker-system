@@ -34,8 +34,8 @@
                 <td>{{ material.descricao }}</td>
                 <td>{{ material.tipo }}</td>
                 <td>{{ material.quantidade }}</td>
-                <td *ngIf="colunasE">{{ material.createdAt }}</td>
-                <td *ngIf="colunasE">{{ material.updatedAt }}</td>
+                <td *ngIf="colunasE">{{ material.createdAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ material.updatedAt | date:'medium' }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarMaterial(material)">Editar</button>
                 </div>

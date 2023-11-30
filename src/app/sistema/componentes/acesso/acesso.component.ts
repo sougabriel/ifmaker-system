@@ -3,6 +3,7 @@ import { Acesso } from '../../interfaces/acesso';
 import { AcessoService } from '../../services/routes/acesso.service';
 import { AtualizarService } from '../../services/atualizar.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MensagensService } from 'src/app/services/mensagens.service';
 
 @Component({
   selector: 'app-acesso',
@@ -16,7 +17,7 @@ export class AcessoComponent {
   acessos: Acesso[] = [];
   colunasE: boolean = false;
 
-  constructor (private acessoService: AcessoService, private atualizar: AtualizarService) {
+  constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService) {
     this.getAcessos();
   }
 
@@ -54,8 +55,7 @@ export class AcessoComponent {
     if (this.acessoInForm.invalid) {
       return;
     }
-    this.acessoService.adicionar(this.acessoInForm.value).subscribe();
-    this.recaregarTabela();
+    this.adicionarAcesso(this.acessoInForm.value);
   }
 
   editarAcesso(acesso: Acesso) {
@@ -68,6 +68,19 @@ export class AcessoComponent {
 
   getAcessos(): void {
     this.acessoService.consultarTodos().subscribe((acessos) => (this.acessos = acessos));
+  }
+
+  async adicionarAcesso(acesso: Acesso) {
+    const formData = new FormData();
+
+    formData.append('dia', acesso.dia as any);
+    formData.append('horaEntrada', acesso.horaEntrada as any);
+    formData.append('finalidade', acesso.finalidade!);
+    formData.append('idPessoa', acesso.idPessoa as any);
+
+    await this.acessoService.adicionar(formData).subscribe();
+    this.recaregarTabela();
+    this.mensagem.adicionar("Acesso adicionado com suscesso!");
   }
 
 }

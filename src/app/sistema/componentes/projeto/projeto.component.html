@@ -30,8 +30,8 @@
             <tbody *ngFor="let projeto of projetos">
                 <td>{{ projeto.nome }}</td>
                 <td>{{ projeto.descricao }}</td>
-                <td *ngIf="colunasE">{{ projeto.createdAt }}</td>
-                <td *ngIf="colunasE">{{ projeto.updatedAt }}</td>
+                <td *ngIf="colunasE">{{ projeto.createdAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ projeto.updatedAt | date:'medium' }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarProjeto(projeto)">Editar</button>
                 </div>

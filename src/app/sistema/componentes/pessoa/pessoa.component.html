@@ -36,8 +36,8 @@
                 <td>{{ pessoa.telefone }}</td>
                 <td>{{ pessoa.publico }}</td>
                 <td>{{ pessoa.id }}</td>
-                <td *ngIf="colunasE">{{ pessoa.createdAt }}</td>
-                <td *ngIf="colunasE">{{ pessoa.updatedAt }}</td>
+                <td *ngIf="colunasE">{{ pessoa.createdAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ pessoa.updatedAt | date:'medium' }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarPessoa(pessoa)">Editar</button>
                 </div>

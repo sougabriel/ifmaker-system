@@ -31,13 +31,13 @@
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
             <tbody *ngFor="let emprestimo of emprestimos">
-                <td>{{ emprestimo.dataInicial }}</td>
-                <td>{{ emprestimo.dataFinal }}</td>
+                <td>{{ emprestimo.dataInicial | date:'mediumDate' }}</td>
+                <td>{{ emprestimo.dataFinal | date:'mediumDate' }}</td>
                 <td>{{ emprestimo.finalidade }}</td>
                 <td>{{ emprestimo.idMaterial }}</td>
                 <td>{{ emprestimo.idPessoa }}</td>
-                <td *ngIf="colunasE">{{ emprestimo.createdAt }}</td>
-                <td *ngIf="colunasE">{{ emprestimo.updatedAt }}</td>
+                <td *ngIf="colunasE">{{ emprestimo.createdAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ emprestimo.updatedAt | date:'medium' }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarEmprestimo(emprestimo)">Editar</button>
                 </div>

@@ -48,8 +48,8 @@
                 <td>{{ acesso.horaEntrada }}</td>
                 <td>{{ acesso.finalidade }}</td>
                 <td>{{ acesso.idPessoa }}</td>
-                <td *ngIf="colunasE">{{ acesso.createdAt }}</td>
-                <td *ngIf="colunasE">{{ acesso.updatedAt }}</td>
+                <td *ngIf="colunasE">{{ acesso.createdAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ acesso.updatedAt | date:'medium' }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarAcesso(acesso)">Editar</button>
                 </div>

@@ -32,8 +32,8 @@
                 <td>{{ usuario.nomeUsuario }}</td>
                 <td>{{ usuario.nivel }}</td>
                 <td>{{ usuario.idPessoa }}</td>
-                <td *ngIf="colunasE">{{ usuario.createdAt }}</td>
-                <td *ngIf="colunasE">{{ usuario.updatedAt }}</td>
+                <td *ngIf="colunasE">{{ usuario.createdAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ usuario.updatedAt | date:'medium' }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarUsuario(usuario)">Editar</button>
                 </div>

@@ -32,8 +32,8 @@
                 <td>{{ registro.idusuario }}</td>
                 <td>{{ registro.atividade }}</td>
                 <td>{{ registro.descricao }}</td>
-                <td *ngIf="colunasE">{{ registro.createdAt }}</td>
-                <td *ngIf="colunasE">{{ registro.updatedAt }}</td>
+                <td *ngIf="colunasE">{{ registro.createdAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ registro.updatedAt | date:'medium' }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarRegistro(registro)">Editar</button>
                 </div>
