@@ -1,19 +1,38 @@
 <main id="model">
+    <div id="insert-select">
+        <section id="insert">
+            <h2>Adicionar Pessoa</h2>
+            <form (submit)="submit()" [formGroup]="pessoaInForm" #formDir="ngForm">
+                <div class="inp">
+                    <label for="nome">Nome</label>
+                    <input formControlName="nome" type="text" placeholder="Nome Completo da Pessoa">
+                </div>
+                <div class="inp">
+                    <label for="email">Email</label>
+                    <input formControlName="email" type="email" placeholder="Email para Contato">
 
-    <section id="insert">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Adicionar">
-        </form>
-    </section>
+                </div>
+                <div class="inp">
+                    <label for="telefone">Telefone</label>
+                    <input formControlName="telefone" type="tel" placeholder="Telefone para Contato">
+                </div>
+                <div class="inp">
+                    <label for="publico">Público</label>
+                    <input formControlName="publico" type="text" placeholder="Ex: discente, docente, visitante...">
+                </div>
+                <div class="inp">
+                    <input type="submit" value="Adicionar">
+                </div>
+            </form>
+        </section>
 
-    <section id="select">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Buscar">
-        </form>
-    </section>
-
+        <section id="select">
+            <h2>Buscar Pessoas</h2>
+                <input type="text">
+                <input type="submit" value="Buscar">
+        </section>
+    </div>
+    
     <section>
         <div id="head">
             <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
@@ -45,5 +64,5 @@
             </tbody>
         </table>
     </section>
-    
+
 </main>

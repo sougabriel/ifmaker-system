@@ -4,7 +4,7 @@ export interface Usuario {
     nomeUsuario: string;
     senha?: string;
     nivel: number;
-    idPessoa?: number;
+    pessoaId?: number;
     createdAt: Date;
     updatedAt: Date;
     

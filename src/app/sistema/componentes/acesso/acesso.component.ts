@@ -24,10 +24,8 @@ export class AcessoComponent {
   ngOnInit(): void {
     this.acessoInForm = new FormGroup({
       id: new FormControl(),
-      dia: new FormControl(),
-      horaEntrada: new FormControl(),
       finalidade: new FormControl(),
-      idPessoa: new FormControl(),
+      pessoaId: new FormControl(),
     });
   }
 
@@ -35,20 +33,12 @@ export class AcessoComponent {
     return this.acessoInForm.get('id');
   }
 
-  get dia() {
-    return this.acessoInForm.get('dia')!;
-  }
-
-  get horaEntrada() {
-    return this.acessoInForm.get('horaEntrada')!;
-  }
-
   get finalidade() {
     return this.acessoInForm.get('finalidade')!;
   }
 
-  get idPessoa() {
-    return this.acessoInForm.get('idPessoa')!;
+  get pessoaId() {
+    return this.acessoInForm.get('pessoaId')!;
   }
 
   submit() {
@@ -73,10 +63,8 @@ export class AcessoComponent {
   async adicionarAcesso(acesso: Acesso) {
     const formData = new FormData();
 
-    formData.append('dia', acesso.dia as any);
-    formData.append('horaEntrada', acesso.horaEntrada as any);
     formData.append('finalidade', acesso.finalidade!);
-    formData.append('idPessoa', acesso.idPessoa as any);
+    formData.append('pessoaId', acesso.pessoaId as any);
 
     await this.acessoService.adicionar(formData).subscribe();
     this.recaregarTabela();

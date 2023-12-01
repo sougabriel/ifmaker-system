@@ -20,7 +20,7 @@ export class AtualizarRegistroComponent {
       id: new FormControl(),
       atividade: new FormControl(),
       descricao: new FormControl(),
-      idUsuario: new FormControl(),
+      usuarioId: new FormControl(),
     })
   }
 
@@ -36,8 +36,8 @@ export class AtualizarRegistroComponent {
     return this.registroForm.get('descricao')!;
   }
 
-  get idUsuario() {
-    return this.registroForm.get('idUsuario')!;
+  get usuarioId() {
+    return this.registroForm.get('usuarioId')!;
   }
 
   submit() {
@@ -60,10 +60,10 @@ export class AtualizarRegistroComponent {
     } else {
       formData.append('descricao', registro.descricao!);
     }
-    if (registro.idusuario == null) {
-      formData.append('idUsuario', registro.idusuario as any); 
+    if (registro.usuarioId == null) {
+      formData.append('usuarioId', registro.usuarioId as any); 
     } else {
-      formData.append('idUsuario', registro.idusuario as any); 
+      formData.append('usuarioId', registro.usuarioId as any); 
     }
 
     await this.registroService.atualizar(this.atualizar.registro.id!, formData).subscribe();

@@ -17,13 +17,13 @@ export class AtualizarPessoaProjetoProjetoComponent {
 
   ngOnInit(): void {
     this.pessoaprojetoForm = new FormGroup({
-      idPessoa: new FormControl(),
+      pessoaId: new FormControl(),
       idProjeto: new FormControl(),
     })
   }
 
-  get idPessoa() {
-    return this.pessoaprojetoForm.get('idPessoa');
+  get pessoaId() {
+    return this.pessoaprojetoForm.get('pessoaId');
   }
 
   get idProjeto() {
@@ -40,10 +40,10 @@ export class AtualizarPessoaProjetoProjetoComponent {
   async atualizarPessoaProjeto(pessoaprojeto: PessoaProjeto) {
     const formData = new FormData;
     
-    if (pessoaprojeto.idPessoa == null) {
-      formData.append('idPessoa', this.atualizar.pessoaProjeto.idPessoa as any);
+    if (pessoaprojeto.pessoaId == null) {
+      formData.append('pessoaId', this.atualizar.pessoaProjeto.pessoaId as any);
     } else {
-      formData.append('idPessoa', pessoaprojeto.idPessoa as any);
+      formData.append('pessoaId', pessoaprojeto.pessoaId as any);
     }
     if (pessoaprojeto.idProjeto == null) {
       formData.append('idProjeto', this.atualizar.pessoaProjeto.idProjeto as any); 
@@ -51,12 +51,12 @@ export class AtualizarPessoaProjetoProjetoComponent {
       formData.append('idProjeto', pessoaprojeto.idProjeto as any); 
     }
 
-    await this.pessoaprojetoService.atualizar(this.atualizar.pessoaProjeto.idPessoa!, formData).subscribe();
+    await this.pessoaprojetoService.atualizar(this.atualizar.pessoaProjeto.pessoaId!, formData).subscribe();
     this.atualizar.limpar();
   }
 
-  async removePessoaProjeto(idPessoa: number) {
-    await this.pessoaprojetoService.removerPorId(idPessoa).subscribe();
+  async removePessoaProjeto(pessoaId: number) {
+    await this.pessoaprojetoService.removerPorId(pessoaId).subscribe();
   }
 
 }

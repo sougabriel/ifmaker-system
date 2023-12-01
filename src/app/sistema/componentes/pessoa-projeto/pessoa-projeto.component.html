@@ -28,7 +28,7 @@
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
             <tbody *ngFor="let pessoaProjeto of pessoasProjetos">
-                <td>{{ pessoaProjeto.idPessoa }}</td>
+                <td>{{ pessoaProjeto.pessoaId }}</td>
                 <td>{{ pessoaProjeto.idProjeto }}</td>
                 <td *ngIf="colunasE">{{ pessoaProjeto.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ pessoaProjeto.updatedAt | date:'medium' }}</td>

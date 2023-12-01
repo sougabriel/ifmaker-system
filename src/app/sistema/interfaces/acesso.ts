@@ -1,10 +1,8 @@
 export interface Acesso {
 
     id?: number;
-    dia: Date;
-    horaEntrada: number;
     finalidade?: string;
-    idPessoa?: number;
+    pessoaId?: number;
     createdAt: Date;
     updatedAt: Date;
 

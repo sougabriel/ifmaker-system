@@ -20,10 +20,8 @@ export class AtualizarAcessoComponent {
   ngOnInit(): void {
     this.acessoForm = new FormGroup({
       id: new FormControl(),
-      dia: new FormControl(),
-      horaEntrada: new FormControl(),
       finalidade: new FormControl(),
-      idPessoa: new FormControl(),
+      pessoaId: new FormControl({value: null, disabled: true}),
     });
   }
 
@@ -31,20 +29,12 @@ export class AtualizarAcessoComponent {
     return this.acessoForm.get('id');
   }
 
-  get dia() {
-    return this.acessoForm.get('dia')!;
-  }
-
-  get horaEntrada() {
-    return this.acessoForm.get('horaEntrada')!;
-  }
-
   get finalidade() {
     return this.acessoForm.get('finalidade')!;
   }
 
-  get idPessoa() {
-    return this.acessoForm.get('idPessoa')!;
+  get pessoaId() {
+    return this.acessoForm.get('pessoaId')!;
   }
 
   submit() {
@@ -57,26 +47,15 @@ export class AtualizarAcessoComponent {
   async atualizarAcesso(acesso: Acesso) {
     const formData = new FormData();
 
-    
-    if (acesso.dia == null) {
-      formData.append('dia', this.atualizar.acesso.dia as any);
-    } else {
-      formData.append('dia', acesso.dia as any);
-    }
-    if (acesso.horaEntrada == null) {
-      formData.append('horaEntrada', this.atualizar.acesso.horaEntrada as any);
-    } else {
-      formData.append('horaEntrada', acesso.horaEntrada as any);
-    }
     if (acesso.finalidade == null) {
       formData.append('finalidade', this.atualizar.acesso.finalidade!);
     } else {
       formData.append('finalidade', acesso.finalidade!);
     }
-    if (acesso.idPessoa == null) {
-      formData.append('idPessoa', this.atualizar.acesso.idPessoa as any);
+    if (acesso.pessoaId == null) {
+      formData.append('pessoaId', this.atualizar.acesso.pessoaId as any);
     } else {
-      formData.append('idPessoa', acesso.idPessoa as any);
+      formData.append('pessoaId', acesso.pessoaId as any);
     }
 
     await this.acessoService

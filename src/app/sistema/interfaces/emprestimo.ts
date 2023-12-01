@@ -4,8 +4,8 @@ export interface Emprestimo {
     dataInicial: Date;
     dataFinal: Date;
     finalidade?: string;
-    idPessoa?: number;
-    idMaterial?: number;
+    pessoaId?: number;
+    materialId?: number;
     createdAt: Date;
     updatedAt: Date;
 }

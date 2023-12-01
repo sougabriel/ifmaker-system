@@ -1,33 +1,28 @@
 <main id="model">
     
-    <section id="insert">
-        <form (submit)="submit()" [formGroup]="acessoInForm" #formDir="ngForm">
-            <div class="inp">
-                <label for="dia">Dia</label>
-                <input formControlName="dia" type="date">
-            </div>
-            <div class="inp">
-                <label for="horaEntrada">Hora de Entrada</label>
-                <input formControlName="horaEntrada" type="time">
-            </div>
-            <div class="inp">
-                <label for="finalidade">Finalidade</label>
-                <input formControlName="finalidade" type="text">
-            </div>
-            <div class="inp">
-                <label for="idPessoa">ID Pessoa</label>
-                <input formControlName="idPessoa" type="number">
-            </div>
-            <div class="inp">
-                <input type="submit">
-            </div>
-        </form>
-    </section>
-    
-    <section id="select">
-        
-    </section>
+    <div id="insert-select">
+        <section id="insert">
+            <h2>Adicionar Acesso</h2>
+            <form (submit)="submit()" [formGroup]="acessoInForm" #formDir="ngForm">
+                <div class="inp">
+                    <label for="finalidade">Finalidade</label>
+                    <input formControlName="finalidade" type="text" placeholder="Qual a Finalidade do Acesso">
+                </div>
+                <div class="inp">
+                    <label for="pessoaId">ID da Pessoa</label>
+                    <input formControlName="pessoaId" type="number" min="1" placeholder="">
+                </div>
+                <div class="inp">
+                    <input type="submit" value="Adicionar">
+                </div>
+            </form>
+        </section>
 
+        <section id="select">
+
+        </section>
+    </div>
+    
     <section>
         <div id="head">
             <button id="reload" (click)="recaregarTabela()"><img src="/assets/icons/reload.svg" alt="reload"></button>
@@ -36,20 +31,18 @@
         </div>
         <table>
             <tr>
-                <th>Dia</th>
-                <th>Hora de Entrada</th>
+                <th>Data de Acesso</th>
                 <th>Finalidade</th>
                 <th>ID da Pessoa</th>
-                <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
+                <th *ngIf="colunasE">ID</th>
             </tr>
             <tbody *ngFor="let acesso of acessos">
-                <td>{{ acesso.dia | date:'mediumDate' }}</td>
-                <td>{{ acesso.horaEntrada }}</td>
+                <td>{{ acesso.createdAt | date:'medium' }}</td>
                 <td>{{ acesso.finalidade }}</td>
-                <td>{{ acesso.idPessoa }}</td>
-                <td *ngIf="colunasE">{{ acesso.createdAt | date:'medium' }}</td>
+                <td>{{ acesso.pessoaId }}</td>
                 <td *ngIf="colunasE">{{ acesso.updatedAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ acesso.id }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarAcesso(acesso)">Editar</button>
                 </div>

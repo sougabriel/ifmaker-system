@@ -6,14 +6,14 @@
             <button id="sair" (click)="atualizar.limpar()">X</button>
         </div>
         <div id="campos">
-            <input formControlName="idPessoa" type="number" value=""
-                placeholder="{{ atualizar.pessoaProjeto.idPessoa }}">
+            <input formControlName="pessoaId" type="number" value=""
+                placeholder="{{ atualizar.pessoaProjeto.pessoaId }}">
             <input formControlName="idProjeto" type="number" value=""
                 placeholder="{{ atualizar.pessoaProjeto.idProjeto }}">
         </div>
         <div id="sub">
             <input type="submit" value="Salvar">
-            <button id="bt-excluir" (click)="removePessoaProjeto(atualizar.pessoaProjeto.idPessoa!)">Excluir</button>
+            <button id="bt-excluir" (click)="removePessoaProjeto(atualizar.pessoaProjeto.pessoaId!)">Excluir</button>
         </div>
     </form>
 </section>

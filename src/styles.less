@@ -102,119 +102,7 @@ table {
   }
 }
 
-#model {
-  section {
-    padding: 10px;
-  }
 
-  #insert {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
-
-  button {
-    width: 90%;
-    padding: 5px;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    transition: 1s;
-  }
-
-  #bt-editar {
-    background-color: @editar;
-
-    &:hover {
-      background-color: darkgreen;
-    }
-  }
-
-  #bt-excluir {
-    background-color: @remover;
-
-    &:hover {
-      background-color: rgb(97, 0, 0);
-    }
-  }
-
-  #update {
-    position: fixed;
-    top: 0;
-    left: 0;
-    min-height: 100vh;
-    min-width: 100vw;
-    max-height: 100vh;
-    max-width: 100vw;
-    z-index: 4;
-
-    div {
-      background-color: white;
-      margin-top: 20px;
-      border-radius: 20px;
-      border: solid 1px grey;
-      min-height: 70vh;
-    }
-  }
-
-  input {
-    border: none;
-    border-bottom: solid 1px black;
-    width: 60%;
-    height: 100%;
-    font-size: large;
-    outline: none;
-  }
-
-  #head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-
-    #reload {
-      margin-right: 20px;
-      width: 40px;
-      height: 40px;
-      border: solid black 1px;
-      border-radius: 50%;
-
-      img {
-        width: 100%;
-      }
-
-      &:hover {
-        background-color: #e0e0e0;
-      }
-    }
-
-    button {
-      width: 200px;
-      color: black;
-      border: 1px solid black;
-      background-color: white;
-
-      &:hover {
-        background-color: #e0e0e0;
-      }
-    }
-  }
-
-  @media (max-width: 1480px) {
-    * {
-      font-size: 1rem;
-    }
-  }
-
-  @media (max-width: 1250px) {
-    * {
-      font-size: 0.8rem;
-    }
-  }
-}
 
 /*  
  * Elemento de carregamento de página
@@ -360,4 +248,168 @@ table {
     flex-wrap: wrap;
   }
 
+}
+
+#model {
+  section {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  #insert-select {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    input {
+      width: 600px;
+    }
+  }
+
+  #insert {
+    form {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      font-size: 24px;
+      .inp {
+        width: 600px;
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+      }
+      input[type=submit] {
+        background-color: white;
+        border: solid 1px black;
+        border-radius: 20px;
+        transition: 0.4s;
+        &:hover {
+          background-color: #dddddd;
+        }
+      }
+    }
+  }
+
+  #select {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      flex-direction: column;
+      flex-wrap: nowrap;
+  }
+
+  button {
+    width: 90%;
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 1s;
+  }
+
+  #bt-editar {
+    background-color: @editar;
+
+    &:hover {
+      background-color: darkgreen;
+    }
+  }
+
+  #bt-excluir {
+    background-color: @remover;
+
+    &:hover {
+      background-color: rgb(97, 0, 0);
+    }
+  }
+
+  #update {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    min-width: 100vw;
+    max-height: 100vh;
+    max-width: 100vw;
+    z-index: 4;
+
+    div {
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 20px;
+      border: solid 1px grey;
+      min-height: 70vh;
+    }
+  }
+
+  input {
+    border: none;
+    border-bottom: solid 1px black;
+    width: 60%;
+    font-size: large;
+    outline: none;
+  }
+
+  #head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    #reload {
+      margin-right: 20px;
+      width: 40px;
+      height: 40px;
+      border: solid black 1px;
+      border-radius: 50%;
+
+      img {
+        width: 100%;
+      }
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+
+    button {
+      width: 200px;
+      color: black;
+      border: 1px solid black;
+      background-color: white;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+
+  @media (max-width: 1480px) {
+    * {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    * {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+input {
+  padding: 5px;
+  margin: 0 auto;
+  width: 400px;
+  outline: none;
+  background-color: white;
+  transition: 0.6s;
+  border: none;
+  &:hover {
+    background-color: #eeeeee;
+  }
 }

@@ -19,17 +19,12 @@ export class AtualizarEmprestimoComponent {
 
   ngOnInit(): void {
     this.emprestimoForm = new FormGroup({
-      id: new FormControl(),
       dataInicial: new FormControl(),
       dataFinal: new FormControl(),
       finalidade: new FormControl(),
-      idMaterial: new FormControl(),
-      idPessoa: new FormControl(),
+      materialId: new FormControl(),
+      pessoaId: new FormControl({value: null, disabled: true}),
     });
-  }
-
-  get id() {
-    return this.emprestimoForm.get('id');
   }
 
   get dataInicial() {
@@ -44,12 +39,12 @@ export class AtualizarEmprestimoComponent {
     return this.emprestimoForm.get('finalidade')!;
   }
 
-  get idMaterial() {
-    return this.emprestimoForm.get('idMaterial')!;
+  get materialId() {
+    return this.emprestimoForm.get('materialId')!;
   }
 
-  get idPessoa() {
-    return this.emprestimoForm.get('idPessoa')!;
+  get pessoaId() {
+    return this.emprestimoForm.get('pessoaId')!;
   }
 
   submit() {
@@ -61,9 +56,6 @@ export class AtualizarEmprestimoComponent {
 
   async atualizarEmprestimo(emprestimo: Emprestimo) {
     const formData = new FormData();
-
-    
-    
 
     if (emprestimo.dataInicial == null) {
       formData.append('dataInicial', this.atualizar.emprestimo.dataInicial as any);
@@ -80,19 +72,19 @@ export class AtualizarEmprestimoComponent {
     } else {
       formData.append('finalidade', emprestimo.finalidade!);
     }
-    if (emprestimo.idMaterial == null) {
-      formData.append('idMaterial', this.atualizar.emprestimo.idMaterial as any);
+    if (emprestimo.materialId == null) {
+      formData.append('materialId', this.atualizar.emprestimo.materialId as any);
     } else {
-      formData.append('idMaterial', emprestimo.idMaterial as any);
+      formData.append('materialId', emprestimo.materialId as any);
     }
-    if (emprestimo.idPessoa == null) {
-      formData.append('idPessoa', this.atualizar.emprestimo.idPessoa as any);
+    if (emprestimo.pessoaId == null) {
+      formData.append('pessoaId', this.atualizar.emprestimo.pessoaId as any);
     } else {
-      formData.append('idPessoa', emprestimo.idPessoa as any);
+      formData.append('pessoaId', emprestimo.pessoaId as any);
     }
 
     await this.emprestimoService
-      .atualizar(this.atualizar.emprestimo.id!, formData)
+      .atualizar(this.atualizar.emprestimo.pessoaId!, this.atualizar.emprestimo.materialId!, formData)
       .subscribe();
     this.atualizar.limpar();
   }

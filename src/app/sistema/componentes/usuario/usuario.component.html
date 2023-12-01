@@ -31,7 +31,7 @@
             <tbody *ngFor="let usuario of usuarios">
                 <td>{{ usuario.nomeUsuario }}</td>
                 <td>{{ usuario.nivel }}</td>
-                <td>{{ usuario.idPessoa }}</td>
+                <td>{{ usuario.pessoaId }}</td>
                 <td *ngIf="colunasE">{{ usuario.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ usuario.updatedAt | date:'medium' }}</td>
                 <div>

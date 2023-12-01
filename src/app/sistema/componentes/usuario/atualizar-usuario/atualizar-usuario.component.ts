@@ -21,7 +21,7 @@ export class AtualizarUsuarioComponent {
       nomeUsuario: new FormControl(),
       senha: new FormControl(),
       nivel: new FormControl({value: null, disabled: true}),
-      idPessoa: new FormControl({value: null, disabled: true}),
+      pessoaId: new FormControl({value: null, disabled: true}),
     })
   }
 
@@ -41,8 +41,8 @@ export class AtualizarUsuarioComponent {
     return this.usuarioForm.get('nivel')!;
   }
   
-  get idPessoa() {
-    return this.usuarioForm.get('idPessoa')!;
+  get pessoaId() {
+    return this.usuarioForm.get('pessoaId')!;
   }
 
   submit() {
@@ -70,10 +70,10 @@ export class AtualizarUsuarioComponent {
     } else {
       formData.append('nivel', usuario.nivel as any);
     }
-    if (usuario.idPessoa == null) {
-      formData.append('idPessoa', this.atualizar.usuario.idPessoa as any);
+    if (usuario.pessoaId == null) {
+      formData.append('pessoaId', this.atualizar.usuario.pessoaId as any);
     } else {
-      formData.append('idPessoa', usuario.idPessoa as any);
+      formData.append('pessoaId', usuario.pessoaId as any);
     }
 
 

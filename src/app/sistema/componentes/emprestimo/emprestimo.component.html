@@ -1,18 +1,41 @@
 <main id="model">
     
-    <section id="insert">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Adicionar">
-        </form>
-    </section>
-    
-    <section id="select">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Buscar">
-        </form>
-    </section>
+    <div id="insert-select">
+        <section id="insert">
+            <h2>Adicionar Emprestimo</h2>
+            <form (submit)="submit()" [formGroup]="emprestimoInForm" #formDir="ngForm">
+                <div class="inp">
+                    <label for="dataInicial">Data Inicial</label>
+                    <input formControlName="dataInicial" type="date" min="2023-12-01">
+                </div>
+                <div class="inp">
+                    <label for="dataFinal">Data Final</label>
+                    <input formControlName="dataFinal" type="date" min="2023-12-01" max="2030-12-30">
+                </div>
+                <div class="inp">
+                    <label for="finalidade">Finalidade</label>
+                    <input formControlName="finalidade" type="text" placeholder="Qual o uso para o material">
+                </div>
+                <div class="inp">
+                    <label for="pessoaId">ID da Pessoa</label>
+                    <input formControlName="pessoaId" type="number" min="1">
+                </div>
+                <div class="inp">
+                    <label for="materialId">ID da Material</label>
+                    <input formControlName="materialId" type="number" min="1">
+                </div>
+                <div class="inp">
+                    <input type="submit" value="Adicionar">
+                </div>
+            </form>
+        </section>
+
+        <section id="select">
+            <h2>Buscar Emprestimos</h2>
+                <input type="text">
+                <input type="submit" value="Buscar">
+        </section>
+    </div>
 
     <section>
         <div id="head">
@@ -34,8 +57,8 @@
                 <td>{{ emprestimo.dataInicial | date:'mediumDate' }}</td>
                 <td>{{ emprestimo.dataFinal | date:'mediumDate' }}</td>
                 <td>{{ emprestimo.finalidade }}</td>
-                <td>{{ emprestimo.idMaterial }}</td>
-                <td>{{ emprestimo.idPessoa }}</td>
+                <td>{{ emprestimo.materialId }}</td>
+                <td>{{ emprestimo.pessoaId }}</td>
                 <td *ngIf="colunasE">{{ emprestimo.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ emprestimo.updatedAt | date:'medium' }}</td>
                 <div>

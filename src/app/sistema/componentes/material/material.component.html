@@ -1,18 +1,37 @@
 <main id="model">
     
-    <section id="insert">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Adicionar">
-        </form>
-    </section>
-    
-    <section id="select">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Buscar">
-        </form>
-    </section>
+    <div id="insert-select">
+        <section id="insert">
+            <h2>Adicionar Material</h2>
+            <form (submit)="submit()" [formGroup]="materialInForm" #formDir="ngForm">
+                <div class="inp">
+                    <label for="nome">Nome do Material</label>
+                    <input formControlName="nome" type="text">
+                </div>
+                <div class="inp">
+                    <label for="descricao">Descrição</label>
+                    <input formControlName="descricao" type="text">
+                </div>
+                <div class="inp">
+                    <label for="tipo">Tipo de Material</label>
+                    <input formControlName="tipo" type="text">
+                </div>
+                <div class="inp">
+                    <label for="quantidade">Quantidade</label>
+                    <input formControlName="quantidade" type="number" min="1">
+                </div>
+                <div class="inp">
+                    <input type="submit" value="Adicionar">
+                </div>
+            </form>
+        </section>
+
+        <section id="select">
+            <h2>Buscar Emprestimos</h2>
+                <input type="text">
+                <input type="submit" value="Buscar">
+        </section>
+    </div>
 
     <section>
         <div id="head">

@@ -3,7 +3,7 @@ export interface Registro {
     id?: number;
     atividade: string;
     descricao: string;
-    idusuario?: number;
+    usuarioId?: number;
     createdAt: Date;
     updatedAt: Date;
     

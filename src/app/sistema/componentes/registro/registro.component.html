@@ -29,7 +29,7 @@
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
             <tbody *ngFor="let registro of registros">
-                <td>{{ registro.idusuario }}</td>
+                <td>{{ registro.usuarioId }}</td>
                 <td>{{ registro.atividade }}</td>
                 <td>{{ registro.descricao }}</td>
                 <td *ngIf="colunasE">{{ registro.createdAt | date:'medium' }}</td>
