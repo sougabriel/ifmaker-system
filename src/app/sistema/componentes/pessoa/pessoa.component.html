@@ -28,8 +28,16 @@
 
         <section id="select">
             <h2>Buscar Pessoas</h2>
+            <div class="inp">
+                <label for="buscar">Buscar por Nome</label>
                 <input type="text">
-                <input type="submit" value="Buscar">
+            </div>
+            <div class="inp">
+                <label for="buscar">Buscar por Público</label>
+                <input type="text">
+            </div>
+
+            <input type="submit" value="Buscar">
         </section>
     </div>
     
@@ -49,7 +57,7 @@
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
-            <tbody *ngFor="let pessoa of pessoas">
+            <tbody *ngFor="let pessoa of pessoas.reverse()">
                 <td>{{ pessoa.nome }}</td>
                 <td>{{ pessoa.email }}</td>
                 <td>{{ pessoa.telefone }}</td>

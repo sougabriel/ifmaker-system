@@ -48,7 +48,7 @@
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
-            <tbody *ngFor="let material of materiais">
+            <tbody *ngFor="let material of materiais.reverse()">
                 <td>{{ material.nome }}</td>
                 <td>{{ material.descricao }}</td>
                 <td>{{ material.tipo }}</td>

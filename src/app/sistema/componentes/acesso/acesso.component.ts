@@ -46,6 +46,7 @@ export class AcessoComponent {
       return;
     }
     this.adicionarAcesso(this.acessoInForm.value);
+    this.acessoInForm.reset();
   }
 
   editarAcesso(acesso: Acesso) {

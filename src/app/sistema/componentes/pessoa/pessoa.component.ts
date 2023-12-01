@@ -49,6 +49,7 @@ export class PessoaComponent {
       return;
     }
     this.adicionarPessoa(this.pessoaInForm.value)
+    this.pessoaInForm.reset();
   }
 
   async adicionarPessoa(pessoa: Pessoa) {

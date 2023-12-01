@@ -38,6 +38,7 @@ export class PessoaProjetoComponent {
       return;
     }
     this.adicionarPessoaProjeto(this.pessoaProjetoInForm.value);
+    this.pessoaProjetoInForm.reset();
   }
 
   async adicionarPessoaProjeto(pessoaProjeto: PessoaProjeto) {

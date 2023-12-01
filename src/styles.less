@@ -262,6 +262,7 @@ table {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 5px 20px;
     input {
       width: 600px;
     }
@@ -270,33 +271,18 @@ table {
   #insert {
     form {
       display: flex;
-      justify-content: start;
-      align-items: start;
+      justify-content: flex-start;
+      align-items: flex-start;
       flex-direction: column;
       flex-wrap: nowrap;
       font-size: 24px;
-      .inp {
-        width: 600px;
-        padding: 5px;
-        display: flex;
-        flex-direction: column;
-      }
-      input[type=submit] {
-        background-color: white;
-        border: solid 1px black;
-        border-radius: 20px;
-        transition: 0.4s;
-        &:hover {
-          background-color: #dddddd;
-        }
-      }
     }
   }
 
   #select {
       display: flex;
-      justify-content: start;
-      align-items: start;
+      justify-content: flex-start;
+      align-items: flex-start;
       flex-direction: column;
       flex-wrap: nowrap;
   }
@@ -412,4 +398,22 @@ input {
   &:hover {
     background-color: #eeeeee;
   }
+}
+
+input[type=submit] {
+  background-color: white;
+  border: solid 1px black;
+  border-radius: 20px;
+  transition: 0.4s;
+  &:hover {
+    background-color: #dddddd;
+  }
+}
+
+
+.inp {
+  width: 600px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
 }

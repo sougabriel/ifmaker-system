@@ -22,7 +22,7 @@
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
-            <tbody *ngFor="let registro of registros">
+            <tbody *ngFor="let registro of registros.reverse()">
                 <td>{{ registro.usuarioId }}</td>
                 <td>{{ registro.atividade }}</td>
                 <td>{{ registro.descricao }}</td>

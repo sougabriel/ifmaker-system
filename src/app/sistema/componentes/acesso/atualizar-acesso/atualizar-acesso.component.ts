@@ -46,7 +46,7 @@ export class AtualizarAcessoComponent {
 
   async atualizarAcesso(acesso: Acesso) {
     const formData = new FormData();
-
+    
     if (acesso.finalidade == null) {
       formData.append('finalidade', this.atualizar.acesso.finalidade!);
     } else {

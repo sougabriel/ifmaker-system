@@ -38,7 +38,7 @@
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
-            <tbody *ngFor="let pessoaProjeto of pessoasProjetos">
+            <tbody *ngFor="let pessoaProjeto of pessoasProjetos.reverse()">
                 <td>{{ pessoaProjeto.pessoaId }}</td>
                 <td>{{ pessoaProjeto.projetoId }}</td>
                 <td *ngIf="colunasE">{{ pessoaProjeto.createdAt | date:'medium' }}</td>

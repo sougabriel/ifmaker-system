@@ -49,6 +49,7 @@ export class MaterialComponent {
       return;
     }
     this.adicionarMaterial(this.materialInForm.value);
+    this.materialInForm.reset();
   }
 
   async adicionarMaterial(material: Material) {

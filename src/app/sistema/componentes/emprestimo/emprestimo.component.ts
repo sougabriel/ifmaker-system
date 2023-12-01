@@ -54,6 +54,7 @@ export class EmprestimoComponent {
       return;
     }
     this.adicionarPessoa(this.emprestimoInForm.value)
+    this.emprestimoInForm.reset();
   }
 
   async adicionarPessoa(emprestimo: Emprestimo) {

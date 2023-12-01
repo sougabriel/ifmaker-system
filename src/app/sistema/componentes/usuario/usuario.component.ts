@@ -33,6 +33,7 @@ export class UsuarioComponent {
       return;
     }
     this.adicionarUsuario(this.usuarioInForm.value);
+    this.usuarioInForm.reset();
   }
 
   async adicionarUsuario(usuario: Usuario) {

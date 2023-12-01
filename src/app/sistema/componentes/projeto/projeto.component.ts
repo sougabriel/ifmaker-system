@@ -31,6 +31,7 @@ export class ProjetoComponent {
       return;
     }
     this.adicionarProjeto(this.projetoInForm.value);
+    this.projetoInForm.reset();
   }
 
   async adicionarProjeto(projeto: Projeto) {

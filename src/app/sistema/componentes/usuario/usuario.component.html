@@ -47,7 +47,7 @@
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
-            <tbody *ngFor="let usuario of usuarios">
+            <tbody *ngFor="let usuario of usuarios.reverse()">
                 <td>{{ usuario.nomeUsuario }}</td>
                 <td>{{ usuario.nivel }}</td>
                 <td>{{ usuario.pessoaId }}</td>
