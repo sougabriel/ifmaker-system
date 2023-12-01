@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Projeto } from '../../interfaces/projeto';
 import { ProjetoService } from '../../services/routes/projeto.service';
 import { AtualizarService } from '../../services/atualizar.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-projeto',
@@ -10,11 +11,36 @@ import { AtualizarService } from '../../services/atualizar.service';
 })
 export class ProjetoComponent {
 
+  projetoInForm!: FormGroup;
   projetos: Projeto[] = [];
   colunasE: boolean = false;
 
   constructor(private projetoService: ProjetoService, private atualizar: AtualizarService) {
     this.getProjetos();
+  }
+
+  ngOnInit(): void {
+    this.projetoInForm = new FormGroup({
+      nome: new FormControl(null, Validators.required),
+      descricao: new FormControl(null, Validators.required),
+    });
+  }
+
+  submit():void {
+    if (this.projetoInForm.invalid) {
+      return;
+    }
+    this.adicionarProjeto(this.projetoInForm.value);
+  }
+
+  async adicionarProjeto(projeto: Projeto) {
+    const formData = new FormData();
+
+    formData.append('nome', projeto.nome);
+    formData.append('descricao', projeto.descricao!);
+
+    this.projetoService.adicionar(formData).subscribe();
+    this.recaregarTabela();
   }
 
   recaregarTabela(): void {

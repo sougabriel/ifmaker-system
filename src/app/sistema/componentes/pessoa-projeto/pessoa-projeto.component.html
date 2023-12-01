@@ -1,18 +1,29 @@
 <main id="model">
     
-    <section id="insert">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Adicionar">
-        </form>
-    </section>
-    
-    <section id="select">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Buscar">
-        </form>
-    </section>
+    <div id="insert-select">
+        <section id="insert">
+            <h2>Adicionar Pessoa a um Projeto</h2>
+            <form (submit)="submit()" [formGroup]="pessoaProjetoInForm" #formDir="ngForm">
+                <div class="inp">
+                    <label for="pessoaId">Id da Pessoa</label>
+                    <input formControlName="pessoaId" type="number" min="1">
+                </div>
+                <div class="inp">
+                    <label for="projetoId">Id do Projeto</label>
+                    <input formControlName="projetoId" type="number" min="1">
+                </div>
+                <div class="inp">
+                    <input type="submit" value="Adicionar">
+                </div>
+            </form>
+        </section>
+
+        <section id="select">
+            <h2>Buscar Pessoas</h2>
+                <input type="text">
+                <input type="submit" value="Buscar">
+        </section>
+    </div>
 
     <section>
         <div id="head">
@@ -29,7 +40,7 @@
             </tr>
             <tbody *ngFor="let pessoaProjeto of pessoasProjetos">
                 <td>{{ pessoaProjeto.pessoaId }}</td>
-                <td>{{ pessoaProjeto.idProjeto }}</td>
+                <td>{{ pessoaProjeto.projetoId }}</td>
                 <td *ngIf="colunasE">{{ pessoaProjeto.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ pessoaProjeto.updatedAt | date:'medium' }}</td>
                 <div>

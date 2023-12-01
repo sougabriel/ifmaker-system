@@ -18,7 +18,7 @@ export class AtualizarPessoaProjetoProjetoComponent {
   ngOnInit(): void {
     this.pessoaprojetoForm = new FormGroup({
       pessoaId: new FormControl(),
-      idProjeto: new FormControl(),
+      projetoId: new FormControl(),
     })
   }
 
@@ -26,8 +26,8 @@ export class AtualizarPessoaProjetoProjetoComponent {
     return this.pessoaprojetoForm.get('pessoaId');
   }
 
-  get idProjeto() {
-    return this.pessoaprojetoForm.get('idProjeto')!;
+  get projetoId() {
+    return this.pessoaprojetoForm.get('projetoId')!;
   }
 
   submit() {
@@ -45,10 +45,10 @@ export class AtualizarPessoaProjetoProjetoComponent {
     } else {
       formData.append('pessoaId', pessoaprojeto.pessoaId as any);
     }
-    if (pessoaprojeto.idProjeto == null) {
-      formData.append('idProjeto', this.atualizar.pessoaProjeto.idProjeto as any); 
+    if (pessoaprojeto.projetoId == null) {
+      formData.append('projetoId', this.atualizar.pessoaProjeto.projetoId as any); 
     } else {
-      formData.append('idProjeto', pessoaprojeto.idProjeto as any); 
+      formData.append('projetoId', pessoaprojeto.projetoId as any); 
     }
 
     await this.pessoaprojetoService.atualizar(this.atualizar.pessoaProjeto.pessoaId!, formData).subscribe();

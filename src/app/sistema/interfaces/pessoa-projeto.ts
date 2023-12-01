@@ -1,7 +1,7 @@
 export interface PessoaProjeto {
 
     pessoaId?: number;
-    idProjeto?: number;
+    projetoId?: number;
     createdAt: Date;
     updatedAt: Date;
     

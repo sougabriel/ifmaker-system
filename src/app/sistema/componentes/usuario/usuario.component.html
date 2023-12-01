@@ -1,18 +1,37 @@
 <main id="model">
 
-    <section id="insert">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Adicionar">
-        </form>
-    </section>
+    <div id="insert-select">
+        <section id="insert">
+            <h2>Adicionar Usuário</h2>
+            <form (submit)="submit()" [formGroup]="usuarioInForm" #formDir="ngForm">
+                <div class="inp">
+                    <label for="nomeUsuario">Nome de Usuário</label>
+                    <input formControlName="nomeUsuario" type="text" placeholder="Nome para login no sistema">
+                </div>
+                <div class="inp">
+                    <label for="senha">Senha de Usuário</label>
+                    <input formControlName="senha" type="password" placeholder="Senha para login no sistema">
+                </div>
+                <div class="inp">
+                    <label for="nivel">Nível de Acesso</label>
+                    <input formControlName="nivel" type="number" min="1">
+                </div>
+                <div class="inp">
+                    <label for="pessoaId">ID da Pessoa</label>
+                    <input formControlName="pessoaId" type="number" min="1">
+                </div>
+                <div class="inp">
+                    <input type="submit" value="Adicionar">
+                </div>
+            </form>
+        </section>
 
-    <section id="select">
-        <form action="">
+        <section id="select">
+            <h2>Buscar Pessoas</h2>
             <input type="text">
             <input type="submit" value="Buscar">
-        </form>
-    </section>
+        </section>
+    </div>
 
     <section>
         <div id="head">

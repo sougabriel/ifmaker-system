@@ -1,18 +1,29 @@
 <main id="model">
     
-    <section id="insert">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Adicionar">
-        </form>
-    </section>
-    
-    <section id="select">
-        <form action="">
-            <input type="text">
-            <input type="submit" value="Buscar">
-        </form>
-    </section>
+    <div id="insert-select">
+        <section id="insert">
+            <h2>Adicionar Projeto</h2>
+            <form (submit)="submit()" [formGroup]="projetoInForm" #formDir="ngForm">
+                <div class="inp">
+                    <label for="nome">Nome do Projeto</label>
+                    <input formControlName="nome" type="text" placeholder="Escreva o Nome do Projeto">
+                </div>
+                <div class="inp">
+                    <label for="descricao">Descrição</label>
+                    <input formControlName="descricao" type="text" placeholder="Descreva o Projeto">
+                </div>
+                <div class="inp">
+                    <input type="submit" value="Adicionar">
+                </div>
+            </form>
+        </section>
+
+        <section id="select">
+            <h2>Buscar Pessoas</h2>
+                <input type="text">
+                <input type="submit" value="Buscar">
+        </section>
+    </div>
 
     <section>
         <div id="head">
