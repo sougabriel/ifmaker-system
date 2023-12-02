@@ -17,6 +17,8 @@ export class AcessoComponent {
   acessos: Acesso[] = [];
   colunasE: boolean = false;
 
+  dataBuscar!: Date;
+
   constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService) {
     this.getAcessos();
   }
@@ -70,6 +72,10 @@ export class AcessoComponent {
     await this.acessoService.adicionar(formData).subscribe();
     this.recaregarTabela();
     this.mensagem.adicionar("Acesso adicionado com suscesso!");
+  }
+
+  getAcessoPorData(data: Date) {
+    this.acessoService.consultarPorData(data).subscribe((acessos) => (this.acessos = acessos));
   }
 
 }

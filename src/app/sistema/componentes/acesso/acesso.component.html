@@ -19,7 +19,14 @@
         </section>
 
         <section id="select">
-
+            <h2>Buscar Acesso</h2>
+            <div class="inp">
+                <label for="buscar">Buscar por Data de Acesso</label>
+                <div  class="find">
+                    <input type="datetime" [(ngModel)]="dataBuscar">
+                    <input type="submit" value="Buscar" (click)="getAcessoPorData(dataBuscar)">
+                </div>
+            </div>
         </section>
     </div>
     
@@ -31,16 +38,18 @@
         </div>
         <table>
             <tr>
-                <th>Data de Acesso</th>
+                <th>Dia e Hora de Acesso</th>
                 <th>Finalidade</th>
                 <th>ID da Pessoa</th>
+                <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
                 <th *ngIf="colunasE">ID</th>
             </tr>
             <tbody *ngFor="let acesso of acessos.reverse()">
-                <td>{{ acesso.createdAt | date:'medium' }}</td>
+                <td>{{ acesso.diaHoraEntrada | date:'medium' }}</td>
                 <td>{{ acesso.finalidade }}</td>
                 <td>{{ acesso.pessoaId }}</td>
+                <td *ngIf="colunasE">{{ acesso.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ acesso.updatedAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ acesso.id }}</td>
                 <div>

@@ -25,6 +25,10 @@ export class AcessoService {
     return this.http.get<Acesso[]>(this.apiUrl + "/" + id);
   }
 
+  consultarPorData(data: Date): Observable<Acesso[]> {
+    return this.http.get<Acesso[]>(`${this.apiUrl}/${data}`);
+  }
+
   atualizar(id: number, formData: FormData): Observable<FormData> {
     return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
   }
