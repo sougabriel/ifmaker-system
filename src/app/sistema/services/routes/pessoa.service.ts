@@ -20,6 +20,14 @@ export class PessoaService {
   consultarTodos(): Observable<Pessoa[]> {
     return this.http.get<Pessoa[]>(this.apiUrl);
   }
+
+  consultarPorNome(nome: string): Observable<Pessoa[]> {
+    return this.http.get<Pessoa[]>(`${this.apiUrl}/${nome}`);
+  }
+  
+  consultarPorPublico(publico: string): Observable<Pessoa[]> {
+    return this.http.get<Pessoa[]>(`${this.apiUrl}/p/${publico}`);
+  }
   
   consultarPorId(id: number): Observable<Pessoa[]> {
     return this.http.get<Pessoa[]>(this.apiUrl + "/" + id);

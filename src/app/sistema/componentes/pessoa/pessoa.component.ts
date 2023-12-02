@@ -15,6 +15,9 @@ export class PessoaComponent {
   pessoas: Pessoa[] = [];
   colunasE: boolean = false;
 
+  nomeBuscar: string = '';
+  publicoBuscar: string = '';
+
   constructor (private pessoaService: PessoaService, private atualizar: AtualizarService) {
     this.getPessoas();
   }
@@ -70,6 +73,14 @@ export class PessoaComponent {
 
   editarPessoa(pessoa: Pessoa) {
     this.atualizar.alterarPessoa(pessoa);
+  }
+
+  getPessoasPorNome(nome: string): void {
+    this.pessoaService.consultarPorNome(nome).subscribe((pessoas) => (this.pessoas = pessoas));
+  }
+
+  getPessoasPorPublico(publico: string): void {
+    this.pessoaService.consultarPorPublico(publico).subscribe((pessoas) => (this.pessoas = pessoas));
   }
 
   getPessoas(): void {
