@@ -4,6 +4,8 @@ import { AcessoService } from '../../services/routes/acesso.service';
 import { AtualizarService } from '../../services/atualizar.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MensagensService } from 'src/app/services/mensagens.service';
+import { Pessoa } from '../../interfaces/pessoa';
+import { PessoaService } from '../../services/routes/pessoa.service';
 
 @Component({
   selector: 'app-acesso',
@@ -14,18 +16,22 @@ export class AcessoComponent {
 
   acessoInForm!: FormGroup; 
 
+  pessoas: Pessoa[] = [];
   acessos: Acesso[] = [];
+
   colunasE: boolean = false;
 
   dataBuscar!: Date;
 
-  constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService) {
+  constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService, private pessoa: PessoaService) {
     this.getAcessos();
+    this.pessoa.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
   }
 
   ngOnInit(): void {
     this.acessoInForm = new FormGroup({
       id: new FormControl(),
+      diaHoraEntrada: new FormControl(),
       finalidade: new FormControl(),
       pessoaId: new FormControl(),
     });
@@ -33,6 +39,10 @@ export class AcessoComponent {
 
   get id() {
     return this.acessoInForm.get('id');
+  }
+
+  get diaHoraEntrada() {
+    return this.acessoInForm.get('diaHoraEntrada');
   }
 
   get finalidade() {
@@ -66,6 +76,7 @@ export class AcessoComponent {
   async adicionarAcesso(acesso: Acesso) {
     const formData = new FormData();
 
+    formData.append('diaHoraEntrada', acesso.diaHoraEntrada as any);
     formData.append('finalidade', acesso.finalidade!);
     formData.append('pessoaId', acesso.pessoaId as any);
 

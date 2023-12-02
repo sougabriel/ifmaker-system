@@ -5,12 +5,20 @@
             <h2>Adicionar Acesso</h2>
             <form (submit)="submit()" [formGroup]="acessoInForm" #formDir="ngForm">
                 <div class="inp">
+                    <label for="diaHoraEntrada">Dia e Hora</label>
+                    <input formControlName="diaHoraEntrada" type="datetime-local">
+                </div>
+                <div class="inp">
                     <label for="finalidade">Finalidade</label>
                     <input formControlName="finalidade" type="text" placeholder="Qual a Finalidade do Acesso">
                 </div>
                 <div class="inp">
                     <label for="pessoaId">ID da Pessoa</label>
-                    <input formControlName="pessoaId" type="number" min="1" placeholder="">
+                    
+                    <select formControlName="pessoaId" name="pessoas" id="pessoas">
+                        <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
+                    </select>
+                    
                 </div>
                 <div class="inp">
                     <input type="submit" value="Adicionar">
@@ -23,7 +31,7 @@
             <div class="inp">
                 <label for="buscar">Buscar por Data de Acesso</label>
                 <div  class="find">
-                    <input type="datetime" [(ngModel)]="dataBuscar">
+                    <input type="datetime-local" [(ngModel)]="dataBuscar">
                     <input type="submit" value="Buscar" (click)="getAcessoPorData(dataBuscar)">
                 </div>
             </div>
