@@ -17,12 +17,16 @@
                     <input formControlName="finalidade" type="text" placeholder="Qual o uso para o material">
                 </div>
                 <div class="inp">
-                    <label for="pessoaId">ID da Pessoa</label>
-                    <input formControlName="pessoaId" type="number" min="1">
+                    <label for="pessoaId">Pessoa</label>
+                    <select formControlName="pessoaId" name="pessoas" id="pessoas">
+                        <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
+                    </select>
                 </div>
                 <div class="inp">
-                    <label for="materialId">ID da Material</label>
-                    <input formControlName="materialId" type="number" min="1">
+                    <label for="materialId">Material</label>
+                    <select formControlName="materialId" name="material" id="material">
+                        <option *ngFor="let material of materiais" value="{{ material.id }}">{{ material.nome }}</option>
+                    </select>
                 </div>
                 <div class="inp">
                     <input type="submit" value="Adicionar">

@@ -5,12 +5,16 @@
             <h2>Adicionar Pessoa a um Projeto</h2>
             <form (submit)="submit()" [formGroup]="pessoaProjetoInForm" #formDir="ngForm">
                 <div class="inp">
-                    <label for="pessoaId">Id da Pessoa</label>
-                    <input formControlName="pessoaId" type="number" min="1">
+                    <label for="pessoaId">Pessoa</label>
+                    <select formControlName="pessoaId" name="pessoas" id="pessoas">
+                        <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
+                    </select>
                 </div>
                 <div class="inp">
-                    <label for="projetoId">Id do Projeto</label>
-                    <input formControlName="projetoId" type="number" min="1">
+                    <label for="projetoId">Projeto</label>
+                    <select formControlName="projetoId" name="projetos" id="projetos">
+                        <option *ngFor="let projeto of projetos" value="{{ projeto.id }}">{{ projeto.nome }}</option>
+                    </select>
                 </div>
                 <div class="inp">
                     <input type="submit" value="Adicionar">

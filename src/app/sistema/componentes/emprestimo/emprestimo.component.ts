@@ -3,6 +3,10 @@ import { Emprestimo } from '../../interfaces/emprestimo';
 import { EmprestimoService } from '../../services/routes/emprestimo.service';
 import { AtualizarService } from '../../services/atualizar.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Pessoa } from '../../interfaces/pessoa';
+import { PessoaService } from '../../services/routes/pessoa.service';
+import { Material } from '../../interfaces/material';
+import { MaterialService } from '../../services/routes/material.service';
 
 @Component({
   selector: 'app-emprestimo',
@@ -11,12 +15,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class EmprestimoComponent {
 
+  pessoas: Pessoa[] = [];
+  materiais: Material[] = [];
+
   emprestimos: Emprestimo[] = [];
+
   emprestimoInForm!: FormGroup;
   colunasE: boolean = false;
 
-  constructor(private emprestimoService: EmprestimoService, private atualizar: AtualizarService) {
+  constructor(private emprestimoService: EmprestimoService, private atualizar: AtualizarService, private pessoaService: PessoaService, private materialService: MaterialService) {
     this.getEmprestimos();
+    this.getPessoas();
+    this.getMateriais();
   }
 
   ngOnInit(): void {
@@ -70,8 +80,8 @@ export class EmprestimoComponent {
     this.recaregarTabela();
   }
 
-  getEmprestimos(): void {
-    this.emprestimoService.consultarTodos().subscribe((emprestimos) => (this.emprestimos = emprestimos));
+  async getEmprestimos() {
+    await this.emprestimoService.consultarTodos().subscribe((emprestimos) => (this.emprestimos = emprestimos));
   }
 
   recaregarTabela(): void {
@@ -82,4 +92,12 @@ export class EmprestimoComponent {
     this.atualizar.alterarEmprestimo(emprestimo);
   }
   
+  async getPessoas() {
+    await this.pessoaService.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
+  }
+
+  async getMateriais() {
+    await this.materialService.consultarTodos().subscribe((materiais) => (this.materiais = materiais));
+  }
+
 }

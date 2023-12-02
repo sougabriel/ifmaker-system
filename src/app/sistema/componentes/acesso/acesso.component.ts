@@ -23,9 +23,9 @@ export class AcessoComponent {
 
   dataBuscar!: Date;
 
-  constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService, private pessoa: PessoaService) {
+  constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService, private pessoaService: PessoaService) {
     this.getAcessos();
-    this.pessoa.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
+    this.getPessoasOrdNome();
   }
 
   ngOnInit(): void {
@@ -35,22 +35,6 @@ export class AcessoComponent {
       finalidade: new FormControl(),
       pessoaId: new FormControl(),
     });
-  }
-
-  get id() {
-    return this.acessoInForm.get('id');
-  }
-
-  get diaHoraEntrada() {
-    return this.acessoInForm.get('diaHoraEntrada');
-  }
-
-  get finalidade() {
-    return this.acessoInForm.get('finalidade')!;
-  }
-
-  get pessoaId() {
-    return this.acessoInForm.get('pessoaId')!;
   }
 
   submit() {
@@ -69,8 +53,8 @@ export class AcessoComponent {
     this.getAcessos();
   }
 
-  getAcessos(): void {
-    this.acessoService.consultarTodos().subscribe((acessos) => (this.acessos = acessos));
+  async getAcessos() {
+    await this.acessoService.consultarTodos().subscribe((acessos) => (this.acessos = acessos));
   }
 
   async adicionarAcesso(acesso: Acesso) {
@@ -85,8 +69,12 @@ export class AcessoComponent {
     this.mensagem.adicionar("Acesso adicionado com suscesso!");
   }
 
-  getAcessoPorData(data: Date) {
-    this.acessoService.consultarPorData(data).subscribe((acessos) => (this.acessos = acessos));
+  async getAcessoPorData(data: Date) {
+    await this.acessoService.consultarPorData(data).subscribe((acessos) => (this.acessos = acessos));
+  }
+
+  async getPessoasOrdNome() {
+    await this.pessoaService.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
   }
 
 }

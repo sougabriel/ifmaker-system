@@ -13,12 +13,10 @@
                     <input formControlName="finalidade" type="text" placeholder="Qual a Finalidade do Acesso">
                 </div>
                 <div class="inp">
-                    <label for="pessoaId">ID da Pessoa</label>
-                    
+                    <label for="pessoaId">Pessoa de Acessou</label>
                     <select formControlName="pessoaId" name="pessoas" id="pessoas">
                         <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
                     </select>
-                    
                 </div>
                 <div class="inp">
                     <input type="submit" value="Adicionar">
