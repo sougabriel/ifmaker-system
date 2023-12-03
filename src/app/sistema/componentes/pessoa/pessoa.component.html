@@ -32,14 +32,14 @@
                 <label for="buscar">Buscar por Nome</label>
                 <div  class="find">
                     <input type="search" [(ngModel)]="nomeBuscar">
-                    <input type="submit" value="Buscar" (click)="getPessoasPorNome(nomeBuscar)">
+                    <input class="buscar" type="submit" value="Buscar" (click)="getPessoasPorNome(nomeBuscar)">
                 </div>
             </div>
             <div class="inp">
                 <label for="buscar">Buscar por Público</label>
                 <div class="find">
                     <input type="search" [(ngModel)]="publicoBuscar">
-                    <input type="submit" value="Buscar" (click)="getPessoasPorPublico(publicoBuscar)">
+                    <input class="buscar" type="submit" value="Buscar" (click)="getPessoasPorPublico(publicoBuscar)">
                 </div>
             </div>
         </section>
