@@ -38,7 +38,12 @@ export class ProjetoComponent {
     const formData = new FormData();
 
     formData.append('nome', projeto.nome);
-    formData.append('descricao', projeto.descricao!);
+    
+    if (projeto.descricao == null) {
+      formData.append('descricao', '');
+    } else {
+      formData.append('descricao', projeto.descricao!);
+    }
 
     this.projetoService.adicionar(formData).subscribe();
     this.recaregarTabela();

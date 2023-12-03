@@ -74,7 +74,13 @@ export class AcessoComponent {
     const formData = new FormData();
 
     formData.append('diaHoraEntrada', acesso.diaHoraEntrada as any);
-    formData.append('finalidade', acesso.finalidade!);
+    
+    if (acesso.finalidade == null) {
+      formData.append('finalidade', '');
+    } else {
+      formData.append('finalidade', acesso.finalidade!);
+    }
+
     formData.append('pessoaId', acesso.pessoaId as any);
 
     await this.acessoService.adicionar(formData).subscribe();

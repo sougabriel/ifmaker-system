@@ -60,7 +60,13 @@ export class PessoaComponent {
 
     formData.append('nome', pessoa.nome);
     formData.append('email', pessoa.email);
-    formData.append('telefone', pessoa.telefone as any);
+    
+    if (pessoa.telefone == null) {
+      formData.append('telefone', '');
+    } else {
+      formData.append('telefone', pessoa.telefone as any);
+    }
+
     formData.append('publico', pessoa.publico);
 
     await this.pessoaService.adicionar(formData).subscribe();

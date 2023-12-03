@@ -56,7 +56,11 @@ export class MaterialComponent {
     const formData = new FormData();
 
     formData.append('nome', material.nome);
-    formData.append('descricao', material.descricao!);
+    if (material.descricao == null) {
+      formData.append('descricao', '');
+    } else {
+      formData.append('descricao', material.descricao!);
+    }
     formData.append('tipo', material.tipo);
     formData.append('quantidade', material.quantidade as any);
 

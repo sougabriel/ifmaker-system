@@ -75,7 +75,13 @@ export class EmprestimoComponent {
 
     formData.append('dataInicial', emprestimo.dataInicial as any);
     formData.append('dataFinal', emprestimo.dataFinal  as any);
-    formData.append('finalidade', emprestimo.finalidade!);
+    
+    if (emprestimo.finalidade == null) {
+      formData.append('finalidade', '');
+    } else {
+      formData.append('finalidade', emprestimo.finalidade!);
+    }
+
     formData.append('pessoaId', emprestimo.pessoaId  as any);
     formData.append('materialId', emprestimo.materialId  as any);
 
