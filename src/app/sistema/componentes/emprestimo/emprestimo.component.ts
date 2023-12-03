@@ -23,6 +23,9 @@ export class EmprestimoComponent {
   emprestimoInForm!: FormGroup;
   colunasE: boolean = false;
 
+  buscarDataInicial!: Date;
+  buscarDataFinal!: Date;
+
   constructor(private emprestimoService: EmprestimoService, private atualizar: AtualizarService, private pessoaService: PessoaService, private materialService: MaterialService) {
     this.getEmprestimos();
     this.getPessoas();
@@ -82,6 +85,14 @@ export class EmprestimoComponent {
 
   async getEmprestimos() {
     await this.emprestimoService.consultarTodos().subscribe((emprestimos) => (this.emprestimos = emprestimos));
+  }
+
+  async getEmprestimosPorDataInicial(dataInicial: Date) {
+    await this.emprestimoService.consultarPorDataInicial(dataInicial).subscribe((emprestimos) => (this.emprestimos = emprestimos));
+  }
+
+  async getEmprestimosPorDataFinal(dataFinal: Date) {
+    await this.emprestimoService.consultarPorDataFinal(dataFinal).subscribe((emprestimos) => (this.emprestimos = emprestimos));
   }
 
   recaregarTabela(): void {

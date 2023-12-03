@@ -36,8 +36,20 @@
 
         <section id="select">
             <h2>Buscar Emprestimos</h2>
-                <input type="text">
-                <input class="buscar" type="submit" value="Buscar">
+            <div class="inp">
+                <label for="buscar">Buscar por Data Inicial</label>
+                <div  class="find">
+                    <input type="date" [(ngModel)]="buscarDataInicial">
+                    <input class="buscar" type="submit" value="Buscar" (click)="getEmprestimosPorDataInicial(buscarDataInicial)">
+                </div>
+            </div>
+            <div class="inp">
+                <label for="buscar">Buscar por Data Final</label>
+                <div  class="find">
+                    <input type="date" [(ngModel)]="buscarDataFinal">
+                    <input class="buscar" type="submit" value="Buscar" (click)="getEmprestimosPorDataFinal(buscarDataFinal)">
+                </div>
+            </div>
         </section>
     </div>
 

@@ -93,6 +93,7 @@ export class AcessoComponent {
 
   async getAcessoPorData(data: Date) {
     await this.acessoService.consultarPorData(data).subscribe((acessos) => (this.acessos = acessos));
+    console.log(this.dataBuscar)
   }
 
   async getAcessoPorPessoa(pessoaId: number) {
