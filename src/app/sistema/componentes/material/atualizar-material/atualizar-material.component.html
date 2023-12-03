@@ -7,11 +7,10 @@
         </div>
         <div id="campos">
             <input formControlName="id" type="hidden" value="{{ atualizar.material.id }}">
-            <input formControlName="dataInicial" type="text" value="" placeholder="{{ atualizar.material.nome }}">
-            <input formControlName="dataFinal" type="text" value="" placeholder="{{ atualizar.material.tipo }}">
-            <input formControlName="finalidade" type="number" value=""
-                placeholder="{{ atualizar.material.quantidade }}">
-            <input formControlName="materialId" type="text" value="" placeholder="{{ atualizar.material.descricao }}">
+            <input formControlName="nome" type="text" value="" placeholder="{{ atualizar.material.nome }}">
+            <input formControlName="descricao" type="text" value="" placeholder="{{ atualizar.material.descricao }}">
+            <input formControlName="tipo" type="text" value="" placeholder="{{ atualizar.material.tipo }}">
+            <input formControlName="quantidade" type="number" value="1" min="1" placeholder="{{ atualizar.material.quantidade }}">
         </div>
         <div id="sub">
             <input type="submit" value="Salvar">

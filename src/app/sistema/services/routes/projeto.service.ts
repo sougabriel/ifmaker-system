@@ -20,6 +20,10 @@ export class ProjetoService {
   consultarTodos(): Observable<Projeto[]> {
     return this.http.get<Projeto[]>(this.apiUrl);
   }
+
+  consultarPorNome(nome: string): Observable<Projeto[]> {
+    return this.http.get<Projeto[]>(`${this.apiUrl}/n/${nome}`);
+  }
   
   consultarPorId(id: number): Observable<Projeto[]> {
     return this.http.get<Projeto[]>(this.apiUrl + "/" + id);

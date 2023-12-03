@@ -15,6 +15,9 @@ export class MaterialComponent {
   materiais: Material[] = [];
   colunasE: boolean = false;
 
+  nomeBuscar: string = '';
+  tipoBuscar: string = '';
+
   constructor (private materialService: MaterialService, private atualizar: AtualizarService) {
     this.getMateriais();    
   }
@@ -71,6 +74,14 @@ export class MaterialComponent {
 
   getMateriais(): void {
     this.materialService.consultarTodos().subscribe((materiais) => (this.materiais = materiais));
+  }
+
+  getMaterialPorNome(nome: string): void {
+    this.materialService.consultarPorNome(nome).subscribe((materiais) => (this.materiais = materiais));
+  }
+
+  getMaterialPorTipo(tipo: string): void {
+    this.materialService.consultarPorTipo(tipo).subscribe((materiais) => (this.materiais = materiais));
   }
 
   recaregarTabela(): void {

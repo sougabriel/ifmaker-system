@@ -19,9 +19,14 @@
         </section>
 
         <section id="select">
-            <h2>Buscar Pessoas</h2>
-                <input type="text">
-                <input class="buscar" type="submit" value="Buscar">
+            <h2>Buscar Projeto</h2>
+            <div class="inp">
+                <label for="buscar">Buscar por Nome</label>
+                <div  class="find">
+                    <input type="search" [(ngModel)]="nomeBuscar">
+                    <input class="buscar" type="submit" value="Buscar" (click)="getProjetoPorNome(nomeBuscar)">
+                </div>
+            </div>
         </section>
     </div>
 

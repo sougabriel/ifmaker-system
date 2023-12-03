@@ -22,9 +22,9 @@ export class AtualizarMaterialComponent {
     this.materialForm = new FormGroup({
       id: new FormControl(),
       nome: new FormControl(),
+      descricao: new FormControl(),
       tipo: new FormControl(),
       quantidade: new FormControl(),
-      descricao: new FormControl(),
     });
   }
 
@@ -36,16 +36,16 @@ export class AtualizarMaterialComponent {
     return this.materialForm.get('nome')!;
   }
 
+  get descricao() {
+    return this.materialForm.get('descricao')!;
+  }
+
   get tipo() {
     return this.materialForm.get('tipo')!;
   }
 
   get quantidade() {
     return this.materialForm.get('quantidade')!;
-  }
-
-  get descricao() {
-    return this.materialForm.get('descricao')!;
   }
 
   submit() {
@@ -59,12 +59,17 @@ export class AtualizarMaterialComponent {
     const formData = new FormData();
 
     
-    if (material.nome == '') {
+    if (material.nome == null) {
       formData.append('nome', this.atualizar.material.nome);
     } else {
       formData.append('nome', material.nome);
     }
-    if (material.tipo == '') {
+    if (material.descricao == null) {
+      formData.append('descricao', this.atualizar.material.descricao!);
+    } else {
+      formData.append('descricao', material.descricao!);
+    }
+    if (material.tipo == null) {
       formData.append('tipo', this.atualizar.material.tipo);
     } else {
       formData.append('tipo', material.tipo);
@@ -73,11 +78,6 @@ export class AtualizarMaterialComponent {
       formData.append('quantidade', this.atualizar.material.quantidade as any);
     } else {
       formData.append('quantidade', material.quantidade as any);
-    }
-    if (material.descricao == null) {
-      formData.append('finalidade', this.atualizar.material.descricao!);
-    } else {
-      formData.append('finalidade', material.descricao!);
     }
 
     await this.materialService.atualizar(this.atualizar.material.id!, formData).subscribe();

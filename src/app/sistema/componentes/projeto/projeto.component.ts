@@ -15,6 +15,8 @@ export class ProjetoComponent {
   projetos: Projeto[] = [];
   colunasE: boolean = false;
 
+  nomeBuscar: string = '';
+
   constructor(private projetoService: ProjetoService, private atualizar: AtualizarService) {
     this.getProjetos();
   }
@@ -55,6 +57,10 @@ export class ProjetoComponent {
 
   getProjetos(): void {
     this.projetoService.consultarTodos().subscribe((projetos) => (this.projetos = projetos));
+  }
+
+  getProjetoPorNome(nome: string): void {
+    this.projetoService.consultarPorNome(nome).subscribe((projetos) => (this.projetos = projetos));
   }
 
   editarProjeto(projeto: Projeto) {

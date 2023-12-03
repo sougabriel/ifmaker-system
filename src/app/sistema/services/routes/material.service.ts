@@ -26,11 +26,11 @@ export class MaterialService {
   }
 
   consultarPorNome(nome: string): Observable<Material[]> {
-    return this.http.get<Material[]>(this.apiUrl + "/" + nome);
+    return this.http.get<Material[]>(`${this.apiUrl}/n/${nome}`);
   }
 
   consultarPorTipo(tipo: string): Observable<Material[]> {
-    return this.http.get<Material[]>(this.apiUrl + "/" + tipo);
+    return this.http.get<Material[]>(`${this.apiUrl}/t/${tipo}`);
   }
 
   atualizar(id: number, formData: FormData): Observable<FormData> {

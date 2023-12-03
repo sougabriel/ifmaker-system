@@ -36,6 +36,13 @@
                 </div>
             </div>
             <div class="inp">
+                <label for="buscar">Buscar por Email</label>
+                <div  class="find">
+                    <input type="search" [(ngModel)]="emailBuscar">
+                    <input class="buscar" type="submit" value="Buscar" (click)="getPessoasPorEmail(emailBuscar)">
+                </div>
+            </div>
+            <div class="inp">
                 <label for="buscar">Buscar por Público</label>
                 <div class="find">
                     <input type="search" [(ngModel)]="publicoBuscar">

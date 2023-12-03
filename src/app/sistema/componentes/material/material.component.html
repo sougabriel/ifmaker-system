@@ -28,8 +28,20 @@
 
         <section id="select">
             <h2>Buscar Materiais</h2>
-                <input type="text">
-                <input class="buscar" type="submit" value="Buscar">
+            <div class="inp">
+                <label for="buscar">Buscar por Nome</label>
+                <div  class="find">
+                    <input type="search" [(ngModel)]="nomeBuscar">
+                    <input class="buscar" type="submit" value="Buscar" (click)="getMaterialPorNome(nomeBuscar)">
+                </div>
+            </div>
+            <div class="inp">
+                <label for="buscar">Buscar por Tipo</label>
+                <div class="find">
+                    <input type="search" [(ngModel)]="tipoBuscar">
+                    <input class="buscar" type="submit" value="Buscar" (click)="getMaterialPorTipo(tipoBuscar)">
+                </div>
+            </div>
         </section>
     </div>
 

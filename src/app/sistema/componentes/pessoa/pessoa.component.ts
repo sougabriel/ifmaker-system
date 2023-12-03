@@ -16,6 +16,7 @@ export class PessoaComponent {
   colunasE: boolean = false;
 
   nomeBuscar: string = '';
+  emailBuscar: string = '';
   publicoBuscar: string = '';
 
   constructor (private pessoaService: PessoaService, private atualizar: AtualizarService) {
@@ -83,6 +84,10 @@ export class PessoaComponent {
 
   getPessoasPorNome(nome: string): void {
     this.pessoaService.consultarPorNome(nome).subscribe((pessoas) => (this.pessoas = pessoas));
+  }
+
+  getPessoasPorEmail(email: string): void {
+    this.pessoaService.consultarPorEmail(email).subscribe((pessoas) => (this.pessoas = pessoas));
   }
 
   getPessoasPorPublico(publico: string): void {
