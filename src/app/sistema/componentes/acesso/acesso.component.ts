@@ -37,6 +37,19 @@ export class AcessoComponent {
     });
   }
 
+  get id() {
+    return this.acessoInForm.get('id');
+  }
+  get diaHoraEntrada() {
+    return this.acessoInForm.get('diaHoraEntrada');
+  }
+  get finalidade() {
+    return this.acessoInForm.get('finalidade');
+  }
+  get pessoaId() {
+    return this.acessoInForm.get('pessoaId');
+  }
+
   submit() {
     if (this.acessoInForm.invalid) {
       return;
@@ -45,6 +58,8 @@ export class AcessoComponent {
     this.acessoInForm.reset();
   }
 
+
+  // Alterar Acesso
   editarAcesso(acesso: Acesso) {
     this.atualizar.alterarAcesso(acesso);
   }
@@ -53,10 +68,8 @@ export class AcessoComponent {
     this.getAcessos();
   }
 
-  async getAcessos() {
-    await this.acessoService.consultarTodos().subscribe((acessos) => (this.acessos = acessos));
-  }
 
+  // Adicionar Acesso
   async adicionarAcesso(acesso: Acesso) {
     const formData = new FormData();
 
@@ -69,10 +82,24 @@ export class AcessoComponent {
     this.mensagem.adicionar("Acesso adicionado com suscesso!");
   }
 
+  // Consultas de Acessos
+  async getAcessos() {
+    await this.acessoService.consultarTodos().subscribe((acessos) => (this.acessos = acessos));
+  }
+
+  async getAcessosOrdPorData() {
+    await this.acessoService.consultarTodosOrdPorData().subscribe((acessos) => (this.acessos = acessos));
+  }
+
   async getAcessoPorData(data: Date) {
     await this.acessoService.consultarPorData(data).subscribe((acessos) => (this.acessos = acessos));
   }
 
+  async getAcessoPorPessoa(pessoaId: number) {
+    await this.acessoService.consultarPorPessoa(pessoaId).subscribe((acessos) => (this.acessos = acessos));
+  }
+
+  // Consulta de Pessoas
   async getPessoasOrdNome() {
     await this.pessoaService.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
   }
