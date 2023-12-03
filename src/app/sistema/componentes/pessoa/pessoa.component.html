@@ -57,18 +57,18 @@
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Público</th>
-                <th>ID</th>
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
+                <th *ngIf="colunasE">ID</th>
             </tr>
             <tbody *ngFor="let pessoa of pessoas.reverse()">
                 <td>{{ pessoa.nome }}</td>
                 <td>{{ pessoa.email }}</td>
                 <td>{{ pessoa.telefone }}</td>
                 <td>{{ pessoa.publico }}</td>
-                <td>{{ pessoa.id }}</td>
                 <td *ngIf="colunasE">{{ pessoa.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ pessoa.updatedAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ pessoa.id }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarPessoa(pessoa)">Editar</button>
                 </div>

@@ -14,7 +14,7 @@ export class DashboardComponent {
   menu: boolean = true;
 
   constructor(private router: Router, private localStorage: LocalStorageService, private mensagem: MensagensService) {
-    this.list = ["acesso", "emprestimo", "material", "pessoa", "pessoa-projeto", "projeto", "registro", "usuario"];
+    this.list = ["acesso", "emprestimo", "material", "pessoa", "projeto", "usuario"];
   }
 
   ngOnInit() {

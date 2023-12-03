@@ -46,6 +46,7 @@
                 <th>ID Pessoa</th>
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
+                <th *ngIf="colunasE">ID</th>
             </tr>
             <tbody *ngFor="let usuario of usuarios.reverse()">
                 <td>{{ usuario.nomeUsuario }}</td>
@@ -53,6 +54,7 @@
                 <td>{{ usuario.pessoaId }}</td>
                 <td *ngIf="colunasE">{{ usuario.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ usuario.updatedAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ usuario.id }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarUsuario(usuario)">Editar</button>
                 </div>

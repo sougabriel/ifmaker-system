@@ -9,17 +9,13 @@ import { MaterialComponent } from './componentes/material/material.component';
 import { EmprestimoComponent } from './componentes/emprestimo/emprestimo.component';
 import { PessoaComponent } from './componentes/pessoa/pessoa.component';
 import { AcessoComponent } from './componentes/acesso/acesso.component';
-import { RegistroComponent } from './componentes/registro/registro.component';
 import { ProjetoComponent } from './componentes/projeto/projeto.component';
-import { PessoaProjetoComponent } from './componentes/pessoa-projeto/pessoa-projeto.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AtualizarPessoaComponent } from './componentes/pessoa/atualizar-pessoa/atualizar-pessoa.component';
 import { AtualizarAcessoComponent } from './componentes/acesso/atualizar-acesso/atualizar-acesso.component';
 import { AtualizarEmprestimoComponent } from './componentes/emprestimo/atualizar-emprestimo/atualizar-emprestimo.component';
 import { AtualizarMaterialComponent } from './componentes/material/atualizar-material/atualizar-material.component';
-import { AtualizarPessoaProjetoProjetoComponent } from './componentes/pessoa-projeto/atualizar-pessoa-projeto/atualizar-pessoa-projeto.component';
 import { AtualizarProjetoComponent } from './componentes/projeto/atualizar-projeto/atualizar-projeto.component';
-import { AtualizarRegistroComponent } from './componentes/registro/atualizar-registro/atualizar-registro.component';
 import { AtualizarUsuarioComponent } from './componentes/usuario/atualizar-usuario/atualizar-usuario.component';
 
 
@@ -31,16 +27,12 @@ import { AtualizarUsuarioComponent } from './componentes/usuario/atualizar-usuar
     EmprestimoComponent,
     PessoaComponent,
     AcessoComponent,
-    RegistroComponent,
     ProjetoComponent,
-    PessoaProjetoComponent,
     AtualizarPessoaComponent,
     AtualizarAcessoComponent,
     AtualizarEmprestimoComponent,
     AtualizarMaterialComponent,
-    AtualizarPessoaProjetoProjetoComponent,
     AtualizarProjetoComponent,
-    AtualizarRegistroComponent,
     AtualizarUsuarioComponent
   ],
   imports: [
@@ -57,9 +49,7 @@ import { AtualizarUsuarioComponent } from './componentes/usuario/atualizar-usuar
     MaterialComponent,
     EmprestimoComponent,
     ProjetoComponent,
-    PessoaProjetoComponent,
     AcessoComponent,
-    RegistroComponent
   ],
   providers: [
     

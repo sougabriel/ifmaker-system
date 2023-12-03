@@ -6,19 +6,19 @@
             <form (submit)="submit()" [formGroup]="materialInForm" #formDir="ngForm">
                 <div class="inp">
                     <label for="nome">Nome do Material</label>
-                    <input formControlName="nome" type="text">
+                    <input formControlName="nome" type="text" placeholder="Nome do material">
                 </div>
                 <div class="inp">
                     <label for="descricao">Descrição</label>
-                    <input formControlName="descricao" type="text">
+                    <input formControlName="descricao" type="text" placeholder="Descreva o material ou status">
                 </div>
                 <div class="inp">
                     <label for="tipo">Tipo de Material</label>
-                    <input formControlName="tipo" type="text">
+                    <input formControlName="tipo" type="text" placeholder="Ex: notebook, esp-32, filamento...">
                 </div>
                 <div class="inp">
                     <label for="quantidade">Quantidade</label>
-                    <input formControlName="quantidade" type="number" min="1">
+                    <input formControlName="quantidade" type="number" min="1" max="10000">
                 </div>
                 <div class="inp">
                     <input type="submit" value="Adicionar">
@@ -47,6 +47,7 @@
                 <th>Quantidade</th>
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
+                <th *ngIf="colunasE">ID</th>
             </tr>
             <tbody *ngFor="let material of materiais.reverse()">
                 <td>{{ material.nome }}</td>
@@ -55,6 +56,7 @@
                 <td>{{ material.quantidade }}</td>
                 <td *ngIf="colunasE">{{ material.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ material.updatedAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ material.id }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarMaterial(material)">Editar</button>
                 </div>

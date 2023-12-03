@@ -24,7 +24,7 @@
                 </div>
                 <div class="inp">
                     <label for="materialId">Material</label>
-                    <select formControlName="materialId" name="material" id="material">
+                    <select formControlName="materialId" name="material" id="material" placeholder="Selecione..">
                         <option *ngFor="let material of materiais" value="{{ material.id }}">{{ material.nome }}</option>
                     </select>
                 </div>

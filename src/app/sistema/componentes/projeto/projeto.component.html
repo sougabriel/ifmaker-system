@@ -37,12 +37,14 @@
                 <th>Descrição</th>
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
+                <th *ngIf="colunasE">ID</th>
             </tr>
             <tbody *ngFor="let projeto of projetos.reverse()">
                 <td>{{ projeto.nome }}</td>
                 <td>{{ projeto.descricao }}</td>
                 <td *ngIf="colunasE">{{ projeto.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ projeto.updatedAt | date:'medium' }}</td>
+                <td *ngIf="colunasE">{{ projeto.id }}</td>
                 <div>
                     <button id="bt-editar" (click)="editarProjeto(projeto)">Editar</button>
                 </div>
