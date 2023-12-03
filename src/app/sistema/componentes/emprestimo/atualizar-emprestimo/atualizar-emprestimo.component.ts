@@ -22,7 +22,8 @@ export class AtualizarEmprestimoComponent {
       dataInicial: new FormControl(),
       dataFinal: new FormControl(),
       finalidade: new FormControl(),
-      materialId: new FormControl(),
+      quantidade: new FormControl(),
+      materialId: new FormControl({value: null, disabled: true}),
       pessoaId: new FormControl({value: null, disabled: true}),
     });
   }
@@ -37,6 +38,10 @@ export class AtualizarEmprestimoComponent {
 
   get finalidade() {
     return this.emprestimoForm.get('finalidade')!;
+  }
+
+  get quantidade() {
+    return this.emprestimoForm.get('quantidade')!;
   }
 
   get materialId() {
@@ -71,6 +76,11 @@ export class AtualizarEmprestimoComponent {
       formData.append('finalidade', this.atualizar.emprestimo.finalidade!);
     } else {
       formData.append('finalidade', emprestimo.finalidade!);
+    }
+    if (emprestimo.quantidade == null) {
+      formData.append('quantidade', 1 as any);
+    } else {
+      formData.append('quantidade', emprestimo.quantidade as any);
     }
     if (emprestimo.materialId == null) {
       formData.append('materialId', this.atualizar.emprestimo.materialId as any);

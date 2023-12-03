@@ -27,7 +27,6 @@ export class MaterialComponent {
       nome: new FormControl(null, Validators.required),
       descricao: new FormControl(),
       tipo: new FormControl(null, Validators.required),
-      quantidade: new FormControl(null, Validators.required),
     });
   }
 
@@ -41,10 +40,6 @@ export class MaterialComponent {
 
   get tipo() {
     return this.materialInForm.get('tipo')!;
-  }
-
-  get quantidade() {
-    return this.materialInForm.get('quantidade')!;
   }
 
   submit(): void {
@@ -65,7 +60,6 @@ export class MaterialComponent {
       formData.append('descricao', material.descricao!);
     }
     formData.append('tipo', material.tipo);
-    formData.append('quantidade', material.quantidade as any);
 
     await this.materialService.adicionar(formData).subscribe();
     this.recaregarTabela();

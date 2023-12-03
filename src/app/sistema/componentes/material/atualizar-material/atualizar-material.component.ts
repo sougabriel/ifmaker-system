@@ -44,10 +44,6 @@ export class AtualizarMaterialComponent {
     return this.materialForm.get('tipo')!;
   }
 
-  get quantidade() {
-    return this.materialForm.get('quantidade')!;
-  }
-
   submit() {
     if (this.materialForm.invalid) {
       return;
@@ -73,11 +69,6 @@ export class AtualizarMaterialComponent {
       formData.append('tipo', this.atualizar.material.tipo);
     } else {
       formData.append('tipo', material.tipo);
-    }
-    if (material.quantidade == null) {
-      formData.append('quantidade', this.atualizar.material.quantidade as any);
-    } else {
-      formData.append('quantidade', material.quantidade as any);
     }
 
     await this.materialService.atualizar(this.atualizar.material.id!, formData).subscribe();

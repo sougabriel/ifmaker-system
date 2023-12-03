@@ -37,6 +37,7 @@ export class EmprestimoComponent {
       dataInicial: new FormControl(null, Validators.required),
       dataFinal: new FormControl(null, Validators.required),
       finalidade: new FormControl(),
+      quantidade: new FormControl(null, Validators.required),
       pessoaId: new FormControl(null, Validators.required),
       materialId: new FormControl(null, Validators.required),
     })
@@ -52,6 +53,10 @@ export class EmprestimoComponent {
 
   get finalidade() {
     return this.emprestimoInForm.get('finalidade')!;
+  }
+
+  get quantidade() {
+    return this.emprestimoInForm.get('quantidade')!;
   }
 
   get pessoaId() {
@@ -81,7 +86,11 @@ export class EmprestimoComponent {
     } else {
       formData.append('finalidade', emprestimo.finalidade!);
     }
-
+    if (emprestimo.quantidade == null) {
+      formData.append('quantidade', 1 as any);
+    } else {
+      formData.append('quantidade', emprestimo.quantidade as any);
+    }
     formData.append('pessoaId', emprestimo.pessoaId  as any);
     formData.append('materialId', emprestimo.materialId  as any);
 

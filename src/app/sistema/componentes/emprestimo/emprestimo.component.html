@@ -17,6 +17,10 @@
                     <input formControlName="finalidade" type="text" placeholder="Qual o uso para o material">
                 </div>
                 <div class="inp">
+                    <label for="quantidade">Quantidade</label>
+                    <input formControlName="quantidade" type="number" min="1" max="10000">
+                </div>
+                <div class="inp">
                     <label for="pessoaId">Pessoa</label>
                     <select formControlName="pessoaId" name="pessoas" id="pessoas">
                         <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
@@ -64,8 +68,9 @@
                 <th>Data Inicial</th>
                 <th>Data Final</th>
                 <th>Finalidade</th>
-                <th>ID do Material</th>
+                <th>Quantidade</th>
                 <th>ID da Pessoa</th>
+                <th>ID do Material</th>
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
@@ -73,8 +78,9 @@
                 <td>{{ emprestimo.dataInicial | date:'mediumDate' }}</td>
                 <td>{{ emprestimo.dataFinal | date:'mediumDate' }}</td>
                 <td>{{ emprestimo.finalidade }}</td>
-                <td>{{ emprestimo.materialId }}</td>
+                <td>{{ emprestimo.quantidade }}</td>
                 <td>{{ emprestimo.pessoaId }}</td>
+                <td>{{ emprestimo.materialId }}</td>
                 <td *ngIf="colunasE">{{ emprestimo.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ emprestimo.updatedAt | date:'medium' }}</td>
                 <div>

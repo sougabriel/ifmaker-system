@@ -17,10 +17,6 @@
                     <input formControlName="tipo" type="text" placeholder="Ex: notebook, esp-32, filamento...">
                 </div>
                 <div class="inp">
-                    <label for="quantidade">Quantidade</label>
-                    <input formControlName="quantidade" type="number" min="1" max="10000">
-                </div>
-                <div class="inp">
                     <input type="submit" value="Adicionar">
                 </div>
             </form>
@@ -56,7 +52,6 @@
                 <th>Nome</th>
                 <th>Descrição</th>
                 <th>Tipo</th>
-                <th>Quantidade</th>
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
                 <th *ngIf="colunasE">ID</th>
@@ -65,7 +60,6 @@
                 <td>{{ material.nome }}</td>
                 <td>{{ material.descricao }}</td>
                 <td>{{ material.tipo }}</td>
-                <td>{{ material.quantidade }}</td>
                 <td *ngIf="colunasE">{{ material.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ material.updatedAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ material.id }}</td>
