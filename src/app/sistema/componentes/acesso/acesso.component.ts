@@ -22,6 +22,11 @@ export class AcessoComponent {
   colunasE: boolean = false;
 
   dataBuscar!: Date;
+  pessoaIdBuscar!: number;
+
+  setPessoa(pessoaId: number) {
+    this.pessoaIdBuscar = pessoaId;
+  } 
 
   constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService, private pessoaService: PessoaService) {
     this.getAcessos();

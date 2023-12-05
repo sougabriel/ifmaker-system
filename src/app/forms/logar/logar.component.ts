@@ -20,19 +20,26 @@ export class LogarComponent {
     private app: AppComponent
   ) {}
 
+  usuario!: Usuario;
+
   async createHandler(usuario: Usuario) {
     const formData = new FormData();
 
     formData.append('nomeUsuario', usuario.nomeUsuario);
     formData.append('senha', usuario.senha!);
 
-    await this.usuarioService.entrar(formData).subscribe();
+    await this.usuarioService.entrar(formData).subscribe((usuario) => (this.usuario = usuario));
 
-    this.localStorage.set('usuario', usuario.nomeUsuario);
-    this.mensagem.adicionar(
-      this.localStorage.get('usuario') + ' Logado com sucesso! '
-    );
-    this.app.logar();
-    this.router.navigate(['sistema']);
+    if (this.usuario == null) {
+      this.mensagem.adicionar("Usuário ou senha incorretos!");
+      return;  
+    } else {
+      this.localStorage.set('usuario', usuario.nomeUsuario);
+      this.mensagem.adicionar(this.localStorage.get('usuario') + ' Logado com sucesso! ');
+      this.app.logar();
+      this.router.navigate(['sistema']);
+
+    }
+
   }
 }
