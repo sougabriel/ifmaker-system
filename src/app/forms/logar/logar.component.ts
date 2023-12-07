@@ -28,18 +28,19 @@ export class LogarComponent {
     formData.append('nomeUsuario', usuario.nomeUsuario);
     formData.append('senha', usuario.senha!);
 
-    await this.usuarioService.entrar(formData).subscribe((usuario) => (this.usuario = usuario));
-
-    if (this.usuario == null) {
-      this.mensagem.adicionar("Usuário ou senha incorretos!");
-      return;  
-    } else {
-      this.localStorage.set('usuario', usuario.nomeUsuario);
-      this.mensagem.adicionar(this.localStorage.get('usuario') + ' Logado com sucesso! ');
-      this.app.logar();
-      this.router.navigate(['sistema']);
-
-    }
+    await this.usuarioService.entrar(formData).subscribe((usuario) => (this.usuario = usuario, this.localStorage.set('usuario', usuario), this.testarLogin()));
 
   }
+
+  testarLogin() {
+    if (this.usuario == null) {
+      this.mensagem.adicionar("Usuário ou senha incorretos!");
+      return;
+    } else {
+      this.mensagem.adicionar('Logado com sucesso! ');
+      this.app.logar();
+      this.router.navigate(['sistema']);
+    }
+  }
+
 }
