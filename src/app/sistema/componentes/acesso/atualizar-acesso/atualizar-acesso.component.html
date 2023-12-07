@@ -13,7 +13,7 @@
         </div>
         <div id="sub">
             <input type="submit" value="Salvar">
-            <button (click)="removeAcesso(atualizar.acesso.id!)">Excluir</button>
+            <button *ngIf="verificaNivel()" (click)="removeAcesso(atualizar.acesso.id!)">Excluir</button>
         </div>
     </form>
 </section>

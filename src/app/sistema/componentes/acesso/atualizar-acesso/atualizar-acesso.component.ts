@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { MensagensService } from 'src/app/services/mensagens.service';
 import { Acesso } from 'src/app/sistema/interfaces/acesso';
+import { Usuario } from 'src/app/sistema/interfaces/usuario';
 import { AtualizarService } from 'src/app/sistema/services/atualizar.service';
 import { AcessoService } from 'src/app/sistema/services/routes/acesso.service';
 
@@ -10,12 +13,23 @@ import { AcessoService } from 'src/app/sistema/services/routes/acesso.service';
   styleUrls: ['./atualizar-acesso.component.less'],
 })
 export class AtualizarAcessoComponent {
+  
   acessoForm!: FormGroup;
+  usuarioLogado: Usuario = this.localStorage.get('usuario')[0];
   
   constructor(
     public atualizar: AtualizarService,
-    private acessoService: AcessoService
+    private acessoService: AcessoService,
+    private localStorage: LocalStorageService,
+    private mensagem: MensagensService
   ) {}
+
+  verificaNivel(): boolean {
+    if (this.usuarioLogado.nivel == 1) {
+      return true;
+    } 
+    return false;
+  }
 
   ngOnInit(): void {
     this.acessoForm = new FormGroup({
@@ -65,7 +79,19 @@ export class AtualizarAcessoComponent {
   }
 
   removeAcesso(id: number) {
-    this.acessoService.removerPorId(id).subscribe();
+    if (confirm('Tenha cuidado ao remover e certeza do que está fazendo!')) {
+      this.acessoService.removerPorId(id).subscribe((x) => (this.testarRemoção(x)));
+    } else {
+      return;
+    }
+  }
+
+  testarRemoção(acesso: Acesso) {
+    if (acesso == null) {
+      this.mensagem.adicionar('Não foi possível excluir acesso!');
+    } else {
+      this.mensagem.adicionar('Acesso excluído com sucesso!');
+    }
   }
 
 }

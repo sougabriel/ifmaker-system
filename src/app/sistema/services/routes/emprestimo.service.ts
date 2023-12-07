@@ -37,7 +37,7 @@ export class EmprestimoService {
     return this.http.put<FormData>(`${this.apiUrl}/${pessoaId}/${materialId}`, formData);
   }
 
-  removerPorId(id: number) {
+  removerPorId(id: number): Observable<Emprestimo> {
     return this.http.delete<Emprestimo>(this.apiUrl + '/' + id);
   }
 

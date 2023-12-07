@@ -41,7 +41,7 @@ export class AcessoService {
     return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
   }
 
-  removerPorId(id: number) {
+  removerPorId(id: number): Observable<Acesso> {
     return this.http.delete<Acesso>(this.apiUrl + '/' + id);
   }
 

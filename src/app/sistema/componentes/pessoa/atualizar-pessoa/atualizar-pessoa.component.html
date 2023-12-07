@@ -14,6 +14,7 @@
         </div>
         <div id="sub">
             <input type="submit" value="Salvar">
+            <button *ngIf="verificaNivel()" (click)="removePessoa(atualizar.pessoa.id!)">Excluir</button>
         </div>
     </form>
 </section>

@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { MensagensService } from 'src/app/services/mensagens.service';
 import { Emprestimo } from 'src/app/sistema/interfaces/emprestimo';
+import { Usuario } from 'src/app/sistema/interfaces/usuario';
 import { AtualizarService } from 'src/app/sistema/services/atualizar.service';
 import { EmprestimoService } from 'src/app/sistema/services/routes/emprestimo.service';
 
@@ -10,12 +13,23 @@ import { EmprestimoService } from 'src/app/sistema/services/routes/emprestimo.se
   styleUrls: ['./atualizar-emprestimo.component.less'],
 })
 export class AtualizarEmprestimoComponent {
+  
   emprestimoForm!: FormGroup;
+  usuarioLogado: Usuario = this.localStorage.get('usuario')[0];
 
   constructor(
     public atualizar: AtualizarService,
-    private emprestimoService: EmprestimoService
+    private emprestimoService: EmprestimoService,
+    private localStorage: LocalStorageService,
+    private mensagem: MensagensService
   ) {}
+
+  verificaNivel(): boolean {
+    if (this.usuarioLogado.nivel == 1) {
+      return true;
+    } 
+    return false;
+  }
 
   ngOnInit(): void {
     this.emprestimoForm = new FormGroup({
@@ -100,8 +114,19 @@ export class AtualizarEmprestimoComponent {
   }
 
   async removeEmprestimo(id: number) {
-    await this.emprestimoService.removerPorId(id).subscribe();
+    if (confirm('Tenha cuidado ao remover e certeza do que está fazendo!')) {
+      await this.emprestimoService.removerPorId(id).subscribe((x) => (this.testarRemoção(x)));
+    } else {
+      return;
+    }
   }
 
+  testarRemoção(emprestimo: Emprestimo) {
+    if (emprestimo == null) {
+      this.mensagem.adicionar('Não foi possível excluir emprestimo!');
+    } else {
+      this.mensagem.adicionar('Emprestimo excluído com sucesso!');
+    }
+  }
 
 }

@@ -34,7 +34,7 @@ export class UsuarioService {
     return this.http.put<FormData>(`${this.apiUrl}/${id}`, formData);
   }
 
-  removerPorId(id: number) {
+  removerPorId(id: number): Observable<Usuario> {
     return this.http.delete<Usuario>(this.apiUrl + '/' + id);
   }
 

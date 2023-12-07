@@ -37,7 +37,7 @@ export class MaterialService {
     return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
   }
 
-  removerPorId(id: number) {
+  removerPorId(id: number): Observable<Material> {
     return this.http.delete<Material>(this.apiUrl + '/' + id);
   }
 

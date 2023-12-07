@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
+import { MensagensService } from 'src/app/services/mensagens.service';
 import { Material } from 'src/app/sistema/interfaces/material';
+import { Usuario } from 'src/app/sistema/interfaces/usuario';
 import { AtualizarService } from 'src/app/sistema/services/atualizar.service';
 import { MaterialService } from 'src/app/sistema/services/routes/material.service';
 
@@ -12,11 +15,21 @@ import { MaterialService } from 'src/app/sistema/services/routes/material.servic
 export class AtualizarMaterialComponent {
 
   materialForm!: FormGroup;
+  usuarioLogado: Usuario = this.localStorage.get('usuario')[0];
 
   constructor(
     public atualizar: AtualizarService,
-    private materialService: MaterialService
+    private materialService: MaterialService,
+    private localStorage: LocalStorageService,
+    private mensagem: MensagensService
   ) {}
+
+  verificaNivel(): boolean {
+    if (this.usuarioLogado.nivel == 1) {
+      return true;
+    } 
+    return false;
+  }
 
   ngOnInit(): void {
     this.materialForm = new FormGroup({
@@ -76,7 +89,19 @@ export class AtualizarMaterialComponent {
   }
 
   async removeMaterial(id: number) {
-    await this.materialService.removerPorId(id).subscribe();
+    if (confirm('Tenha cuidado ao remover e certeza do que está fazendo!')) {
+      await this.materialService.removerPorId(id).subscribe((x) => (this.testarRemoção(x)));
+    } else {
+      return;
+    }
+  }
+
+  testarRemoção(material: Material) {
+    if (material == null) {
+      this.mensagem.adicionar('Não foi possível excluir material!');
+    } else {
+      this.mensagem.adicionar('Material excluído com sucesso!');
+    }
   }
 
 }

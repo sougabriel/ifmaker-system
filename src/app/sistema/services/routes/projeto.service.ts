@@ -33,7 +33,7 @@ export class ProjetoService {
     return this.http.put<FormData>(this.apiUrl + '/' + id, formData);
   }
 
-  removerPorId(id: number) {
+  removerPorId(id: number): Observable<Projeto> {
     return this.http.delete<Projeto>(this.apiUrl + '/' + id);
   }
 
