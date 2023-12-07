@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { Usuario } from 'src/app/sistema/interfaces/usuario';
 import { AtualizarService } from 'src/app/sistema/services/atualizar.service';
 import { UsuarioService } from 'src/app/sistema/services/routes/usuario.service';
@@ -12,8 +13,16 @@ import { UsuarioService } from 'src/app/sistema/services/routes/usuario.service'
 export class AtualizarUsuarioComponent {
 
   usuarioForm!: FormGroup;
+  usuarioLogado: Usuario = this.localStorage.get('usuario')[0];
 
-  constructor(public atualizar: AtualizarService, private usuarioService: UsuarioService) { }
+  constructor(public atualizar: AtualizarService, private usuarioService: UsuarioService, private localStorage: LocalStorageService) { }
+  
+  verificaNivel(): boolean {
+    if (this.usuarioLogado.nivel == 1) {
+      return true;
+    } 
+    return false;
+  }
 
   ngOnInit(): void {
     this.usuarioForm = new FormGroup({
