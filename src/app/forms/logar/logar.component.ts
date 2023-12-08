@@ -28,12 +28,12 @@ export class LogarComponent {
     formData.append('nomeUsuario', usuario.nomeUsuario);
     formData.append('senha', usuario.senha!);
 
-    await this.usuarioService.entrar(formData).subscribe((usuario) => (this.usuario = usuario, this.localStorage.set('usuario', usuario), this.testarLogin()));
+    await this.usuarioService.entrar(formData).subscribe();
 
   }
 
   testarLogin() {
-    if (this.usuario == null) {
+    if (this.localStorage.get('usuario').nomeUsuario == '') {
       this.mensagem.adicionar("Usuário ou senha incorretos!");
       return;
     } else {

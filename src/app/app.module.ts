@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -13,6 +13,8 @@ import { MensagensComponent } from './componentes/mensagens/mensagens.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SistemaModule } from './sistema/sistema.module';
 import { LogarComponent } from './forms/logar/logar.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { NgHttpCachingModule } from 'ng-http-caching';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { LogarComponent } from './forms/logar/logar.component';
     ReactiveFormsModule,
     AppRoutingModule,
     FontAwesomeModule, 
-    SistemaModule
+    SistemaModule, 
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: !isDevMode(),registrationStrategy: 'registerWhenStable:30000' }),
+    NgHttpCachingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
