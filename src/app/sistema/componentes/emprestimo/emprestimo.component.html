@@ -74,7 +74,7 @@
                 <th *ngIf="colunasE">Data de Criação</th>
                 <th *ngIf="colunasE">Data de Alteração</th>
             </tr>
-            <tbody *ngFor="let emprestimo of emprestimos.reverse()">
+            <tbody *ngFor="let emprestimo of emprestimos">
                 <td>{{ emprestimo.dataInicial | date:'mediumDate' }}</td>
                 <td>{{ emprestimo.dataFinal | date:'mediumDate' }}</td>
                 <td>{{ emprestimo.finalidade }}</td>

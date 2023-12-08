@@ -94,8 +94,8 @@ export class PessoaComponent {
     this.pessoaService.consultarPorPublico(publico).subscribe((pessoas) => (this.pessoas = pessoas));
   }
 
-  getPessoas(): void {
-    this.pessoaService.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
+  async getPessoas() {
+    await this.pessoaService.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
   }
 
 }

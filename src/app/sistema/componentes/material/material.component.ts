@@ -31,15 +31,15 @@ export class MaterialComponent {
   }
 
   get nome() {
-    return this.materialInForm.get('nome')!;
+    return this.materialInForm.get('nome');
   }
 
   get descricao() {
-    return this.materialInForm.get('descricao')!;
+    return this.materialInForm.get('descricao');
   }
 
   get tipo() {
-    return this.materialInForm.get('tipo')!;
+    return this.materialInForm.get('tipo');
   }
 
   submit(): void {

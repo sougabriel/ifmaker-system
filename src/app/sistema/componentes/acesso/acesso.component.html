@@ -55,7 +55,7 @@
                 <th *ngIf="colunasE">Data de Alteração</th>
                 <th *ngIf="colunasE">ID</th>
             </tr>
-            <tbody *ngFor="let acesso of acessos.reverse()">
+            <tbody *ngFor="let acesso of acessos">
                 <td>{{ acesso.diaHoraEntrada | date:'medium' }}</td>
                 <td>{{ acesso.finalidade }}</td>
                 <td>{{ acesso.pessoaId }}</td>

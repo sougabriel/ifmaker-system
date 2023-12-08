@@ -22,7 +22,7 @@ export class PessoaService {
   }
 
   consultarPorNome(nome: string): Observable<Pessoa[]> {
-    return this.http.get<Pessoa[]>(`${this.apiUrl}/${nome}`);
+    return this.http.get<Pessoa[]>(`${this.apiUrl}/n/${nome}`);
   }
   
   consultarPorEmail(email: string): Observable<Pessoa[]> {
@@ -33,8 +33,8 @@ export class PessoaService {
     return this.http.get<Pessoa[]>(`${this.apiUrl}/p/${publico}`);
   }
   
-  consultarPorId(id: number): Observable<Pessoa[]> {
-    return this.http.get<Pessoa[]>(this.apiUrl + "/" + id);
+  consultarPorId(id: number): Observable<Pessoa> {
+    return this.http.get<Pessoa>(`${this.apiUrl}/${id}`);
   }
 
   atualizar(id: number, formData: FormData): Observable<FormData> {
