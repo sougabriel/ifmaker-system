@@ -20,7 +20,7 @@ export class LogarComponent {
     private app: AppComponent
   ) {}
 
-  usuario!: Usuario;
+  usuario: Usuario[] = [];
 
   async createHandler(usuario: Usuario) {
     const formData = new FormData();
@@ -28,18 +28,23 @@ export class LogarComponent {
     formData.append('nomeUsuario', usuario.nomeUsuario);
     formData.append('senha', usuario.senha!);
 
-    await this.usuarioService.entrar(formData).subscribe();
+    await this.usuarioService.entrar(formData).subscribe(
+      (x) => {
+        this.usuario = x;
+        this.testarLogin();
+      }
+      );
 
   }
 
   testarLogin() {
-    if (this.localStorage.get('usuario').nomeUsuario == '') {
-      this.mensagem.adicionar("Usuário ou senha incorretos!");
-      return;
+    if (this.usuario.length < 1) {
+      this.mensagem.adicionar("Não foi possivel logar!");
     } else {
-      this.mensagem.adicionar('Logado com sucesso! ');
+      this.localStorage.set('usuario', this.usuario);
+      this.mensagem.adicionar("Logado com sucesso!");
       this.app.logar();
-      this.router.navigate(['sistema']);
+      this.router.navigate(['/sistema']);
     }
   }
 

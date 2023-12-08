@@ -26,8 +26,8 @@ export class UsuarioService {
     return this.http.get<Usuario[]>(this.apiUrl + "/" + id);
   }
 
-  entrar(formData: FormData): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.apiUrl}/login`, formData);
+  entrar(formData: FormData): Observable<Usuario[]> {
+    return this.http.post<Usuario[]>(`${this.apiUrl}/login`, formData);
   }
 
   atualizar(id: number, formData: FormData): Observable<FormData> {
