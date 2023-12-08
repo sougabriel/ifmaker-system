@@ -2,6 +2,7 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
@@ -14,6 +15,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SistemaModule } from './sistema/sistema.module';
 import { LogarComponent } from './forms/logar/logar.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AppRoutingModule,
     FontAwesomeModule, 
     SistemaModule, 
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: !isDevMode(),registrationStrategy: 'registerWhenStable:30000' }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: !isDevMode(),registrationStrategy: 'registerWhenStable:30000' }), 
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
