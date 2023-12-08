@@ -39,7 +39,7 @@
         </section>
 
         <section id="select">
-            <h2>Buscar Emprestimos</h2>
+            <h2><img id="icon" src="/assets/icons/buscar.svg" alt="Ícone Buscar">Buscar Emprestimos</h2>
             <div class="inp">
                 <label for="buscar">Buscar por Data Inicial</label>
                 <div  class="find">
@@ -84,7 +84,7 @@
                 <td *ngIf="colunasE">{{ emprestimo.createdAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ emprestimo.updatedAt | date:'medium' }}</td>
                 <div>
-                    <button id="bt-editar" (click)="editarEmprestimo(emprestimo)">Editar</button>
+                    <button id="bt-editar" (click)="editarEmprestimo(emprestimo)"><img id="icon-editar" src="/assets/icons/editar.svg" alt="Ícone Editar">Editar</button>
                 </div>
                 <app-atualizar-emprestimo></app-atualizar-emprestimo>
             </tbody>

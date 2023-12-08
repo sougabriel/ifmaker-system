@@ -50,7 +50,7 @@
                 <td *ngIf="colunasE">{{ usuario.updatedAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ usuario.id }}</td>
                 <div>
-                    <button id="bt-editar" (click)="editarUsuario(usuario)">Editar</button>
+                    <button id="bt-editar" (click)="editarUsuario(usuario)"><img id="icon-editar" src="/assets/icons/editar.svg" alt="Ícone Editar">Editar</button>
                 </div>
                 <app-atualizar-usuario></app-atualizar-usuario>
             </tbody>

@@ -23,7 +23,7 @@
         </section>
 
         <section id="select">
-            <h2>Buscar Materiais</h2>
+            <h2><img id="icon" src="/assets/icons/buscar.svg" alt="Ícone Buscar">Buscar Materiais</h2>
             <div class="inp">
                 <label for="buscar">Buscar por Nome</label>
                 <div  class="find">
@@ -64,7 +64,7 @@
                 <td *ngIf="colunasE">{{ material.updatedAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ material.id }}</td>
                 <div>
-                    <button id="bt-editar" (click)="editarMaterial(material)">Editar</button>
+                    <button id="bt-editar" (click)="editarMaterial(material)"><img id="icon-editar" src="/assets/icons/editar.svg" alt="Ícone Editar">Editar</button>
                 </div>
                 <app-atualizar-material></app-atualizar-material>
             </tbody>

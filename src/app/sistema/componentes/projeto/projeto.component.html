@@ -19,7 +19,7 @@
         </section>
 
         <section id="select">
-            <h2>Buscar Projeto</h2>
+            <h2><img id="icon" src="/assets/icons/buscar.svg" alt="Ícone Buscar">Buscar Projeto</h2>
             <div class="inp">
                 <label for="buscar">Buscar por Nome</label>
                 <div  class="find">
@@ -51,7 +51,7 @@
                 <td *ngIf="colunasE">{{ projeto.updatedAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ projeto.id }}</td>
                 <div>
-                    <button id="bt-editar" (click)="editarProjeto(projeto)">Editar</button>
+                    <button id="bt-editar" (click)="editarProjeto(projeto)"><img id="icon-editar" src="/assets/icons/editar.svg" alt="Ícone Editar">Editar</button>
                 </div>
             </tbody>
             <app-atualizar-projeto></app-atualizar-projeto>

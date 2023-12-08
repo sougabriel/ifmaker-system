@@ -27,7 +27,7 @@
         </section>
 
         <section id="select">
-            <h2>Buscar Pessoas</h2>
+            <h2><img id="icon" src="/assets/icons/buscar.svg" alt="Ícone Buscar">Buscar Pessoas</h2>
             <div class="inp">
                 <label for="buscar">Buscar por Nome</label>
                 <div  class="find">
@@ -77,7 +77,7 @@
                 <td *ngIf="colunasE">{{ pessoa.updatedAt | date:'medium' }}</td>
                 <td *ngIf="colunasE">{{ pessoa.id }}</td>
                 <div>
-                    <button id="bt-editar" (click)="editarPessoa(pessoa)">Editar</button>
+                    <button id="bt-editar" (click)="editarPessoa(pessoa)"><img id="icon-editar" src="/assets/icons/editar.svg" alt="Ícone Editar">Editar</button>
                 </div>
                 <app-atualizar-pessoa></app-atualizar-pessoa>
             </tbody>
