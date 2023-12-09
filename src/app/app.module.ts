@@ -2,7 +2,6 @@ import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './partials/header/header.component';
@@ -26,19 +25,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     InicioComponent,
     EntrarComponent,
     MensagensComponent,
-    LogarComponent
+    LogarComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    FontAwesomeModule, 
-    SistemaModule, 
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: !isDevMode(),registrationStrategy: 'registerWhenStable:30000' }), 
+    FontAwesomeModule,
+    SistemaModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
     BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
