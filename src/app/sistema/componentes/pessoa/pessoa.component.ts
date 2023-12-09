@@ -32,22 +32,6 @@ export class PessoaComponent {
     })
   }
 
-  get nome() {
-    return this.pessoaInForm.get('nome')!;
-  }
-
-  get email() {
-    return this.pessoaInForm.get('email')!;
-  }
-
-  get telefone() {
-    return this.pessoaInForm.get('telefone')!;
-  }
-
-  get publico() {
-    return this.pessoaInForm.get('publico')!;
-  }
-
   submit(): void {
     if (this.pessoaInForm.invalid) {
       return;
@@ -73,6 +57,9 @@ export class PessoaComponent {
     await this.pessoaService.adicionar(formData).subscribe();
     this.recaregarTabela();
   }
+  async getPessoas() {
+    await this.pessoaService.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
+  }
 
   recaregarTabela(): void {
     this.getPessoas();
@@ -94,8 +81,20 @@ export class PessoaComponent {
     this.pessoaService.consultarPorPublico(publico).subscribe((pessoas) => (this.pessoas = pessoas));
   }
 
-  async getPessoas() {
-    await this.pessoaService.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
+  get nome() {
+    return this.pessoaInForm.get('nome')!;
+  }
+
+  get email() {
+    return this.pessoaInForm.get('email')!;
+  }
+
+  get telefone() {
+    return this.pessoaInForm.get('telefone')!;
+  }
+
+  get publico() {
+    return this.pessoaInForm.get('publico')!;
   }
 
 }
