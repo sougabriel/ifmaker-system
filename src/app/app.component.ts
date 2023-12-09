@@ -10,7 +10,11 @@ export class AppComponent {
 
   logado: boolean = false;
 
-  constructor (private localStorage: LocalStorageService) {}
+  constructor (private localStorage: LocalStorageService) {
+    window.onbeforeunload = function(){
+      localStorage.clear();
+   }
+  }
   
   logar(): boolean {
     if (this.localStorage.get('usuario') == null) {
@@ -21,5 +25,5 @@ export class AppComponent {
       return true;
     }
   }
-
+  
 }
