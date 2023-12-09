@@ -2,7 +2,7 @@
   "name": "ifmakers-system",
   "short_name": "ifmakers-system",
   "theme_color": "#237a26",
-  "background_color": "#fafafa",
+  "background_color": "#237a26",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

@@ -11,9 +11,7 @@ export class AppComponent {
   logado: boolean = false;
 
   constructor (private localStorage: LocalStorageService) {
-    window.onbeforeunload = function(){
-      localStorage.clear();
-   }
+    
   }
   
   logar(): boolean {

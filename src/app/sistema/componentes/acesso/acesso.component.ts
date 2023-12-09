@@ -30,7 +30,6 @@ export class AcessoComponent {
 
   constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService, private pessoaService: PessoaService) {
     this.getAcessos();
-    this.getPessoasOrdNome();
   }
 
   ngOnInit(): void {
@@ -109,11 +108,6 @@ export class AcessoComponent {
 
   async getAcessoPorPessoa(pessoaId: number) {
     await this.acessoService.consultarPorPessoa(pessoaId).subscribe((acessos) => (this.acessos = acessos));
-  }
-
-  // Consulta de Pessoas
-  async getPessoasOrdNome() {
-    await this.pessoaService.consultarTodos().subscribe((pessoas) => (this.pessoas = pessoas));
   }
 
 }
