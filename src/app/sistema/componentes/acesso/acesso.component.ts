@@ -30,6 +30,7 @@ export class AcessoComponent {
 
   constructor (private acessoService: AcessoService, private atualizar: AtualizarService, private mensagem: MensagensService, private pessoaService: PessoaService) {
     this.getAcessos();
+    
   }
 
   ngOnInit(): void {
@@ -39,6 +40,7 @@ export class AcessoComponent {
       finalidade: new FormControl(),
       pessoaId: new FormControl(),
     });
+    this.getPessoas();
   }
 
   get id() {
@@ -108,6 +110,10 @@ export class AcessoComponent {
 
   async getAcessoPorPessoa(pessoaId: number) {
     await this.acessoService.consultarPorPessoa(pessoaId).subscribe((acessos) => (this.acessos = acessos));
+  }
+
+  async getPessoas() {
+    await this.pessoaService.consultarTodos().subscribe((x) => (this.pessoas = x));
   }
 
 }
