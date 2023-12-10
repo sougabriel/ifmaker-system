@@ -5,7 +5,7 @@
             <h2>Adicionar Material</h2>
             <form (submit)="submit()" [formGroup]="materialInForm" #formDir="ngForm">
                 <div class="inp">
-                    <label for="nome">Nome do Material</label>
+                    <label for="nome">Nome do Material <span class="required">*</span></label>
                     <input formControlName="nome" type="text" placeholder="Nome do material">
                 </div>
                 <div class="inp">
@@ -13,7 +13,7 @@
                     <input formControlName="descricao" type="text" placeholder="Descreva o material ou status">
                 </div>
                 <div class="inp">
-                    <label for="tipo">Tipo de Material</label>
+                    <label for="tipo">Tipo de Material <span class="required">*</span></label>
                     <input formControlName="tipo" type="text" placeholder="Ex: notebook, esp-32, filamento...">
                 </div>
                 <div class="inp">

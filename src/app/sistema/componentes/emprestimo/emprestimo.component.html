@@ -5,11 +5,11 @@
             <h2>Adicionar Emprestimo</h2>
             <form (submit)="submit()" [formGroup]="emprestimoInForm" #formDir="ngForm">
                 <div class="inp">
-                    <label for="dataInicial">Data Inicial</label>
+                    <label for="dataInicial">Data Inicial <span class="required">*</span></label>
                     <input formControlName="dataInicial" type="date" min="2023-12-01">
                 </div>
                 <div class="inp">
-                    <label for="dataFinal">Data Final</label>
+                    <label for="dataFinal">Data Final <span class="required">*</span></label>
                     <input formControlName="dataFinal" type="date" min="2023-12-01" max="2030-12-30">
                 </div>
                 <div class="inp">
@@ -17,17 +17,17 @@
                     <input formControlName="finalidade" type="text" placeholder="Qual o uso para o material">
                 </div>
                 <div class="inp">
-                    <label for="quantidade">Quantidade</label>
+                    <label for="quantidade">Quantidade <span class="required">*</span></label>
                     <input formControlName="quantidade" type="number" min="1" max="10000">
                 </div>
                 <div class="inp">
-                    <label for="pessoaId">Pessoa</label>
+                    <label for="pessoaId">Pessoa <span class="required">*</span></label>
                     <select formControlName="pessoaId" name="pessoas" id="pessoas">
                         <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
                     </select>
                 </div>
                 <div class="inp">
-                    <label for="materialId">Material</label>
+                    <label for="materialId">Material <span class="required">*</span></label>
                     <select formControlName="materialId" name="material" id="material" placeholder="Selecione..">
                         <option *ngFor="let material of materiais" value="{{ material.id }}">{{ material.nome }}</option>
                     </select>

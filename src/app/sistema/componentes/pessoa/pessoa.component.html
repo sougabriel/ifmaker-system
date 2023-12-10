@@ -4,20 +4,19 @@
             <h2>Adicionar Pessoa</h2>
             <form (submit)="submit()" [formGroup]="pessoaInForm" #formDir="ngForm">
                 <div class="inp">
-                    <label for="nome">Nome</label>
+                    <label for="nome">Nome <span class="required">*</span></label>
                     <input formControlName="nome" type="text" placeholder="Nome Completo da Pessoa">
                 </div>
                 <div class="inp">
-                    <label for="email">Email</label>
+                    <label for="email">Email <span class="required">*</span></label>
                     <input formControlName="email" type="email" placeholder="Email para Contato">
-
                 </div>
                 <div class="inp">
                     <label for="telefone">Telefone</label>
                     <input formControlName="telefone" type="tel" placeholder="Telefone para Contato">
                 </div>
                 <div class="inp">
-                    <label for="publico">Público</label>
+                    <label for="publico">Público <span class="required">*</span></label>
                     <input formControlName="publico" type="text" placeholder="Ex: discente, docente, visitante...">
                 </div>
                 <div class="inp">

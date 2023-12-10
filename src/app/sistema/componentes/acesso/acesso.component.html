@@ -5,7 +5,7 @@
             <h2>Adicionar Acesso</h2>
             <form (submit)="submit()" [formGroup]="acessoInForm" #formDir="ngForm">
                 <div class="inp">
-                    <label for="diaHoraEntrada">Dia e Hora</label>
+                    <label for="diaHoraEntrada">Dia e Hora <span class="required">*</span></label>
                     <input formControlName="diaHoraEntrada" type="datetime-local">
                 </div>
                 <div class="inp">
@@ -13,7 +13,7 @@
                     <input formControlName="finalidade" type="text" placeholder="Qual a Finalidade do Acesso">
                 </div>
                 <div class="inp">
-                    <label for="pessoaId">Pessoa</label>
+                    <label for="pessoaId">Pessoa <span class="required">*</span></label>
                     <select formControlName="pessoaId" name="pessoas" id="pessoas">
                         <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
                     </select>

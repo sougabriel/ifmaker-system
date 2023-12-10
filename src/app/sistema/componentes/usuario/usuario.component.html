@@ -5,19 +5,19 @@
             <h2>Adicionar Usuário</h2>
             <form (submit)="submit()" [formGroup]="usuarioInForm" #formDir="ngForm">
                 <div class="inp">
-                    <label for="nomeUsuario">Nome de Usuário</label>
+                    <label for="nomeUsuario">Nome de Usuário <span class="required">*</span></label>
                     <input formControlName="nomeUsuario" type="text" placeholder="Nome para login no sistema">
                 </div>
                 <div class="inp">
-                    <label for="senha">Senha de Usuário</label>
+                    <label for="senha">Senha de Usuário <span class="required">*</span></label>
                     <input formControlName="senha" type="password" placeholder="Senha para login no sistema">
                 </div>
                 <div class="inp">
-                    <label for="nivel">Nível de Acesso</label>
+                    <label for="nivel">Nível de Acesso <span class="required">*</span></label>
                     <input formControlName="nivel" type="number" min="1">
                 </div>
                 <div class="inp">
-                    <label for="pessoaId">ID da Pessoa</label>
+                    <label for="pessoaId">ID da Pessoa <span class="required">*</span></label>
                     <input formControlName="pessoaId" type="number" min="1">
                 </div>
                 <div class="inp">

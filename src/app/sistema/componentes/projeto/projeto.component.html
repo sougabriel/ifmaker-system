@@ -5,7 +5,7 @@
             <h2>Adicionar Projeto</h2>
             <form (submit)="submit()" [formGroup]="projetoInForm" #formDir="ngForm">
                 <div class="inp">
-                    <label for="nome">Nome do Projeto</label>
+                    <label for="nome">Nome do Projeto <span class="required">*</span></label>
                     <input formControlName="nome" type="text" placeholder="Escreva o Nome do Projeto">
                 </div>
                 <div class="inp">
