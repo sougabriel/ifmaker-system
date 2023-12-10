@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
         <label for="senha">senha</label> <br>
-        <input formControlName="senha" type="password" name="senha" id="senha" autocomplete="current-password" required/>
+        <input formControlName="senha" type="password" name="senha" id="senha" autocomplete="current-password" placeholder="Digite sua Senha" required/>
         <div *ngIf="senha.invalid && formDir.submitted" class="valid-error">
             <p *ngIf="senha.errors?.['required']">
                 Campo senha é obrigatório! 
