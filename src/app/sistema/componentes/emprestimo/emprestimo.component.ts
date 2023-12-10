@@ -25,6 +25,8 @@ export class EmprestimoComponent {
 
   buscarDataInicial!: Date;
   buscarDataFinal!: Date;
+  buscarPessoa!: number;
+  buscarMaterial!: number;
 
   constructor(private emprestimoService: EmprestimoService, private atualizar: AtualizarService, private pessoaService: PessoaService, private materialService: MaterialService) {
     this.getEmprestimos();
@@ -108,6 +110,14 @@ export class EmprestimoComponent {
 
   async getEmprestimosPorDataFinal(dataFinal: Date) {
     await this.emprestimoService.consultarPorDataFinal(dataFinal).subscribe((emprestimos) => (this.emprestimos = emprestimos));
+  }
+  
+  async getEmprestimosPorPessoa(id: number) {
+    await this.emprestimoService.consultarPorPessoa(id).subscribe((emprestimos) => (this.emprestimos = emprestimos));
+  }
+
+  async getEmprestimosPorMaterial(id: number) {
+    await this.emprestimoService.consultarPorMaterial(id).subscribe((emprestimos) => (this.emprestimos = emprestimos));
   }
 
   recaregarTabela(): void {

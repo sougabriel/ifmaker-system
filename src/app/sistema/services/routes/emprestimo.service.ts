@@ -33,6 +33,13 @@ export class EmprestimoService {
     return this.http.get<Emprestimo[]>(`${this.apiUrl}/data/f/${dataFinal}`);
   }
 
+  consultarPorPessoa(id: number): Observable<Emprestimo[]> {
+    return this.http.get<Emprestimo[]>(`${this.apiUrl}/pessoa/${id}`);
+  }
+  consultarPorMaterial(id: number): Observable<Emprestimo[]> {
+    return this.http.get<Emprestimo[]>(`${this.apiUrl}/material/${id}`);
+  }
+
   atualizar(pessoaId: number, materialId: number, formData: FormData): Observable<FormData> {
     return this.http.put<FormData>(`${this.apiUrl}/${pessoaId}/${materialId}`, formData);
   }

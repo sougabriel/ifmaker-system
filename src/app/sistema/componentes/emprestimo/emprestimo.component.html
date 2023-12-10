@@ -54,6 +54,24 @@
                     <input class="buscar" type="submit" value="Buscar" (click)="getEmprestimosPorDataFinal(buscarDataFinal)">
                 </div>
             </div>
+            <div class="inp">
+                <label for="buscar">Buscar por Pessoa</label>
+                <div  class="find">
+                    <select [(ngModel)]="buscarPessoa" placeholder="Selecione..">
+                        <option *ngFor="let pessoa of pessoas" value="{{ pessoa.id }}">{{ pessoa.nome }}</option>
+                    </select>
+                    <input class="buscar" type="submit" value="Buscar" (click)="getEmprestimosPorPessoa(buscarPessoa)">
+                </div>
+            </div>
+            <div class="inp">
+                <label for="buscar">Buscar por Material</label>
+                <div  class="find">
+                    <select [(ngModel)]="buscarMaterial" placeholder="Selecione..">
+                        <option *ngFor="let material of materiais" value="{{ material.id }}">{{ material.nome }}</option>
+                    </select>
+                    <input class="buscar" type="submit" value="Buscar" (click)="getEmprestimosPorMaterial(buscarMaterial)">
+                </div>
+            </div>
         </section>
     </div>
 
