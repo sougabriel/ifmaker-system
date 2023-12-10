@@ -7,14 +7,17 @@
         </div>
         <div id="campos">
             <input formControlName="id" type="hidden" value="{{ atualizar.emprestimo.id }}">
-            <input formControlName="dataInicial" type="date" value=""
-                placeholder="{{ atualizar.emprestimo.dataInicial }}">
+            <label class="alt-label">Data Inicial</label>
+            <input formControlName="dataInicial" type="date" value="" placeholder="{{ atualizar.emprestimo.dataInicial }}">
+            <label class="alt-label">Data Final</label>
             <input formControlName="dataFinal" type="date" value="" placeholder="{{ atualizar.emprestimo.dataFinal }}">
-            <input formControlName="finalidade" type="text" value=""
-                placeholder="{{ atualizar.emprestimo.finalidade }}">
-                <input formControlName="quantidade" type="number" value="1" min="1" placeholder="{{ atualizar.emprestimo.quantidade }}">
-            <input formControlName="materialId" type="number" value=""
-                placeholder="{{ atualizar.emprestimo.materialId }}">
+            <label class="alt-label">Finalidade</label>
+            <input formControlName="finalidade" type="text" value="" placeholder="{{ atualizar.emprestimo.finalidade }}">
+            <label class="alt-label">Quantidade</label>
+            <input formControlName="quantidade" type="number" value="1" min="1" placeholder="{{ atualizar.emprestimo.quantidade }}">
+            <label class="alt-label">ID do Material</label>
+            <input formControlName="materialId" type="number" value="" placeholder="{{ atualizar.emprestimo.materialId }}">
+            <label class="alt-label">ID da Pessoa</label>
             <input formControlName="pessoaId" type="number" value="" placeholder="{{ atualizar.emprestimo.pessoaId }}">
         </div>
         <div id="sub">

@@ -7,9 +7,13 @@
         </div>
         <div id="campos">
             <input formControlName="id" type="hidden" value="{{ atualizar.usuario.id }}">
-            <input formControlName="nomeUsuario" type="text" value="" placeholder="{{ atualizar.usuario.nomeUsuario }}" autocomplete="username">
-            <input formControlName="senha" type="password" value="" placeholder="{{  transform(atualizar.usuario.senha!) }}" autocomplete="current-password">
+            <label class="alt-label">Nome de Usuário</label>
+            <input formControlName="nomeUsuario" type="text" value="" placeholder="{{ atualizar.usuario.nomeUsuario }}">
+            <label class="alt-label">Senha</label>
+            <input formControlName="senha" type="password" value="" placeholder="{{  transform(atualizar.usuario.senha!) }}">
+            <label class="alt-label">Nível de Acesso</label>
             <input formControlName="nivel" type="number" value="" placeholder="{{ atualizar.usuario.nivel }}">
+            <label class="alt-label">ID da Pessoa</label>
             <input formControlName="pessoaId" type="number" value="" placeholder="{{ atualizar.usuario.pessoaId }}">    
         </div>
         <div id="sub">

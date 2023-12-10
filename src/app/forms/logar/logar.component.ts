@@ -44,7 +44,7 @@ export class LogarComponent {
       this.localStorage.set('usuario', this.usuario);
       this.mensagem.adicionar("Logado com sucesso!");
       this.app.logar();
-      this.router.navigate(['/sistema']);
+      this.router.navigate(['/sistema/pessoa']);
     }
   }
 
