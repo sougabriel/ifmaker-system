@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ifmakers-system'`, () => {
+  it(`should have as title 'ifmaker-sistema'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    //expect(app.title).toEqual('ifmakers-system');
+    //expect(app.title).toEqual('ifmaker-sistema');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ifmakers-system app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('ifmaker-sistema app is running!');
   });
 });
