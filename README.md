@@ -1,27 +1,25 @@
-# IfmakersSystem
+# IFMaker - System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+Esse é um projeto desenvolvido para o gerenciamento do Laboratório Maker do Instituto Federal Farroupilha - Campus São Vicente do Sul, com a finalidade e centralizar os processos e melhorar a gestão do ambiente. Esse projeto engloba a aplicação do lado cliente do meu Trabalho de Conclusão de Curso, a aplicação lado servidor (API) está no repositório [ifmaker-api](https://github.com/sougabriel/ifmaker-api).
 
-## Development server
+[IFMaker SVS - Banner](/ifmaker-svs.svg)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Pré-Requisitos
 
-## Code scaffolding
+Para prosseguir verifique se possuí o [Node.js](https://nodejs.org/en) e o [Angular CLI](https://angular.io/cli) instalados em seu ambiente de desenvolvimento.  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Servidor de Desenvolvimento
 
-## Build
+Na raiz do projeto, execute o comando `ng serve` no terminal para iniciar o servidor em modo de desenvolvimento. Digite a URL `http://localhost:4200/` no seu navegador. A aplicação irá automaticamente recarregar quando salvar qualquer alteração nos arquivos do código-fonte. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Estrutura dos Códigos
 
-## Running unit tests
+Execute o comando `ng generate component component-name` para gerar um novo componente. Você pode também usar o comando `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Build para Produção
 
-## Running end-to-end tests
+Execute o comando `ng build` para construir a aplicação em produção que será armazenada no diretório `dist/`. 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Mais Ajuda
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para conseguir mais ajuda no Angular CLI, use o comando `ng help` ou de uma olhada na página de documentação do [Angular CLI](https://angular.io/cli).
