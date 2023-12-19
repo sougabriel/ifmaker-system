@@ -1,4 +1,4 @@
-# IFMaker - System
+# IFMaker - Sistema
 
 Esse é um projeto desenvolvido para o gerenciamento do Laboratório Maker do Instituto Federal Farroupilha - Campus São Vicente do Sul, com a finalidade e centralizar os processos e melhorar a gestão do ambiente. Esse projeto engloba a aplicação do lado cliente do meu Trabalho de Conclusão de Curso, a aplicação lado servidor (API) está no repositório [ifmaker-api](https://github.com/sougabriel/ifmaker-api).
 
