@@ -19,7 +19,6 @@
 @fundo1: #41ac6f;
 @fundo2: #153623;
 
-
 // Tamanhos de larguras de telas em diferentes dispositivos
 @miniphone: 486px;
 @phone: 767px;
@@ -78,26 +77,25 @@
 /* 
  * Estilos dos Elementos
  */
-// Todos os elementos da página
-* {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  transition: 0.2s;
-}
 
-html {
+ // Todos os elementos da página
+html, body {
   scroll-behavior: smooth;
+  min-height: 100dvh;
+  min-width: 100dvw;
+  * {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    transition: 0.2s;
+  }
 }
 
 body {
-  min-height: 100dvh;
-  min-width: 100dvw;
   font-family: sans-serif;
   color: @branca;
   background-image: linear-gradient(to bottom, @fundo1, @fundo2);
   z-index: -1;
-  font-size: 1.2rem;
   overflow-x: hidden;
 }
 
@@ -130,7 +128,7 @@ body {
  */
 @media (max-width: @miniphone) {
   .container {
-    width: 100dvw;
+    width: 98dvw;
   }
 }
 
@@ -187,7 +185,6 @@ table {
     border: none;
     border-radius: 10px;
     transition: 1s;
-    font-size: large;
     margin: 0px 0px;
   }
 
@@ -320,7 +317,6 @@ table {
       align-items: flex-start;
       flex-direction: column;
       flex-wrap: nowrap;
-      font-size: 24px;
     }
   }
 
@@ -375,7 +371,6 @@ table {
     border: none;
     border-bottom: solid 1px black;
     width: 60%;
-    font-size: large;
     outline: none;
   }
   #icon {
@@ -430,20 +425,7 @@ table {
   }
 }
 
-@media (max-width: 1480px) {
-  * {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 1250px) {
-  * {
-    font-size: 0.9rem;
-  }
-}
-
 .alt-label {
-  font-size: small;
   border-bottom: 1px solid black;
 }
 
