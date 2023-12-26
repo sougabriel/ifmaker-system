@@ -12,7 +12,7 @@
     </p>
 
     <div>
-        <img src="/assets/images/ifmaker-banner.png" alt="">
+        <img src="/assets/images/ifmaker-banner.png" alt="Imagens de demonstração do laboratório maker" priority>
     </div>
 
     <h1>Quais são os objetivos dos Laboratórios IF Maker?</h1>
@@ -37,8 +37,13 @@
         <li>Internet das Coisas;</li>
     </ul>
 
-    
+    @defer (on viewport) {
         <div>
-            <img src="/assets/logos/ifmaker-svsv2white.svg" alt="">
+            <img src="/assets/logos/ifmaker-svsv2white.svg" alt="IFMaker Logo Completo">
         </div>
+    } @placeholder {
+        <p>Carregando IFMaker Logo Completo...</p>
+    } @error {
+        <p>Falha ao carregar imagem IFMaker Logo! </p>
+    }
 </article>
