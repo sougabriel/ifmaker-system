@@ -14,6 +14,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SistemaModule } from './sistema/sistema.module';
 import { LogarComponent } from './forms/logar/logar.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,12 @@ import { LogarComponent } from './forms/logar/logar.component';
     FontAwesomeModule,
     SistemaModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
