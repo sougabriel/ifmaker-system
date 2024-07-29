@@ -1,25 +1,32 @@
-# IFMaker - Sistema
+# IFMaker Web System
 
-Esse é um projeto desenvolvido para o gerenciamento do Laboratório Maker do Instituto Federal Farroupilha - Campus São Vicente do Sul, com a finalidade e centralizar os processos e melhorar a gestão do ambiente. Esse projeto engloba a aplicação do lado cliente do meu Trabalho de Conclusão de Curso, a aplicação lado servidor (API) está no repositório [ifmaker-api](https://github.com/sougabriel/ifmaker-api).
+At the Maker Lab of the Farroupilha Federal Institute - São Vicente do Sul Campus, the lack of a material and access control system has been causing difficulties in locating materials and the entry of unidentified persons. This work proposes the development of a web solution for stock management for the maker lab. 
 
-<img alt="IFMaker São Vicente do Sul - Banner" title="IFMaker SVS - Banner" src="/ifmaker-svs.svg" width="100%">
+The solution aims to manage material reservations, replacing the manual methods and online spreadsheets currently used, through the development of two applications. The theoretical framework addresses concepts of web applications such as Single-Page Applications (SPAs) and Application Programming Interface (API), in addition, similar stock control projects are discussed to support the development of the proposed applications.
 
-## Pré-Requisitos
+<img alt="IFMaker SVS Banner" src="https://raw.githubusercontent.com/sougabriel/ifmaker-system/main/ifmaker-svs.svg" width="80%" />
 
-Para prosseguir verifique se possuí o [Node.js](https://nodejs.org/en) e o [Angular CLI](https://angular.io/cli) instalados em seu ambiente de desenvolvimento.  
+## Summary
 
-## Servidor de Desenvolvimento
+1. [Prerequisites](#Prerequisites): What you need to get started.
+2. [Development Server](#Development-Server): Run the project in your localhost.
+3. [Build](#Build): Build for production.
+4. [Further Information](#Further-Information): Get some help.
 
-Na raiz do projeto, execute o comando `ng serve` no terminal para iniciar o servidor em modo de desenvolvimento. Digite a URL `http://localhost:4200/` no seu navegador. A aplicação irá automaticamente recarregar quando salvar qualquer alteração nos arquivos do código-fonte. 
+## Prerequisites
 
-## Estrutura dos Códigos
+Please, verify if you have [Node.js](https://nodejs.org/en) and [Angular CLI](https://angular.io/cli) installed on your development environment.
 
-Execute o comando `ng generate component component-name` para gerar um novo componente. Você pode também usar o comando `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+**Install dependencies**: `npm install`.
 
-## Build para Produção
+## Development Server
 
-Execute o comando `ng build` para construir a aplicação em produção que será armazenada no diretório `dist/`. 
+From the project directory, run the `ng serve` command in the terminal to start the server in development mode. Enter the URL `http://localhost:4200/` into your browser. The application will automatically reload when saving any changes to the source code files. 
 
-## Mais Ajuda
+## Build
 
-Para conseguir mais ajuda no Angular CLI, use o comando `ng help` ou de uma olhada na página de documentação do [Angular CLI](https://angular.io/cli).
+Execute the command `ng build --prod` to build the project for production, the output is `dist/`. 
+
+## Further Information
+
+For help with the Angular CLI, execute the command `ng help` or look the oficial documentation of [Angular CLI](https://angular.io/cli).
